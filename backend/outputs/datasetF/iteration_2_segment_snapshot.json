@@ -200,7 +200,7 @@
     "engine": "fp_growth",
     "minsup": 0.04,
     "minconf": 0.45,
-    "holdout_mean_hr": 0.9377871379927512,
+    "holdout_mean_hr": 0.9377871379927513,
     "menu_rank_top10": [
       {
         "item": "Water",
@@ -266,18 +266,18 @@
     "promos_top3": [
       {
         "bundle": [
-          "Fruit Juice",
+          "Chicken Rice",
           "Salad",
-          "Chicken Rice"
+          "Fruit Juice"
         ],
         "promo": "Bundle Discount 10%",
         "why": "lift=3.97, conf=0.89, profit~138php"
       },
       {
         "bundle": [
-          "Chicken Rice",
+          "Fruit Juice",
           "Salad",
-          "Fruit Juice"
+          "Chicken Rice"
         ],
         "promo": "Bundle Discount 10%",
         "why": "lift=3.97, conf=0.89, profit~138php"

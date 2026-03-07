@@ -1143,62 +1143,19 @@
     "emerging": [
       {
         "antecedents": [
-          "Brownie",
-          "Pasta"
+          "Soda"
+        ],
+        "consequents": [
+          "Extra Rice",
+          "Fried Chicken"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
         ],
         "consequents": [
           "Coffee"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fruit Juice"
-        ],
-        "consequents": [
-          "Extra Rice",
-          "Fish Fillet"
-        ]
-      },
-      {
-        "antecedents": [
-          "Soda"
-        ],
-        "consequents": [
-          "Extra Rice",
-          "Fried Chicken"
-        ]
-      },
-      {
-        "antecedents": [
-          "Burger",
-          "Iced Tea"
-        ],
-        "consequents": [
-          "Nuggets"
-        ]
-      },
-      {
-        "antecedents": [
-          "Soda"
-        ],
-        "consequents": [
-          "Fried Chicken"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fruit Juice"
-        ],
-        "consequents": [
-          "Fish Fillet"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fish Fillet"
-        ],
-        "consequents": [
-          "Fruit Juice"
         ]
       },
       {
@@ -1208,6 +1165,50 @@
         ],
         "consequents": [
           "Extra Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Pasta"
+        ],
+        "consequents": [
+          "Brownie",
+          "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets"
+        ],
+        "consequents": [
+          "Burger",
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fried Chicken"
+        ],
+        "consequents": [
+          "Extra Rice",
+          "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
+        ],
+        "consequents": [
+          "Pasta"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
+        ],
+        "consequents": [
+          "Coffee",
+          "Pasta"
         ]
       }
     ],

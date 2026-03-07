@@ -107,20 +107,20 @@
       {
         "item": "Fries",
         "pop": 46,
-        "impact": 5.752863089246298,
+        "impact": 5.752863089246299,
         "rank_score": 2.0
       },
       {
         "item": "Soda",
         "pop": 44,
         "impact": 5.023945333849476,
-        "rank_score": 1.8000590706714297
+        "rank_score": 1.8000590706714295
       },
       {
         "item": "Nuggets",
         "pop": 20,
         "impact": 3.1258451352969367,
-        "rank_score": 1.0079732747305354
+        "rank_score": 1.0079732747305352
       },
       {
         "item": "Milk Tea",
@@ -132,25 +132,25 @@
         "item": "Sisig Rice",
         "pop": 17,
         "impact": 3.069494968549287,
-        "rank_score": 0.9514164865836281
+        "rank_score": 0.9514164865836279
       },
       {
         "item": "Water",
         "pop": 16,
         "impact": 3.046710158422705,
-        "rank_score": 0.9316252273108621
+        "rank_score": 0.9316252273108618
       },
       {
         "item": "Cheese Stick",
         "pop": 21,
         "impact": 2.571459848014084,
-        "rank_score": 0.8923224733432379
+        "rank_score": 0.8923224733432378
       },
       {
         "item": "Spaghetti",
         "pop": 17,
         "impact": 2.444448602409022,
-        "rank_score": 0.8047395048444522
+        "rank_score": 0.8047395048444521
       },
       {
         "item": "Burger",

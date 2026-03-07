@@ -211,50 +211,50 @@
       {
         "item": "Fries",
         "pop": 127,
-        "impact": 4.147896573254394,
+        "impact": 4.1478965732543935,
         "rank_score": 1.61
       },
       {
         "item": "Cheese Stick",
         "pop": 126,
         "impact": 4.124109960069927,
-        "rank_score": 1.5998946258104767
+        "rank_score": 1.5998946258104771
       },
       {
         "item": "Milk Tea",
         "pop": 116,
         "impact": 4.1198894004887014,
-        "rank_score": 1.574884612823405
+        "rank_score": 1.5748846128234053
       },
       {
         "item": "Nachos",
         "pop": 151,
         "impact": 2.9092204552856806,
-        "rank_score": 1.2635801041020522
+        "rank_score": 1.2635801041020525
       },
       {
         "item": "Burger",
         "pop": 151,
         "impact": 2.8996031154311894,
-        "rank_score": 1.2604499853601145
+        "rank_score": 1.2604499853601148
       },
       {
         "item": "Donut",
         "pop": 124,
         "impact": 0.7388504169882846,
-        "rank_score": 0.49337990432467166
+        "rank_score": 0.4933799043246717
       },
       {
         "item": "Coffee",
         "pop": 124,
         "impact": 0.729951607464475,
-        "rank_score": 0.49048364289554025
+        "rank_score": 0.4904836428955403
       },
       {
         "item": "Iced Tea",
         "pop": 115,
         "impact": 0.7120720576135565,
-        "rank_score": 0.4633917270600177
+        "rank_score": 0.46339172706001774
       },
       {
         "item": "Lumpia",

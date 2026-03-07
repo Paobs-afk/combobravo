@@ -998,10 +998,11 @@
     "emerging": [
       {
         "antecedents": [
-          "Sundae"
+          "Nuggets",
+          "Sisig Rice"
         ],
         "consequents": [
-          "Fries"
+          "Iced Tea"
         ]
       },
       {
@@ -1014,11 +1015,10 @@
       },
       {
         "antecedents": [
-          "Nuggets",
-          "Sisig Rice"
+          "Sundae"
         ],
         "consequents": [
-          "Iced Tea"
+          "Fries"
         ]
       }
     ],

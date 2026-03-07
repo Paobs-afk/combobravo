@@ -1141,36 +1141,45 @@
     "stable": [
       {
         "antecedents": [
-          "Cheese Stick"
-        ],
-        "consequents": [
-          "Fries",
-          "Milk Tea"
-        ]
-      },
-      {
-        "antecedents": [
-          "Lumpia"
-        ],
-        "consequents": [
-          "Iced Tea"
-        ]
-      },
-      {
-        "antecedents": [
-          "Nachos"
-        ],
-        "consequents": [
-          "Soda"
-        ]
-      },
-      {
-        "antecedents": [
           "Burger"
         ],
         "consequents": [
           "Nachos",
           "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fries"
+        ],
+        "consequents": [
+          "Cheese Stick",
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      },
+      {
+        "antecedents": [
+          "Donut"
+        ],
+        "consequents": [
+          "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Fries",
+          "Milk Tea"
         ]
       },
       {
@@ -1184,27 +1193,19 @@
       },
       {
         "antecedents": [
-          "Iced Tea"
+          "Burger"
         ],
         "consequents": [
-          "Lumpia"
+          "Soda"
         ]
       },
       {
         "antecedents": [
-          "Fries"
+          "Fries",
+          "Milk Tea"
         ],
         "consequents": [
-          "Milk Tea"
-        ]
-      },
-      {
-        "antecedents": [
-          "Cheese Stick",
-          "Fries"
-        ],
-        "consequents": [
-          "Milk Tea"
+          "Cheese Stick"
         ]
       }
     ],

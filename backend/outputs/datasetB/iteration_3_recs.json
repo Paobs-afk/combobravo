@@ -1003,11 +1003,11 @@
     "fading": [
       {
         "antecedents": [
-          "Hotdog",
-          "Sundae"
+          "Burger",
+          "Nuggets"
         ],
         "consequents": [
-          "Fries"
+          "Soda"
         ]
       },
       {
@@ -1021,11 +1021,11 @@
       },
       {
         "antecedents": [
-          "Burger",
-          "Nuggets"
+          "Hotdog",
+          "Sundae"
         ],
         "consequents": [
-          "Soda"
+          "Fries"
         ]
       },
       {

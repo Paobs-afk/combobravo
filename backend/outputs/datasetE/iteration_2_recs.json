@@ -1141,28 +1141,45 @@
     "stable": [
       {
         "antecedents": [
-          "Cheese Stick"
-        ],
-        "consequents": [
-          "Fries",
-          "Milk Tea"
-        ]
-      },
-      {
-        "antecedents": [
-          "Lumpia"
-        ],
-        "consequents": [
-          "Iced Tea"
-        ]
-      },
-      {
-        "antecedents": [
           "Burger"
         ],
         "consequents": [
           "Nachos",
           "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fries"
+        ],
+        "consequents": [
+          "Cheese Stick",
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      },
+      {
+        "antecedents": [
+          "Donut"
+        ],
+        "consequents": [
+          "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Fries",
+          "Milk Tea"
         ]
       },
       {
@@ -1176,34 +1193,19 @@
       },
       {
         "antecedents": [
-          "Iced Tea"
-        ],
-        "consequents": [
-          "Lumpia"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fries"
-        ],
-        "consequents": [
+          "Fries",
           "Milk Tea"
+        ],
+        "consequents": [
+          "Cheese Stick"
         ]
       },
       {
         "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
           "Cheese Stick",
-          "Fries"
-        ],
-        "consequents": [
-          "Milk Tea"
-        ]
-      },
-      {
-        "antecedents": [
-          "Milk Tea"
-        ],
-        "consequents": [
           "Fries"
         ]
       }
@@ -1219,30 +1221,22 @@
       },
       {
         "antecedents": [
-          "Fries"
-        ],
-        "consequents": [
-          "Cheese Stick"
-        ]
-      },
-      {
-        "antecedents": [
           "Burger"
         ],
         "consequents": [
           "Soda"
         ]
+      },
+      {
+        "antecedents": [
+          "Fries"
+        ],
+        "consequents": [
+          "Cheese Stick"
+        ]
       }
     ],
     "fading": [
-      {
-        "antecedents": [
-          "Cheese Stick"
-        ],
-        "consequents": [
-          "Fries"
-        ]
-      },
       {
         "antecedents": [
           "Donut",
@@ -1250,6 +1244,14 @@
         ],
         "consequents": [
           "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Fries"
         ]
       },
       {

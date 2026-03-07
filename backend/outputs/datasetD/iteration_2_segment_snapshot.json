@@ -21,8 +21,8 @@
       {
         "item": "Brownie",
         "pop": 50,
-        "impact": 4.005972770380304,
-        "rank_score": 1.1272529952495562
+        "impact": 4.005972770380303,
+        "rank_score": 1.127252995249556
       },
       {
         "item": "Pasta",
@@ -155,8 +155,8 @@
       {
         "item": "Soda",
         "pop": 50,
-        "impact": 3.0534097891127248,
-        "rank_score": 0.9098921091569192
+        "impact": 3.0534097891127243,
+        "rank_score": 0.9098921091569191
       },
       {
         "item": "Fruit Juice",
@@ -169,8 +169,8 @@
       {
         "bundle": [
           "Brownie",
-          "Pasta",
-          "Coffee"
+          "Coffee",
+          "Pasta"
         ],
         "promo": "Bundle Discount 10%",
         "why": "lift=5.26, conf=1.00, profit~142php"
@@ -178,8 +178,8 @@
       {
         "bundle": [
           "Brownie",
-          "Coffee",
-          "Pasta"
+          "Pasta",
+          "Coffee"
         ],
         "promo": "Bundle Discount 10%",
         "why": "lift=5.26, conf=1.00, profit~142php"

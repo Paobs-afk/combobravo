@@ -1138,10 +1138,11 @@
     "stable": [
       {
         "antecedents": [
-          "Brownie"
+          "Chicken Rice",
+          "Salad"
         ],
         "consequents": [
-          "Fish Fillet"
+          "Fruit Juice"
         ]
       },
       {
@@ -1154,18 +1155,36 @@
       },
       {
         "antecedents": [
-          "Iced Tea"
+          "Fruit Juice"
         ],
         "consequents": [
-          "Pasta"
+          "Chicken Rice"
         ]
       },
       {
         "antecedents": [
-          "Pasta"
+          "Brownie"
         ],
         "consequents": [
-          "Iced Tea"
+          "Fish Fillet"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fish Fillet",
+          "Water"
+        ],
+        "consequents": [
+          "Brownie"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger"
+        ],
+        "consequents": [
+          "Salad",
+          "Water"
         ]
       },
       {
@@ -1179,27 +1198,10 @@
       },
       {
         "antecedents": [
-          "Burger"
+          "Chicken Rice"
         ],
         "consequents": [
-          "Salad"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fruit Juice"
-        ],
-        "consequents": [
-          "Chicken Rice",
-          "Salad"
-        ]
-      },
-      {
-        "antecedents": [
-          "Chicken Rice",
-          "Fruit Juice"
-        ],
-        "consequents": [
+          "Fruit Juice",
           "Salad"
         ]
       }

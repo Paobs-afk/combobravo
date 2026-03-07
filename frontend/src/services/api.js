@@ -31,10 +31,7 @@ export const fetchDatasets = () => fetchJson("/api/datasets");
 
 export const fetchDashboardData = async (dataset, iteration) => {
   const endpoints = [
-    { key: "recommendations", required: true, url: `/api/recommendations/${dataset}/${iteration}` },
-    { key: "rules", required: false, url: `/api/rules/${dataset}/${iteration}` },
-    { key: "menuRank", required: false, url: `/api/menu-rank/${dataset}/${iteration}` },
-    { key: "segments", required: false, url: `/api/segments/${dataset}/${iteration}` },
+    { key: "overview", required: true, url: `/api/overview/${dataset}/${iteration}` },
     { key: "topMeals", required: false, url: `/api/top-meals/${dataset}?limit=10` },
   ];
 
@@ -51,7 +48,14 @@ export const fetchDashboardData = async (dataset, iteration) => {
   settled.forEach((result, index) => {
     const endpoint = endpoints[index];
     if (result.status === "fulfilled") {
-      data[endpoint.key] = result.value;
+      if (endpoint.key === "overview") {
+        data.recommendations = result.value?.recommendations || {};
+        data.rules = result.value?.rules || [];
+        data.menuRank = result.value?.menu_rank || [];
+        data.segments = result.value?.segments || {};
+      } else {
+        data[endpoint.key] = result.value;
+      }
       return;
     }
     errors.push({

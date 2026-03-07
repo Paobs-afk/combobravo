@@ -1142,53 +1142,37 @@
     "stable": [
       {
         "antecedents": [
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Chicken Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets"
+        ],
+        "consequents": [
+          "Fries",
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fries",
+          "Nuggets"
+        ],
+        "consequents": [
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
           "Soda",
           "Spaghetti"
         ],
         "consequents": [
           "Cheese Stick"
-        ]
-      },
-      {
-        "antecedents": [
-          "Spaghetti"
-        ],
-        "consequents": [
-          "Cheese Stick"
-        ]
-      },
-      {
-        "antecedents": [
-          "Cheese Stick",
-          "Soda"
-        ],
-        "consequents": [
-          "Spaghetti"
-        ]
-      },
-      {
-        "antecedents": [
-          "Burger",
-          "Fries"
-        ],
-        "consequents": [
-          "Soda"
-        ]
-      },
-      {
-        "antecedents": [
-          "Milk Tea"
-        ],
-        "consequents": [
-          "Nuggets"
-        ]
-      },
-      {
-        "antecedents": [
-          "Chicken Rice"
-        ],
-        "consequents": [
-          "Iced Tea"
         ]
       },
       {
@@ -1201,20 +1185,11 @@
       },
       {
         "antecedents": [
-          "Water"
+          "Burger"
         ],
         "consequents": [
-          "Sisig Rice"
-        ]
-      }
-    ],
-    "emerging": [
-      {
-        "antecedents": [
-          "Cheese Stick"
-        ],
-        "consequents": [
-          "Spaghetti"
+          "Fries",
+          "Soda"
         ]
       },
       {
@@ -1222,7 +1197,35 @@
           "Milk Tea"
         ],
         "consequents": [
+          "Fries",
+          "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Spaghetti"
+        ],
+        "consequents": [
+          "Cheese Stick",
+          "Soda"
+        ]
+      }
+    ],
+    "emerging": [
+      {
+        "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
           "Fries"
+        ]
+      },
+      {
+        "antecedents": [
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Spaghetti"
         ]
       }
     ],
@@ -1230,19 +1233,19 @@
       {
         "antecedents": [
           "Brownie",
-          "Chicken Rice"
+          "Iced Tea"
         ],
         "consequents": [
-          "Iced Tea"
+          "Chicken Rice"
         ]
       },
       {
         "antecedents": [
           "Brownie",
-          "Iced Tea"
+          "Chicken Rice"
         ],
         "consequents": [
-          "Chicken Rice"
+          "Iced Tea"
         ]
       }
     ],

@@ -128,6 +128,46 @@ def build_margin_table(items: List[str]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _dataset_id_label(dataset_key: str) -> tuple[str, str]:
+    labels = {
+        "dataseta": ("A", "Dataset A"),
+        "datasetb": ("B", "Dataset B"),
+        "datasetc": ("C", "Dataset C"),
+        "datasetd": ("D", "Dataset D"),
+        "datasete": ("E", "Dataset E"),
+        "datasetf": ("F", "Dataset F"),
+    }
+    key = dataset_key.strip()
+    mapped = labels.get(key.lower())
+    if mapped:
+        return mapped
+    if key.startswith("custom_"):
+        return key, key.replace("custom_", "Custom ").replace("_", " ").title()
+    return key, key
+
+
+def output_dataset_fallback_rows() -> List[Dict[str, object]]:
+    if not os.path.isdir(OUTPUT_ROOT):
+        return []
+    rows: List[Dict[str, object]] = []
+    for name in sorted(os.listdir(OUTPUT_ROOT)):
+        output_dir = os.path.join(OUTPUT_ROOT, name)
+        if not os.path.isdir(output_dir):
+            continue
+        dataset_id, label = _dataset_id_label(name)
+        rows.append(
+            {
+                "id": dataset_id,
+                "folder": name,
+                "dataset_key": name,
+                "label": label,
+                "transactions": 0,
+                "unique_items": 0,
+            }
+        )
+    return rows
+
+
 @app.get("/api/health")
 async def health_check():
     try:
@@ -152,7 +192,22 @@ async def supabase_status():
 
 @app.get("/api/datasets")
 async def get_datasets():
-    return list_datasets()
+    try:
+        rows = list_datasets()
+        if rows:
+            return rows
+        fallback = output_dataset_fallback_rows()
+        if fallback:
+            logger.warning("Supabase returned no datasets; using output-folder fallback.")
+            return fallback
+        return []
+    except Exception as exc:
+        logger.exception("Failed to load dataset list")
+        fallback = output_dataset_fallback_rows()
+        if fallback:
+            logger.warning("Using output-folder fallback after dataset API failure: %s", exc)
+            return fallback
+        raise HTTPException(status_code=500, detail=f"Failed to load dataset list: {exc}") from exc
 
 
 @app.get("/api/top-meals/{dataset_type}")

@@ -147,7 +147,7 @@ function App() {
       <aside className="sidebar">
         <div className="side-brand">
           <div className="logo-placeholder" title="ComboBravo">
-            <span>CB</span>
+            <img className="logo-image" src="/combobra.png" alt="ComboBravo logo" />
           </div>
           <div className="brand-text">
             <p className="eyebrow">Market Basket AI</p>

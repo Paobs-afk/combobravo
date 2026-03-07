@@ -9,9 +9,11 @@
     "supabase:status": "cd backend && python -c \"from supabase_store import get_supabase_store; print(get_supabase_store().status())\"",
     "supabase:bootstrap": "cd backend && python scripts/bootstrap_supabase.py",
     "train": "cd backend && python -c \"from mba_engine import run_all_datasets; run_all_datasets(3)\"",
-    "dev:backend": "cd backend && python main.py",
+    "dev:backend": "cd backend && python run_server.py",
     "dev:frontend": "npm --prefix frontend run dev",
-    "dev": "npm run setup && npm run train && concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:prepare": "npm run setup && npm run train",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:full": "npm run dev:prepare && npm run dev",
     "build": "npm --prefix frontend run build"
   },
   "devDependencies": {

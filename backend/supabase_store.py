@@ -1,6 +1,7 @@
 import math
 import os
 import logging
+import time
 from collections import Counter
 from typing import Dict, List
 from urllib.parse import urlparse
@@ -29,6 +30,11 @@ class SupabaseStore:
         self.datasets_table = DATASETS_TABLE
         self.transactions_table = TRANSACTIONS_TABLE
         self.margins_table = MARGINS_TABLE
+        self.cache_ttl_seconds = max(float(os.getenv("SUPABASE_CACHE_TTL_SECONDS", "20")), 0.0)
+        self._dataset_keys_cache: List[str] | None = None
+        self._dataset_keys_cache_until: float = 0.0
+        self._datasets_cache: List[Dict[str, object]] | None = None
+        self._datasets_cache_until: float = 0.0
 
     def _fetch_all(self, table_name: str, columns: str = "*", page_size: int = 1000, **filters) -> List[dict]:
         rows: List[dict] = []
@@ -69,7 +75,19 @@ class SupabaseStore:
         label = explicit_label or dataset_key.replace("custom_", "Custom ").replace("_", " ").title()
         return dataset_key, label
 
+    def _cache_is_valid(self, expiry: float) -> bool:
+        return expiry > time.monotonic()
+
+    def clear_cache(self) -> None:
+        self._dataset_keys_cache = None
+        self._dataset_keys_cache_until = 0.0
+        self._datasets_cache = None
+        self._datasets_cache_until = 0.0
+
     def list_dataset_keys(self) -> List[str]:
+        if self._dataset_keys_cache is not None and self._cache_is_valid(self._dataset_keys_cache_until):
+            return list(self._dataset_keys_cache)
+
         keys: set[str] = set()
 
         datasets = self._fetch_all(self.datasets_table, columns="dataset_key")
@@ -90,6 +108,8 @@ class SupabaseStore:
         preferred = ["datasetA", "datasetB"]
         ordered = [name for name in preferred if name in keys]
         ordered.extend(sorted(name for name in keys if name not in preferred))
+        self._dataset_keys_cache = ordered
+        self._dataset_keys_cache_until = time.monotonic() + self.cache_ttl_seconds
         return ordered
 
     def dataset_exists(self, dataset_key: str) -> bool:
@@ -104,34 +124,52 @@ class SupabaseStore:
         return None
 
     def list_datasets(self) -> List[Dict[str, object]]:
+        if self._datasets_cache is not None and self._cache_is_valid(self._datasets_cache_until):
+            return [dict(row) for row in self._datasets_cache]
+
         dataset_meta = {
             str(row.get("dataset_key")): row
             for row in self._fetch_all(self.datasets_table, columns="dataset_key,label")
             if row.get("dataset_key")
         }
-
-        rows: List[Dict[str, object]] = []
-        for dataset_key in self.list_dataset_keys():
-            tx_rows = self._fetch_all(
-                self.transactions_table,
-                columns="items",
-                dataset_key=dataset_key,
-            )
-            unique_items: set[str] = set()
-            for tx in tx_rows:
-                for item in parse_items(tx.get("items", "")):
+        tx_rows = self._fetch_all(self.transactions_table, columns="dataset_key,items")
+        stats: Dict[str, Dict[str, object]] = {}
+        for tx in tx_rows:
+            dataset_key = str(tx.get("dataset_key") or "").strip()
+            if not dataset_key:
+                continue
+            if dataset_key not in stats:
+                stats[dataset_key] = {"transactions": 0, "unique_items": set()}
+            stats[dataset_key]["transactions"] = int(stats[dataset_key]["transactions"]) + 1
+            for item in parse_items(tx.get("items", "")):
+                unique_items = stats[dataset_key]["unique_items"]
+                if isinstance(unique_items, set):
                     unique_items.add(item)
 
+        all_dataset_keys = set(dataset_meta.keys()) | set(stats.keys())
+        preferred = ["datasetA", "datasetB"]
+        ordered_keys = [name for name in preferred if name in all_dataset_keys]
+        ordered_keys.extend(
+            sorted(
+                name for name in all_dataset_keys if name not in {"datasetA", "datasetB"}
+            )
+        )
+
+        rows: List[Dict[str, object]] = []
+        for dataset_key in ordered_keys:
             meta_label = dataset_meta.get(dataset_key, {}).get("label")
             dataset_id, label = self._dataset_id_label(dataset_key, explicit_label=meta_label)
+            stat = stats.get(dataset_key, {"transactions": 0, "unique_items": set()})
+            unique_items = stat.get("unique_items", set())
+            unique_count = len(unique_items) if isinstance(unique_items, set) else 0
             rows.append(
                 {
                     "id": dataset_id,
                     "folder": dataset_key,
                     "dataset_key": dataset_key,
                     "label": label,
-                    "transactions": len(tx_rows),
-                    "unique_items": len(unique_items),
+                    "transactions": int(stat.get("transactions", 0) or 0),
+                    "unique_items": int(unique_count),
                 }
             )
 
@@ -141,6 +179,10 @@ class SupabaseStore:
                 str(item["label"]).lower(),
             )
         )
+        self._datasets_cache = [dict(row) for row in rows]
+        self._datasets_cache_until = time.monotonic() + self.cache_ttl_seconds
+        self._dataset_keys_cache = [row["dataset_key"] for row in rows if row.get("dataset_key")]
+        self._dataset_keys_cache_until = time.monotonic() + self.cache_ttl_seconds
         return rows
 
     def top_meals(self, dataset_key: str, limit: int | None = None) -> List[Dict[str, object]]:
@@ -345,6 +387,7 @@ class SupabaseStore:
                     payload[start : start + 500],
                     on_conflict="dataset_key,item",
                 ).execute()
+        self.clear_cache()
 
 
 _STORE: SupabaseStore | None = None

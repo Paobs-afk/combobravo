@@ -1142,64 +1142,11 @@
     "stable": [
       {
         "antecedents": [
-          "Brownie",
-          "Pasta"
-        ],
-        "consequents": [
-          "Coffee"
-        ]
-      },
-      {
-        "antecedents": [
           "Soda"
         ],
         "consequents": [
-          "Fried Chicken"
-        ]
-      },
-      {
-        "antecedents": [
           "Extra Rice",
-          "Fruit Juice"
-        ],
-        "consequents": [
-          "Fish Fillet"
-        ]
-      },
-      {
-        "antecedents": [
           "Fried Chicken"
-        ],
-        "consequents": [
-          "Extra Rice",
-          "Soda"
-        ]
-      },
-      {
-        "antecedents": [
-          "Extra Rice",
-          "Soda"
-        ],
-        "consequents": [
-          "Fried Chicken"
-        ]
-      },
-      {
-        "antecedents": [
-          "Coffee"
-        ],
-        "consequents": [
-          "Brownie",
-          "Pasta"
-        ]
-      },
-      {
-        "antecedents": [
-          "Nuggets"
-        ],
-        "consequents": [
-          "Burger",
-          "Iced Tea"
         ]
       },
       {
@@ -1208,6 +1155,60 @@
         ],
         "consequents": [
           "Coffee",
+          "Pasta"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger",
+          "Nuggets"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger",
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Extra Rice",
+          "Soda"
+        ],
+        "consequents": [
+          "Fried Chicken"
+        ]
+      },
+      {
+        "antecedents": [
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Burger",
+          "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Coffee",
+          "Pasta"
+        ],
+        "consequents": [
+          "Brownie"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie",
+          "Coffee"
+        ],
+        "consequents": [
           "Pasta"
         ]
       }
@@ -1223,19 +1224,19 @@
       },
       {
         "antecedents": [
-          "Milk Tea"
-        ],
-        "consequents": [
-          "Spring Rolls"
-        ]
-      },
-      {
-        "antecedents": [
           "Burger"
         ],
         "consequents": [
           "Iced Tea",
           "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
+          "Spring Rolls"
         ]
       }
     ],
@@ -1250,19 +1251,19 @@
       },
       {
         "antecedents": [
+          "Fried Chicken"
+        ],
+        "consequents": [
+          "Soda"
+        ]
+      },
+      {
+        "antecedents": [
           "Fish Fillet",
           "Fruit Juice"
         ],
         "consequents": [
           "Extra Rice"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fried Chicken"
-        ],
-        "consequents": [
-          "Soda"
         ]
       }
     ],

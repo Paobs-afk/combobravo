@@ -1117,6 +1117,47 @@
     "emerging": [
       {
         "antecedents": [
+          "Burger"
+        ],
+        "consequents": [
+          "Salad"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fish Fillet"
+        ],
+        "consequents": [
+          "Brownie"
+        ]
+      },
+      {
+        "antecedents": [
+          "Chicken Rice",
+          "Salad"
+        ],
+        "consequents": [
+          "Fruit Juice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Pasta"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fruit Juice"
+        ],
+        "consequents": [
+          "Salad"
+        ]
+      },
+      {
+        "antecedents": [
           "Burger",
           "Salad"
         ],
@@ -1126,19 +1167,10 @@
       },
       {
         "antecedents": [
-          "Brownie"
+          "Pasta"
         ],
         "consequents": [
-          "Fish Fillet"
-        ]
-      },
-      {
-        "antecedents": [
-          "Brownie",
-          "Water"
-        ],
-        "consequents": [
-          "Fish Fillet"
+          "Iced Tea"
         ]
       },
       {
@@ -1147,38 +1179,6 @@
         ],
         "consequents": [
           "Chicken Rice"
-        ]
-      },
-      {
-        "antecedents": [
-          "Brownie"
-        ],
-        "consequents": [
-          "Water"
-        ]
-      },
-      {
-        "antecedents": [
-          "Fruit Juice"
-        ],
-        "consequents": [
-          "Salad"
-        ]
-      },
-      {
-        "antecedents": [
-          "Iced Tea"
-        ],
-        "consequents": [
-          "Pasta"
-        ]
-      },
-      {
-        "antecedents": [
-          "Pasta"
-        ],
-        "consequents": [
-          "Iced Tea"
         ]
       }
     ],

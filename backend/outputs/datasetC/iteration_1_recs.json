@@ -1142,20 +1142,62 @@
     "emerging": [
       {
         "antecedents": [
-          "Burger"
-        ],
-        "consequents": [
-          "Fries",
-          "Soda"
-        ]
-      },
-      {
-        "antecedents": [
-          "Brownie",
           "Iced Tea"
         ],
         "consequents": [
           "Chicken Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fries",
+          "Nuggets"
+        ],
+        "consequents": [
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets"
+        ],
+        "consequents": [
+          "Fries",
+          "Milk Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger",
+          "Soda"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      },
+      {
+        "antecedents": [
+          "Milk Tea"
+        ],
+        "consequents": [
+          "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fries",
+          "Milk Tea"
+        ],
+        "consequents": [
+          "Nuggets"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger"
+        ],
+        "consequents": [
+          "Fries"
         ]
       },
       {
@@ -1165,49 +1207,6 @@
         ],
         "consequents": [
           "Cheese Stick"
-        ]
-      },
-      {
-        "antecedents": [
-          "Sisig Rice"
-        ],
-        "consequents": [
-          "Water"
-        ]
-      },
-      {
-        "antecedents": [
-          "Milk Tea"
-        ],
-        "consequents": [
-          "Fries",
-          "Nuggets"
-        ]
-      },
-      {
-        "antecedents": [
-          "Spaghetti"
-        ],
-        "consequents": [
-          "Cheese Stick"
-        ]
-      },
-      {
-        "antecedents": [
-          "Cheese Stick",
-          "Soda"
-        ],
-        "consequents": [
-          "Spaghetti"
-        ]
-      },
-      {
-        "antecedents": [
-          "Burger",
-          "Fries"
-        ],
-        "consequents": [
-          "Soda"
         ]
       }
     ],
