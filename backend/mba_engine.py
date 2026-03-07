@@ -2,6 +2,7 @@ import json
 import os
 from collections import Counter
 from dataclasses import dataclass
+from itertools import combinations
 from typing import Dict, List, Sequence, Set, Tuple
 
 import numpy as np
@@ -9,10 +10,10 @@ import pandas as pd
 from mlxtend.frequent_patterns import apriori, association_rules, fpgrowth
 from mlxtend.preprocessing import TransactionEncoder
 from scipy.spatial.distance import jensenshannon
+from supabase_store import get_supabase_store
 
 
 PROJECT_ROOT = os.path.dirname(__file__)
-DATA_ROOT = os.path.join(PROJECT_ROOT, "data")
 OUTPUT_ROOT = os.path.join(PROJECT_ROOT, "outputs")
 
 MIN_SUP_GRID = [0.01, 0.015, 0.02, 0.03, 0.04]
@@ -338,26 +339,107 @@ def build_menu_rank(baskets: Sequence[Sequence[str]], rules: pd.DataFrame) -> pd
     return ranking
 
 
-def top_item_suggestions(selected_item: str, rules: pd.DataFrame, limit: int = 5) -> List[Dict[str, str | float]]:
-    if rules.empty:
-        return []
-    best: Dict[str, Dict[str, str | float]] = {}
-    for _, row in rules.sort_values("blend_score", ascending=False).iterrows():
-        antecedent = set(row["antecedents"])
-        if selected_item not in antecedent:
+def build_pair_model(baskets: Sequence[Sequence[str]]) -> Dict[str, object]:
+    item_counts: Counter[str] = Counter()
+    pair_counts: Counter[Tuple[str, str]] = Counter()
+    tx_count = 0
+
+    for basket in baskets:
+        unique_items = sorted(set(basket))
+        if not unique_items:
             continue
-        for item in row["consequents"]:
-            if item == selected_item:
+        tx_count += 1
+        for item in unique_items:
+            item_counts[item] += 1
+        for left, right in combinations(unique_items, 2):
+            pair_counts[(left, right)] += 1
+
+    return {"tx_count": tx_count, "item_counts": item_counts, "pair_counts": pair_counts}
+
+
+def fallback_pair_suggestions(
+    selected_item: str, pair_model: Dict[str, object], limit: int = 5, min_occ: int = 4
+) -> List[Dict[str, str | float]]:
+    tx_count = int(pair_model.get("tx_count", 0))
+    if tx_count <= 0:
+        return []
+
+    item_counts: Counter[str] = pair_model.get("item_counts", Counter())
+    pair_counts: Counter[Tuple[str, str]] = pair_model.get("pair_counts", Counter())
+    selected_count = int(item_counts.get(selected_item, 0))
+    if selected_count <= 0:
+        return []
+
+    selected_support = float(selected_count / tx_count)
+    picks: List[Dict[str, str | float]] = []
+    for other_item, other_count in item_counts.items():
+        if other_item == selected_item:
+            continue
+        pair_key = tuple(sorted((selected_item, other_item)))
+        pair_count = int(pair_counts.get(pair_key, 0))
+        if pair_count < min_occ:
+            continue
+
+        support = float(pair_count / tx_count)
+        confidence = float(pair_count / selected_count)
+        consequent_support = float(other_count / tx_count)
+        lift = float(confidence / consequent_support) if consequent_support else 0.0
+        leverage = float(support - (selected_support * consequent_support))
+        conviction = float((1 - consequent_support) / max(1 - confidence, 1e-9))
+        score = float(0.50 * confidence + 0.35 * max(lift - 1.0, 0.0) + 0.15 * support)
+
+        picks.append(
+            {
+                "item": other_item,
+                "score": score,
+                "support": support,
+                "confidence": confidence,
+                "lift": lift,
+                "leverage": leverage,
+                "conviction": conviction,
+                "why": f"pair signal: conf={confidence:.2f}, lift={lift:.2f}",
+            }
+        )
+    return sorted(picks, key=lambda row: float(row["score"]), reverse=True)[:limit]
+
+
+def top_item_suggestions(
+    selected_item: str,
+    rules: pd.DataFrame,
+    limit: int = 5,
+    pair_model: Dict[str, object] | None = None,
+) -> List[Dict[str, str | float]]:
+    best: Dict[str, Dict[str, str | float]] = {}
+    if not rules.empty:
+        for _, row in rules.sort_values("blend_score", ascending=False).iterrows():
+            antecedent = set(row["antecedents"])
+            if selected_item not in antecedent:
                 continue
-            if item not in best:
+            for item in row["consequents"]:
+                if item == selected_item or item in best:
+                    continue
                 best[item] = {
                     "item": item,
                     "score": float(row["blend_score"]),
+                    "support": float(row["support"]),
                     "confidence": float(row["confidence"]),
                     "lift": float(row["lift"]),
-                    "why": f"conf={row['confidence']:.2f}, lift={row['lift']:.2f}",
+                    "leverage": float(row.get("leverage", 0.0)),
+                    "conviction": float(row.get("conviction", 0.0)),
+                    "why": f"rule signal: conf={row['confidence']:.2f}, lift={row['lift']:.2f}",
                 }
-    return sorted(best.values(), key=lambda x: float(x["score"]), reverse=True)[:limit]
+    ordered = sorted(best.values(), key=lambda row: float(row["score"]), reverse=True)
+    if pair_model and len(ordered) < limit:
+        fallback = fallback_pair_suggestions(
+            selected_item, pair_model, limit=max(limit * 2, limit + 2)
+        )
+        for row in fallback:
+            if row["item"] in best:
+                continue
+            ordered.append(row)
+            if len(ordered) >= limit:
+                break
+    return ordered[:limit]
 
 
 def recommendation_coverage(
@@ -378,7 +460,11 @@ def recommendation_coverage(
 
 
 def build_cart_targets(
-    rules: pd.DataFrame, menu_rank: pd.DataFrame, max_items: int = 10, suggestion_limit: int = 5
+    rules: pd.DataFrame,
+    menu_rank: pd.DataFrame,
+    pair_model: Dict[str, object] | None = None,
+    max_items: int = 10,
+    suggestion_limit: int = 5,
 ) -> Dict[str, List[Dict[str, str | float]]]:
     seed_items: List[str] = []
     if not menu_rank.empty:
@@ -392,33 +478,125 @@ def build_cart_targets(
 
     targets: Dict[str, List[Dict[str, str | float]]] = {}
     for item in seed_items:
-        picks = top_item_suggestions(item, rules, limit=suggestion_limit)
+        picks = top_item_suggestions(item, rules, limit=suggestion_limit, pair_model=pair_model)
         if picks:
             targets[item] = picks
     return targets
 
 
-def generate_promos(rules: pd.DataFrame, limit: int = 5) -> List[Dict[str, object]]:
+def generate_promos(
+    rules: pd.DataFrame, pair_model: Dict[str, object] | None = None, limit: int = 5
+) -> List[Dict[str, object]]:
     promos: List[Dict[str, object]] = []
-    if rules.empty:
-        return promos
     seen_bundle: Set[Tuple[str, ...]] = set()
-    for _, row in rules.sort_values("blend_score", ascending=False).iterrows():
-        bundle = tuple(dict.fromkeys(list(row["antecedents"]) + list(row["consequents"])))
-        if len(bundle) < 2 or bundle in seen_bundle:
-            continue
-        seen_bundle.add(bundle)
-        promo_name = "Bundle Discount 10%" if len(bundle) >= 3 else "Add-on Suggestion 15%"
-        promos.append(
-            {
-                "bundle": list(bundle),
-                "promo": promo_name,
-                "why": f"lift={row['lift']:.2f}, conf={row['confidence']:.2f}, profit~{row['profit']:.0f}php",
-            }
-        )
-        if len(promos) >= limit:
-            break
+
+    if not rules.empty:
+        for _, row in rules.sort_values("blend_score", ascending=False).iterrows():
+            bundle = tuple(dict.fromkeys(list(row["antecedents"]) + list(row["consequents"])))
+            if len(bundle) < 2 or bundle in seen_bundle:
+                continue
+            seen_bundle.add(bundle)
+            promo_name = "Bundle Discount 10%" if len(bundle) >= 3 else "Add-on Suggestion 15%"
+            promos.append(
+                {
+                    "bundle": list(bundle),
+                    "promo": promo_name,
+                    "why": f"lift={row['lift']:.2f}, conf={row['confidence']:.2f}, profit~{row['profit']:.0f}php",
+                }
+            )
+            if len(promos) >= limit:
+                break
+
+    if pair_model and len(promos) < limit:
+        item_counts: Counter[str] = pair_model.get("item_counts", Counter())
+        pair_counts: Counter[Tuple[str, str]] = pair_model.get("pair_counts", Counter())
+        tx_count = int(pair_model.get("tx_count", 0))
+        if tx_count > 0:
+            pair_rows = sorted(pair_counts.items(), key=lambda pair: pair[1], reverse=True)
+            for (left, right), pair_count in pair_rows:
+                bundle = (left, right)
+                if bundle in seen_bundle:
+                    continue
+                left_support = float(item_counts.get(left, 0) / tx_count)
+                right_support = float(item_counts.get(right, 0) / tx_count)
+                confidence = float(pair_count / max(item_counts.get(left, 1), 1))
+                support = float(pair_count / tx_count)
+                lift = float(confidence / right_support) if right_support else 0.0
+                if support < 0.02 or lift <= 1.0:
+                    continue
+                seen_bundle.add(bundle)
+                promos.append(
+                    {
+                        "bundle": [left, right],
+                        "promo": "Pair Promo 12%",
+                        "why": f"pair support={support:.2f}, lift={lift:.2f}, conf={confidence:.2f}",
+                    }
+                )
+                if len(promos) >= limit:
+                    break
     return promos
+
+
+def generate_top_bundles(
+    rules: pd.DataFrame, pair_model: Dict[str, object] | None = None, limit: int = 5
+) -> List[Dict[str, object]]:
+    bundles: List[Dict[str, object]] = []
+    seen: Set[Tuple[str, ...]] = set()
+
+    if not rules.empty:
+        for _, row in rules.sort_values("blend_score", ascending=False).iterrows():
+            bundle = tuple(dict.fromkeys(list(row["antecedents"]) + list(row["consequents"])))
+            if len(bundle) < 2 or bundle in seen:
+                continue
+            seen.add(bundle)
+            bundles.append(
+                {
+                    "items": list(bundle),
+                    "support": float(row["support"]),
+                    "confidence": float(row["confidence"]),
+                    "lift": float(row["lift"]),
+                    "leverage": float(row.get("leverage", 0.0)),
+                    "conviction": float(row.get("conviction", 0.0)),
+                    "why": f"strong bundle because lift={row['lift']:.2f} and confidence={row['confidence']:.2f}",
+                }
+            )
+            if len(bundles) >= limit:
+                return bundles
+
+    if pair_model:
+        item_counts: Counter[str] = pair_model.get("item_counts", Counter())
+        pair_counts: Counter[Tuple[str, str]] = pair_model.get("pair_counts", Counter())
+        tx_count = int(pair_model.get("tx_count", 0))
+        if tx_count > 0:
+            for (left, right), pair_count in sorted(pair_counts.items(), key=lambda pair: pair[1], reverse=True):
+                bundle = (left, right)
+                if bundle in seen:
+                    continue
+                left_support = float(item_counts.get(left, 0) / tx_count)
+                right_support = float(item_counts.get(right, 0) / tx_count)
+                support = float(pair_count / tx_count)
+                confidence = float(pair_count / max(item_counts.get(left, 1), 1))
+                lift = float(confidence / right_support) if right_support else 0.0
+                leverage = float(support - (left_support * right_support))
+                conviction = float((1 - right_support) / max(1 - confidence, 1e-9))
+                if support < 0.02 or lift <= 1.0:
+                    continue
+                seen.add(bundle)
+                bundles.append(
+                    {
+                        "items": [left, right],
+                        "support": support,
+                        "confidence": confidence,
+                        "lift": lift,
+                        "leverage": leverage,
+                        "conviction": conviction,
+                        "why": "pair-driven bundle from frequent co-purchases",
+                    }
+                )
+                if len(bundles) >= limit:
+                    break
+
+    return bundles
 
 
 def portfolio_delta(prev_rules: pd.DataFrame, curr_rules: pd.DataFrame) -> Dict[str, object]:
@@ -450,6 +628,51 @@ def portfolio_delta(prev_rules: pd.DataFrame, curr_rules: pd.DataFrame) -> Dict[
     }
 
 
+def build_business_insights(
+    menu_rank: pd.DataFrame,
+    blended_rules: pd.DataFrame,
+    coverage: float,
+    estimated_uplift_score: float,
+    drift: Dict[str, float | bool],
+    margin_map: Dict[str, float],
+) -> List[str]:
+    insights: List[str] = []
+    if not menu_rank.empty:
+        anchor_items = menu_rank["item"].head(3).tolist()
+        insights.append(
+            f"Homepage anchor order should be {', '.join(anchor_items)} based on rank score."
+        )
+
+    if not blended_rules.empty:
+        strongest = blended_rules.iloc[0]
+        insights.append(
+            f"Most influential cross-sell rule: {', '.join(strongest['antecedents'])} -> {', '.join(strongest['consequents'])}."
+        )
+
+    if margin_map and not menu_rank.empty:
+        ranked_items = menu_rank[["item", "rank_score"]].copy()
+        ranked_items["margin_php"] = ranked_items["item"].map(margin_map).fillna(0.0)
+        ranked_items["rank_order"] = np.arange(1, len(ranked_items) + 1)
+        high_margin = ranked_items.sort_values("margin_php", ascending=False).head(6)
+        underexposed = high_margin[high_margin["rank_order"] > max(3, len(ranked_items) * 0.35)]
+        if not underexposed.empty:
+            pick = underexposed.iloc[0]
+            insights.append(
+                f"Shelf placement suggestion: move {pick['item']} near checkout to monetize its high margin ({pick['margin_php']:.0f}php)."
+            )
+
+    insights.append(
+        "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion."
+    )
+    insights.append(
+        f"Iteration drift score (JS) is {float(drift['js']):.4f}, recent-model weight adapted automatically."
+    )
+    insights.append(
+        f"Top-rule coverage is {coverage:.1%} of baskets with estimated uplift score {estimated_uplift_score:.2f}."
+    )
+    return insights
+
+
 def rules_for_export(rules: pd.DataFrame) -> pd.DataFrame:
     export = rules.copy()
     export["antecedents"] = export["antecedents"].apply(
@@ -462,28 +685,16 @@ def rules_for_export(rules: pd.DataFrame) -> pd.DataFrame:
 
 
 def load_transactions(dataset_name: str, iteration: int) -> pd.DataFrame:
-    folder = os.path.join(DATA_ROOT, dataset_name)
-    chunks: List[pd.DataFrame] = []
-    for idx in range(1, iteration + 1):
-        file_path = os.path.join(folder, f"batch{idx}.csv")
-        if os.path.exists(file_path):
-            chunks.append(pd.read_csv(file_path))
-    if not chunks:
-        raise FileNotFoundError(f"No batch files found for {dataset_name} iteration {iteration}")
-    df = pd.concat(chunks, ignore_index=True)
-    df["items"] = df["items"].fillna("")
-    df["basket"] = df["items"].apply(parse_items)
+    store = get_supabase_store()
+    df = store.load_transactions_for_iteration(dataset_name, iteration)
+    if df.empty:
+        raise FileNotFoundError(f"No transactions found for dataset '{dataset_name}' iteration {iteration}")
     return df
 
 
 def load_margin_map(dataset_name: str) -> Dict[str, float]:
-    margin_file = os.path.join(DATA_ROOT, dataset_name, "margins.csv")
-    if not os.path.exists(margin_file):
-        return {}
-    margin_df = pd.read_csv(margin_file)
-    if "item" not in margin_df.columns or "margin_php" not in margin_df.columns:
-        return {}
-    return dict(zip(margin_df["item"], margin_df["margin_php"]))
+    store = get_supabase_store()
+    return store.get_margin_map(dataset_name)
 
 
 def build_segment_snapshot(df: pd.DataFrame, margin_map: Dict[str, float]) -> Dict[str, object]:
@@ -497,6 +708,7 @@ def build_segment_snapshot(df: pd.DataFrame, margin_map: Dict[str, float]) -> Di
         seg_rules = seg_pack.rules_scored.copy()
         seg_rules["blend_score"] = seg_rules["score"]
         seg_menu = build_menu_rank(seg_baskets, seg_rules)
+        seg_pairs = build_pair_model(seg_baskets)
         snapshot[segment] = {
             "n_tx": int(len(seg_df)),
             "engine": seg_pack.engine,
@@ -504,7 +716,7 @@ def build_segment_snapshot(df: pd.DataFrame, margin_map: Dict[str, float]) -> Di
             "minconf": seg_pack.minconf,
             "holdout_mean_hr": seg_pack.holdout_mean_hr,
             "menu_rank_top10": seg_menu.head(10).to_dict(orient="records"),
-            "promos_top3": generate_promos(seg_rules, limit=3),
+            "promos_top3": generate_promos(seg_rules, pair_model=seg_pairs, limit=3),
         }
     return snapshot
 
@@ -542,52 +754,62 @@ def run_dataset_iterations(dataset_name: str, max_iteration: int = 3) -> List[Di
             long_pack.rules_scored, recent_pack.rules_scored, w_long=w_long, w_recent=w_recent
         )
 
+        pair_model = build_pair_model(baskets)
         menu_rank = build_menu_rank(baskets, blended_rules)
-        cart_targets = build_cart_targets(blended_rules, menu_rank, max_items=10, suggestion_limit=5)
+        cart_targets = build_cart_targets(
+            blended_rules, menu_rank, pair_model=pair_model, max_items=10, suggestion_limit=5
+        )
         coverage = recommendation_coverage(baskets, blended_rules, top_n=20)
         avg_basket_size = float(np.mean([len(b) for b in baskets])) if baskets else 0.0
         mean_blend = float(blended_rules["blend_score"].head(12).mean()) if not blended_rules.empty else 0.0
         estimated_uplift_score = float(min(1.0, coverage * (1.0 + mean_blend)))
 
-        promos = generate_promos(blended_rules, limit=5)
-        top_bundles = []
-        for _, row in blended_rules.head(5).iterrows():
-            bundle = list(dict.fromkeys(list(row["antecedents"]) + list(row["consequents"])))
-            top_bundles.append(
+        promos = generate_promos(blended_rules, pair_model=pair_model, limit=5)
+        top_bundles = generate_top_bundles(blended_rules, pair_model=pair_model, limit=5)
+        top_rules_full = []
+        for _, row in blended_rules.head(12).iterrows():
+            top_rules_full.append(
                 {
-                    "items": bundle,
+                    "antecedents": list(row["antecedents"]),
+                    "consequents": list(row["consequents"]),
                     "support": float(row["support"]),
                     "confidence": float(row["confidence"]),
                     "lift": float(row["lift"]),
-                    "why": f"strong bundle because lift={row['lift']:.2f} and confidence={row['confidence']:.2f}",
+                    "leverage": float(row.get("leverage", 0.0)),
+                    "conviction": float(row.get("conviction", 0.0)),
+                    "blend_score": float(row.get("blend_score", 0.0)),
                 }
             )
 
         portfolio = portfolio_delta(previous_blended.head(25), blended_rules.head(25))
-        fbt_burger = cart_targets.get("Burger", top_item_suggestions("Burger", blended_rules, limit=5))
-        cross_sell_burger = cart_targets.get(
-            "Burger", top_item_suggestions("Burger", blended_rules, limit=5)
+        widget_item = "Burger"
+        if widget_item not in cart_targets:
+            if not menu_rank.empty:
+                widget_item = str(menu_rank.iloc[0]["item"])
+            elif cart_targets:
+                widget_item = next(iter(cart_targets.keys()))
+        fbt_widget = cart_targets.get(
+            widget_item,
+            top_item_suggestions(widget_item, blended_rules, limit=5, pair_model=pair_model),
+        )
+        cross_sell_widget = cart_targets.get(
+            widget_item,
+            top_item_suggestions(widget_item, blended_rules, limit=5, pair_model=pair_model),
+        )
+        burger_suggestions = top_item_suggestions(
+            "Burger", blended_rules, limit=5, pair_model=pair_model
         )
         segment_snapshot = build_segment_snapshot(df, margin_map)
 
-        insights = []
-        if not menu_rank.empty:
-            top_item = menu_rank.iloc[0]["item"]
-            insights.append(f"Homepage anchor item should be {top_item} based on rank score.")
-        if not blended_rules.empty:
-            strongest = blended_rules.iloc[0]
-            insights.append(
-                f"Most influential cross-sell rule: {', '.join(strongest['antecedents'])} -> {', '.join(strongest['consequents'])}."
-            )
-        insights.append(
-            "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion."
+        insights = build_business_insights(
+            menu_rank=menu_rank,
+            blended_rules=blended_rules,
+            coverage=coverage,
+            estimated_uplift_score=estimated_uplift_score,
+            drift=drift,
+            margin_map=margin_map,
         )
-        insights.append(
-            f"Iteration drift score (JS) is {float(drift['js']):.4f}, recent-model weight set to {w_recent:.2f}."
-        )
-        insights.append(
-            f"Top-rule coverage is {coverage:.1%} of baskets with estimated uplift score {estimated_uplift_score:.2f}."
-        )
+        homepage_ranking_preview = menu_rank.head(10).to_dict(orient="records")
 
         rec_json = {
             "business": {
@@ -625,8 +847,12 @@ def run_dataset_iterations(dataset_name: str, max_iteration: int = 3) -> List[Di
                 "recommendable_items": int(len(cart_targets)),
             },
             "top_bundles": top_bundles,
-            "fbt_burger": fbt_burger,
-            "cross_sell_burger": cross_sell_burger,
+            "top_rules_full_measures": top_rules_full,
+            "homepage_ranking_preview": homepage_ranking_preview,
+            "fbt_widget": {"anchor_item": widget_item, "suggestions": fbt_widget},
+            "cross_sell_widget": {"cart_item": widget_item, "suggestions": cross_sell_widget},
+            "fbt_burger": burger_suggestions,
+            "cross_sell_burger": burger_suggestions,
             "cart_targets": cart_targets,
             "promos": promos,
             "portfolio": portfolio,
@@ -663,7 +889,9 @@ def run_dataset_iterations(dataset_name: str, max_iteration: int = 3) -> List[Di
 
 
 def run_all_datasets(max_iteration: int = 3) -> Dict[str, List[Dict[str, object]]]:
+    store = get_supabase_store()
+    dataset_names = store.list_dataset_keys()
     reports: Dict[str, List[Dict[str, object]]] = {}
-    for dataset_name in ["datasetA", "datasetB"]:
+    for dataset_name in dataset_names:
         reports[dataset_name] = run_dataset_iterations(dataset_name, max_iteration=max_iteration)
     return reports

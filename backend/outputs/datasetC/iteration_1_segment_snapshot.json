@@ -1,0 +1,296 @@
+{
+  "morning": {
+    "n_tx": 112,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.25,
+    "holdout_mean_hr": 0.8524917542774686,
+    "menu_rank_top10": [
+      {
+        "item": "Soda",
+        "pop": 58,
+        "impact": 7.106555743710884,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Fries",
+        "pop": 44,
+        "impact": 6.4188984220738545,
+        "rank_score": 1.7097197504292836
+      },
+      {
+        "item": "Burger",
+        "pop": 34,
+        "impact": 3.466581916140113,
+        "rank_score": 1.0348465539626182
+      },
+      {
+        "item": "Spaghetti",
+        "pop": 30,
+        "impact": 3.4534711423553976,
+        "rank_score": 0.9867419249433689
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 27,
+        "impact": 3.299614486412226,
+        "rank_score": 0.9233039510405965
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 35,
+        "impact": 1.7638021711258638,
+        "rank_score": 0.7227807565515109
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 31,
+        "impact": 1.8057294432110482,
+        "rank_score": 0.6851314542198936
+      },
+      {
+        "item": "Nuggets",
+        "pop": 11,
+        "impact": 2.7796944871717217,
+        "rank_score": 0.6420809784453039
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 11,
+        "impact": 2.575038999291514,
+        "rank_score": 0.6032035083174173
+      },
+      {
+        "item": "Sisig Rice",
+        "pop": 20,
+        "impact": 0.7012290252483794,
+        "rank_score": 0.3498759480999518
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Fries",
+          "Milk Tea",
+          "Nuggets"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=8.90, conf=1.00, profit~139php"
+      },
+      {
+        "bundle": [
+          "Fries",
+          "Soda",
+          "Burger"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.30, conf=1.00, profit~139php"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Fries",
+          "Soda"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.30, conf=0.96, profit~139php"
+      }
+    ]
+  },
+  "lunch": {
+    "n_tx": 96,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.65,
+    "holdout_mean_hr": 0.6714285714285715,
+    "menu_rank_top10": [
+      {
+        "item": "Fries",
+        "pop": 46,
+        "impact": 5.752863089246298,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Soda",
+        "pop": 44,
+        "impact": 5.023945333849476,
+        "rank_score": 1.8000590706714297
+      },
+      {
+        "item": "Nuggets",
+        "pop": 20,
+        "impact": 3.1258451352969367,
+        "rank_score": 1.0079732747305354
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 20,
+        "impact": 3.1107818441576964,
+        "rank_score": 1.0044384360384784
+      },
+      {
+        "item": "Sisig Rice",
+        "pop": 17,
+        "impact": 3.069494968549287,
+        "rank_score": 0.9514164865836281
+      },
+      {
+        "item": "Water",
+        "pop": 16,
+        "impact": 3.046710158422705,
+        "rank_score": 0.9316252273108621
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 21,
+        "impact": 2.571459848014084,
+        "rank_score": 0.8923224733432379
+      },
+      {
+        "item": "Spaghetti",
+        "pop": 17,
+        "impact": 2.444448602409022,
+        "rank_score": 0.8047395048444522
+      },
+      {
+        "item": "Burger",
+        "pop": 27,
+        "impact": 1.6924726537171206,
+        "rank_score": 0.7727209403513646
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 24,
+        "impact": 0.7261302529611904,
+        "rank_score": 0.5026201312790213
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Fries",
+          "Milk Tea",
+          "Nuggets"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.07, conf=1.00, profit~139php"
+      },
+      {
+        "bundle": [
+          "Fries",
+          "Nuggets",
+          "Milk Tea"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.07, conf=1.00, profit~139php"
+      },
+      {
+        "bundle": [
+          "Milk Tea",
+          "Fries",
+          "Nuggets"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.07, conf=1.00, profit~139php"
+      }
+    ]
+  },
+  "dinner": {
+    "n_tx": 192,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.55,
+    "holdout_mean_hr": 0.8388345864661655,
+    "menu_rank_top10": [
+      {
+        "item": "Soda",
+        "pop": 89,
+        "impact": 6.3284124121794525,
+        "rank_score": 1.9888173827809776
+      },
+      {
+        "item": "Fries",
+        "pop": 87,
+        "impact": 6.38127116238668,
+        "rank_score": 1.9852272727272728
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 52,
+        "impact": 3.610323668335077,
+        "rank_score": 1.1404923282055668
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 51,
+        "impact": 3.497267213600022,
+        "rank_score": 1.1091881259429504
+      },
+      {
+        "item": "Burger",
+        "pop": 59,
+        "impact": 2.9799124795987804,
+        "rank_score": 1.0588292290111274
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 41,
+        "impact": 2.8187104801921397,
+        "rank_score": 0.8917713374267848
+      },
+      {
+        "item": "Spaghetti",
+        "pop": 38,
+        "impact": 2.7871669649144937,
+        "rank_score": 0.8629390078257192
+      },
+      {
+        "item": "Nuggets",
+        "pop": 38,
+        "impact": 2.7348563186626618,
+        "rank_score": 0.8518723456133019
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 34,
+        "impact": 2.681169846589177,
+        "rank_score": 0.8109691638290479
+      },
+      {
+        "item": "Water",
+        "pop": 38,
+        "impact": 0.9267612347954691,
+        "rank_score": 0.46935790591853566
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Soda",
+          "Spaghetti"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.94, conf=1.00, profit~141php"
+      },
+      {
+        "bundle": [
+          "Fries",
+          "Nuggets",
+          "Milk Tea"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.64, conf=0.96, profit~139php"
+      },
+      {
+        "bundle": [
+          "Soda",
+          "Spaghetti",
+          "Cheese Stick"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.64, conf=1.00, profit~141php"
+      }
+    ]
+  }
+}

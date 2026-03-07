@@ -1,0 +1,296 @@
+{
+  "morning": {
+    "n_tx": 308,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.45,
+    "holdout_mean_hr": 0.8561519676277604,
+    "menu_rank_top10": [
+      {
+        "item": "Soda",
+        "pop": 155,
+        "impact": 4.218102199026599,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Fries",
+        "pop": 85,
+        "impact": 3.9520535878374052,
+        "rank_score": 1.6053275600830497
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 75,
+        "impact": 3.928381981447342,
+        "rank_score": 1.553533795635329
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 74,
+        "impact": 3.915156729493389,
+        "rank_score": 1.544879296354851
+      },
+      {
+        "item": "Burger",
+        "pop": 77,
+        "impact": 3.1597565470712254,
+        "rank_score": 1.3163794203759145
+      },
+      {
+        "item": "Nachos",
+        "pop": 77,
+        "impact": 3.0650035019210935,
+        "rank_score": 1.286053789341608
+      },
+      {
+        "item": "Hotdog",
+        "pop": 89,
+        "impact": 0.5270351084839671,
+        "rank_score": 0.5268404008713883
+      },
+      {
+        "item": "Coffee",
+        "pop": 64,
+        "impact": 0.8216200775941491,
+        "rank_score": 0.5105778505157783
+      },
+      {
+        "item": "Donut",
+        "pop": 62,
+        "impact": 0.8008631939896436,
+        "rank_score": 0.4950910902617476
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 45,
+        "impact": 0.7940150866621453,
+        "rank_score": 0.41772929134327086
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Fries",
+          "Milk Tea",
+          "Cheese Stick"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.24, conf=1.00, profit~125php"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Fries",
+          "Milk Tea"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.31, conf=0.98, profit~125php"
+      },
+      {
+        "bundle": [
+          "Nachos",
+          "Soda",
+          "Burger"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.71, conf=0.97, profit~132php"
+      }
+    ]
+  },
+  "lunch": {
+    "n_tx": 312,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.25,
+    "holdout_mean_hr": 0.8030133265427383,
+    "menu_rank_top10": [
+      {
+        "item": "Soda",
+        "pop": 153,
+        "impact": 4.406627887097508,
+        "rank_score": 1.9768241070868378
+      },
+      {
+        "item": "Fries",
+        "pop": 69,
+        "impact": 4.463604776693286,
+        "rank_score": 1.6174279750704592
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 65,
+        "impact": 4.4570814502612635,
+        "rank_score": 1.5975327840965778
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 61,
+        "impact": 4.483599307404121,
+        "rank_score": 1.5875862068965518
+      },
+      {
+        "item": "Burger",
+        "pop": 82,
+        "impact": 3.5575158845646717,
+        "rank_score": 1.4028828465674907
+      },
+      {
+        "item": "Nachos",
+        "pop": 83,
+        "impact": 3.538254249384336,
+        "rank_score": 1.4015659773198934
+      },
+      {
+        "item": "Donut",
+        "pop": 80,
+        "impact": 0.8038802525917003,
+        "rank_score": 0.5648048577846283
+      },
+      {
+        "item": "Coffee",
+        "pop": 69,
+        "impact": 0.7630114662056725,
+        "rank_score": 0.5031890284928024
+      },
+      {
+        "item": "Hotdog",
+        "pop": 84,
+        "impact": 0.4792121471550576,
+        "rank_score": 0.48497917667157875
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 61,
+        "impact": 0.8077451193150709,
+        "rank_score": 0.4807961452321631
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Fries",
+          "Milk Tea",
+          "Cheese Stick"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.98, conf=1.00, profit~125php"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Fries",
+          "Milk Tea"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.98, conf=1.00, profit~125php"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Milk Tea",
+          "Fries"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.61, conf=1.00, profit~125php"
+      }
+    ]
+  },
+  "dinner": {
+    "n_tx": 580,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.55,
+    "holdout_mean_hr": 0.837928573247858,
+    "menu_rank_top10": [
+      {
+        "item": "Soda",
+        "pop": 292,
+        "impact": 3.9365466193733485,
+        "rank_score": 1.9312127405540513
+      },
+      {
+        "item": "Fries",
+        "pop": 127,
+        "impact": 4.147896573254394,
+        "rank_score": 1.61
+      },
+      {
+        "item": "Cheese Stick",
+        "pop": 126,
+        "impact": 4.124109960069927,
+        "rank_score": 1.5998946258104767
+      },
+      {
+        "item": "Milk Tea",
+        "pop": 116,
+        "impact": 4.1198894004887014,
+        "rank_score": 1.574884612823405
+      },
+      {
+        "item": "Nachos",
+        "pop": 151,
+        "impact": 2.9092204552856806,
+        "rank_score": 1.2635801041020522
+      },
+      {
+        "item": "Burger",
+        "pop": 151,
+        "impact": 2.8996031154311894,
+        "rank_score": 1.2604499853601145
+      },
+      {
+        "item": "Donut",
+        "pop": 124,
+        "impact": 0.7388504169882846,
+        "rank_score": 0.49337990432467166
+      },
+      {
+        "item": "Coffee",
+        "pop": 124,
+        "impact": 0.729951607464475,
+        "rank_score": 0.49048364289554025
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 115,
+        "impact": 0.7120720576135565,
+        "rank_score": 0.4633917270600177
+      },
+      {
+        "item": "Lumpia",
+        "pop": 106,
+        "impact": 0.707300055789571,
+        "rank_score": 0.4405658746433513
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Fries",
+          "Milk Tea"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.98, conf=0.99, profit~125php"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Milk Tea",
+          "Fries"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.55, conf=1.00, profit~125php"
+      },
+      {
+        "bundle": [
+          "Fries",
+          "Milk Tea",
+          "Cheese Stick"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.49, conf=0.99, profit~125php"
+      }
+    ]
+  }
+}

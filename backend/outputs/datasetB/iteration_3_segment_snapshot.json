@@ -1,6 +1,6 @@
 {
   "morning": {
-    "n_tx": 401,
+    "n_tx": 400,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.55,
@@ -75,11 +75,27 @@
         ],
         "promo": "Add-on Suggestion 15%",
         "why": "lift=1.65, conf=0.61, profit~24php"
+      },
+      {
+        "bundle": [
+          "Fries",
+          "Hotdog"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.52, conf=0.35"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Fries"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.00, conf=0.21"
       }
     ]
   },
   "lunch": {
-    "n_tx": 653,
+    "n_tx": 649,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.45,
@@ -153,12 +169,28 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.35, conf=0.49, profit~31php"
+        "why": "lift=1.34, conf=0.49, profit~31php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.12, lift=1.28, conf=0.48"
+      },
+      {
+        "bundle": [
+          "Donut",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.08, lift=1.07, conf=0.40"
       }
     ]
   },
   "dinner": {
-    "n_tx": 446,
+    "n_tx": 442,
     "engine": "fp_growth",
     "minsup": 0.015,
     "minconf": 0.65,
@@ -233,7 +265,23 @@
           "Cheese Stick"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=7.27, conf=1.00, profit~43php"
+        "why": "lift=7.20, conf=1.00, profit~43php"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.16, conf=0.32"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.68, conf=0.47"
       }
     ]
   }

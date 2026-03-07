@@ -18,7 +18,7 @@ Write-Host "[1/5] Checking backend dependencies..." -ForegroundColor Yellow
 $backendDepsReady = $false
 try {
   Push-Location $backendDir
-  python -c "import fastapi, pandas, mlxtend, scipy, numpy" | Out-Null
+  python -c "import fastapi, pandas, mlxtend, scipy, numpy, multipart, supabase, dotenv" | Out-Null
   $backendDepsReady = $true
 } catch {
   $backendDepsReady = $false
@@ -43,7 +43,11 @@ if (-not (Test-Path (Join-Path $frontendDir "node_modules"))) {
 
 Write-Host "[3/5] Generating latest iteration outputs..." -ForegroundColor Yellow
 Push-Location $backendDir
-python -c "from mba_engine import run_all_datasets; run_all_datasets(3)"
+try {
+  python -c "from mba_engine import run_all_datasets; run_all_datasets(3)"
+} catch {
+  Write-Host "Training skipped. Import or upload your datasets to Supabase first." -ForegroundColor DarkYellow
+}
 Pop-Location
 
 Write-Host "[4/5] Launching backend..." -ForegroundColor Yellow

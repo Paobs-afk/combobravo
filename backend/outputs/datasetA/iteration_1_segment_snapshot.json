@@ -1,6 +1,6 @@
 {
   "morning": {
-    "n_tx": 125,
+    "n_tx": 122,
     "engine": "fp_growth",
     "minsup": 0.04,
     "minconf": 0.45,
@@ -9,32 +9,32 @@
       {
         "item": "Coffee",
         "pop": 37,
-        "impact": 3.0939455775705778,
+        "impact": 3.1557750647500646,
         "rank_score": 2.0
       },
       {
         "item": "Fries",
         "pop": 31,
-        "impact": 1.8121169580419578,
-        "rank_score": 1.3148855085467734
+        "impact": 2.052381573192889,
+        "rank_score": 1.4021759986444757
       },
       {
         "item": "Extra Rice",
         "pop": 19,
-        "impact": 1.3234678839678842,
-        "rank_score": 0.8500573972764903
+        "impact": 1.3579878473378473,
+        "rank_score": 0.8535103870759881
       },
       {
         "item": "Burger",
         "pop": 24,
-        "impact": 0.17184469696969693,
-        "rank_score": 0.45240139155936004
+        "impact": 0.23884215842636902,
+        "rank_score": 0.47959295950312675
       },
       {
         "item": "Sisig Rice",
         "pop": 11,
-        "impact": 0.7391672979797979,
-        "rank_score": 0.4273640506229047
+        "impact": 0.758667297979798,
+        "rank_score": 0.4293868258321566
       },
       {
         "item": "Hotdog",
@@ -75,7 +75,7 @@
           "Coffee"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=3.33, conf=1.00, profit~48php"
+        "why": "lift=3.23, conf=1.00, profit~48php"
       },
       {
         "bundle": [
@@ -84,7 +84,7 @@
           "Coffee"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=3.33, conf=1.00, profit~73php"
+        "why": "lift=3.23, conf=1.00, profit~73php"
       },
       {
         "bundle": [
@@ -93,12 +93,12 @@
           "Fries"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=3.20, conf=0.80, profit~73php"
+        "why": "lift=3.10, conf=0.80, profit~73php"
       }
     ]
   },
   "lunch": {
-    "n_tx": 229,
+    "n_tx": 228,
     "engine": "fp_growth",
     "minsup": 0.015,
     "minconf": 0.65,
@@ -173,7 +173,23 @@
           "Chicken Rice"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=3.27, conf=0.75, profit~72php"
+        "why": "lift=3.25, conf=0.75, profit~72php"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Fries"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.61, conf=0.31"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.24, conf=0.31"
       }
     ]
   },
@@ -253,6 +269,22 @@
         ],
         "promo": "Add-on Suggestion 15%",
         "why": "lift=2.24, conf=0.58, profit~37php"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Nuggets"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.08, lift=2.04, conf=0.31"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.25, conf=0.33"
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "morning": {
-    "n_tx": 239,
+    "n_tx": 235,
     "engine": "fp_growth",
     "minsup": 0.04,
     "minconf": 0.55,
@@ -74,12 +74,28 @@
           "Coffee"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.82, conf=0.56, profit~63php"
+        "why": "lift=1.79, conf=0.56, profit~63php"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Hotdog"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.11, lift=1.27, conf=0.33"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Fries"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.11, lift=1.43, conf=0.30"
       }
     ]
   },
   "lunch": {
-    "n_tx": 469,
+    "n_tx": 465,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.35,
@@ -153,12 +169,28 @@
           "Chicken Rice"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.69, conf=0.40, profit~62php"
+        "why": "lift=1.67, conf=0.40, profit~62php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.15, conf=0.29"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Fries"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.26, conf=0.26"
       }
     ]
   },
   "dinner": {
-    "n_tx": 292,
+    "n_tx": 289,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.45,
@@ -232,7 +264,23 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.77, conf=0.45, profit~37php"
+        "why": "lift=1.75, conf=0.45, profit~37php"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Nuggets"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.79, conf=0.27"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Sisig Rice"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.24, conf=0.27"
       }
     ]
   }

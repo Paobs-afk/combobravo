@@ -1,0 +1,295 @@
+{
+  "morning": {
+    "n_tx": 112,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.45,
+    "holdout_mean_hr": 0.9108333333333333,
+    "menu_rank_top10": [
+      {
+        "item": "Water",
+        "pop": 64,
+        "impact": 5.878370071147581,
+        "rank_score": 1.9267605633802818
+      },
+      {
+        "item": "Salad",
+        "pop": 72,
+        "impact": 5.452520270448152,
+        "rank_score": 1.902201252390359
+      },
+      {
+        "item": "Fruit Juice",
+        "pop": 37,
+        "impact": 3.4596194893013688,
+        "rank_score": 1.124098097894275
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 34,
+        "impact": 3.081052627608217,
+        "rank_score": 1.009693348407422
+      },
+      {
+        "item": "Fish Fillet",
+        "pop": 30,
+        "impact": 3.178480016634397,
+        "rank_score": 0.9954483655418158
+      },
+      {
+        "item": "Brownie",
+        "pop": 26,
+        "impact": 2.900584126581667,
+        "rank_score": 0.8950083284989535
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 24,
+        "impact": 0.8152747844827587,
+        "rank_score": 0.39779571607045416
+      },
+      {
+        "item": "Pasta",
+        "pop": 24,
+        "impact": 0.7635629618226601,
+        "rank_score": 0.38591981173877865
+      },
+      {
+        "item": "Burger",
+        "pop": 13,
+        "impact": 0.8130971813725489,
+        "rank_score": 0.29659139219388614
+      },
+      {
+        "item": "Fries",
+        "pop": 7,
+        "impact": 0.04279513184584178,
+        "rank_score": 0.06475771473628376
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Salad",
+          "Fruit Juice"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.07, conf=1.00, profit~138php"
+      },
+      {
+        "bundle": [
+          "Brownie",
+          "Fish Fillet",
+          "Water"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.02, conf=0.95, profit~113php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Fruit Juice",
+          "Salad"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=2.94, conf=0.93, profit~138php"
+      }
+    ]
+  },
+  "lunch": {
+    "n_tx": 96,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.45,
+    "holdout_mean_hr": 0.9097222222222223,
+    "menu_rank_top10": [
+      {
+        "item": "Salad",
+        "pop": 65,
+        "impact": 5.343943644802469,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Water",
+        "pop": 55,
+        "impact": 4.997302536449903,
+        "rank_score": 1.8108681827728046
+      },
+      {
+        "item": "Fruit Juice",
+        "pop": 26,
+        "impact": 3.014666310786341,
+        "rank_score": 1.0154785625223928
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 23,
+        "impact": 2.872686756196221,
+        "rank_score": 0.9491425932108488
+      },
+      {
+        "item": "Brownie",
+        "pop": 20,
+        "impact": 2.338789481088643,
+        "rank_score": 0.783799419133371
+      },
+      {
+        "item": "Fish Fillet",
+        "pop": 19,
+        "impact": 2.278713196016298,
+        "rank_score": 0.7584665523427829
+      },
+      {
+        "item": "Burger",
+        "pop": 23,
+        "impact": 1.0341070483332033,
+        "rank_score": 0.48467612975381874
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 22,
+        "impact": 0.7727930753911764,
+        "rank_score": 0.40850611035060935
+      },
+      {
+        "item": "Pasta",
+        "pop": 18,
+        "impact": 0.7280152976133987,
+        "rank_score": 0.35656923956417363
+      },
+      {
+        "item": "Nachos",
+        "pop": 6,
+        "impact": 0.14655449868571768,
+        "rank_score": 0.08780420278097606
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Fruit Juice",
+          "Salad"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.07, conf=1.00, profit~138php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Salad",
+          "Fruit Juice"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=4.47, conf=1.00, profit~138php"
+      },
+      {
+        "bundle": [
+          "Fruit Juice",
+          "Salad",
+          "Chicken Rice"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=5.07, conf=0.93, profit~138php"
+      }
+    ]
+  },
+  "dinner": {
+    "n_tx": 192,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.65,
+    "holdout_mean_hr": 0.9216408591408592,
+    "menu_rank_top10": [
+      {
+        "item": "Salad",
+        "pop": 111,
+        "impact": 4.975656228141874,
+        "rank_score": 1.9500000000000002
+      },
+      {
+        "item": "Water",
+        "pop": 120,
+        "impact": 4.378865370474788,
+        "rank_score": 1.8380781105226323
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 44,
+        "impact": 2.655095652362998,
+        "rank_score": 0.9481609727455319
+      },
+      {
+        "item": "Fish Fillet",
+        "pop": 55,
+        "impact": 2.421726674018849,
+        "rank_score": 0.9459541803843899
+      },
+      {
+        "item": "Fruit Juice",
+        "pop": 41,
+        "impact": 2.5649381994725466,
+        "rank_score": 0.9070326962285475
+      },
+      {
+        "item": "Brownie",
+        "pop": 50,
+        "impact": 2.374726024618517,
+        "rank_score": 0.905424139632419
+      },
+      {
+        "item": "Pasta",
+        "pop": 42,
+        "impact": 0.7927005149963284,
+        "rank_score": 0.4317429593559392
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 41,
+        "impact": 0.7766173038526334,
+        "rank_score": 0.4218236909455475
+      },
+      {
+        "item": "Burger",
+        "pop": 33,
+        "impact": 0.6972012703889492,
+        "rank_score": 0.35583200926039615
+      },
+      {
+        "item": "Fries",
+        "pop": 8,
+        "impact": 0.13167199186696682,
+        "rank_score": 0.06350315366187247
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Fruit Juice",
+          "Salad",
+          "Chicken Rice"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.98, conf=0.94, profit~138php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Salad",
+          "Fruit Juice"
+        ],
+        "promo": "Bundle Discount 10%",
+        "why": "lift=3.95, conf=0.88, profit~138php"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Pasta"
+        ],
+        "promo": "Add-on Suggestion 15%",
+        "why": "lift=4.35, conf=0.94, profit~53php"
+      }
+    ]
+  }
+}

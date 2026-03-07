@@ -1,3 +1,12 @@
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+
+const withBase = (url) => {
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+  return `${API_BASE_URL}${url}`;
+};
+
 const parseError = async (response) => {
   try {
     const payload = await response.json();
@@ -11,7 +20,7 @@ const parseError = async (response) => {
 };
 
 export const fetchJson = async (url, options = {}) => {
-  const response = await fetch(url, options);
+  const response = await fetch(withBase(url), options);
   if (!response.ok) {
     throw new Error(await parseError(response));
   }

@@ -1,6 +1,6 @@
 {
   "morning": {
-    "n_tx": 366,
+    "n_tx": 356,
     "engine": "fp_growth",
     "minsup": 0.02,
     "minconf": 0.65,
@@ -75,12 +75,28 @@
           "Coffee"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=1.89, conf=0.67, profit~48php"
+        "why": "lift=1.86, conf=0.67, profit~48php"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Fries"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.11, lift=1.39, conf=0.31"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Hotdog"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.10, lift=1.18, conf=0.30"
       }
     ]
   },
   "lunch": {
-    "n_tx": 698,
+    "n_tx": 689,
     "engine": "fp_growth",
     "minsup": 0.02,
     "minconf": 0.35,
@@ -154,12 +170,28 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.47, conf=0.37, profit~37php"
+        "why": "lift=1.45, conf=0.37, profit~37php"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Sisig Rice"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.22, conf=0.25"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Nuggets"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.45, conf=0.24"
       }
     ]
   },
   "dinner": {
-    "n_tx": 436,
+    "n_tx": 431,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.35,
@@ -233,7 +265,23 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.70, conf=0.43, profit~37php"
+        "why": "lift=1.68, conf=0.43, profit~37php"
+      },
+      {
+        "bundle": [
+          "Iced Tea",
+          "Sisig Rice"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.07, lift=1.12, conf=0.26"
+      },
+      {
+        "bundle": [
+          "Burger",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.06, lift=1.37, conf=0.36"
       }
     ]
   }

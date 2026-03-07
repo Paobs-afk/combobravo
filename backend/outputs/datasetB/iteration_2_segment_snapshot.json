@@ -1,6 +1,6 @@
 {
   "morning": {
-    "n_tx": 273,
+    "n_tx": 272,
     "engine": "fp_growth",
     "minsup": 0.04,
     "minconf": 0.55,
@@ -74,12 +74,28 @@
           "Coffee"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.71, conf=0.65, profit~24php"
+        "why": "lift=1.73, conf=0.65, profit~24php"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Hotdog"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.10, lift=1.25, conf=0.26"
+      },
+      {
+        "bundle": [
+          "Coffee",
+          "Nuggets"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.08, lift=1.18, conf=0.21"
       }
     ]
   },
   "lunch": {
-    "n_tx": 422,
+    "n_tx": 421,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.55,
@@ -154,12 +170,28 @@
           "Iced Tea"
         ],
         "promo": "Bundle Discount 10%",
-        "why": "lift=1.44, conf=0.55, profit~77php"
+        "why": "lift=1.43, conf=0.55, profit~77php"
+      },
+      {
+        "bundle": [
+          "Chicken Rice",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.10, lift=1.23, conf=0.45"
+      },
+      {
+        "bundle": [
+          "Cheese Stick",
+          "Iced Tea"
+        ],
+        "promo": "Pair Promo 12%",
+        "why": "pair support=0.08, lift=1.33, conf=0.49"
       }
     ]
   },
   "dinner": {
-    "n_tx": 305,
+    "n_tx": 303,
     "engine": "fp_growth",
     "minsup": 0.03,
     "minconf": 0.35,
@@ -168,32 +200,32 @@
       {
         "item": "Iced Tea",
         "pop": 84,
-        "impact": 1.3658916586768932,
+        "impact": 1.3658916586768939,
         "rank_score": 2.0
       },
       {
         "item": "Soda",
         "pop": 75,
-        "impact": 0.7759845942647956,
-        "rank_score": 1.3379022382716779
+        "impact": 0.7759845942647957,
+        "rank_score": 1.3379022382716776
       },
       {
         "item": "Cheese Stick",
         "pop": 41,
-        "impact": 0.41213153981086026,
-        "rank_score": 0.6796338347234143
+        "impact": 0.4121315398108603,
+        "rank_score": 0.6796338347234141
       },
       {
         "item": "Burger",
         "pop": 61,
-        "impact": 0.20210951799877958,
-        "rank_score": 0.6477310193488134
+        "impact": 0.20210951799877985,
+        "rank_score": 0.6477310193488135
       },
       {
         "item": "Donut",
         "pop": 52,
-        "impact": 0.09907670454545461,
-        "rank_score": 0.4668429016057505
+        "impact": 0.09907670454545453,
+        "rank_score": 0.46684290160575037
       },
       {
         "item": "Chicken Rice",
@@ -233,7 +265,7 @@
           "Soda"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.79, conf=0.41, profit~28php"
+        "why": "lift=1.78, conf=0.41, profit~28php"
       },
       {
         "bundle": [
@@ -241,7 +273,7 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.48, conf=0.40, profit~50php"
+        "why": "lift=1.47, conf=0.40, profit~50php"
       },
       {
         "bundle": [
@@ -249,7 +281,7 @@
           "Iced Tea"
         ],
         "promo": "Add-on Suggestion 15%",
-        "why": "lift=1.52, conf=0.41, profit~31php"
+        "why": "lift=1.51, conf=0.41, profit~31php"
       }
     ]
   }

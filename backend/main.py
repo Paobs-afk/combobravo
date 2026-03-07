@@ -1,5 +1,6 @@
 import io
 import json
+import logging
 import os
 import re
 from collections import Counter
@@ -7,57 +8,69 @@ from typing import Dict, List
 
 import numpy as np
 import pandas as pd
+from dotenv import load_dotenv
 from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
 from mba_engine import OUTPUT_ROOT, run_all_datasets, run_dataset_iterations
+from supabase_store import get_supabase_store, parse_items
 
-app = FastAPI(title="ComboBravo MBA API", version="3.0.0")
 BASE_DIR = os.path.dirname(__file__)
-DATA_ROOT = os.path.join(BASE_DIR, "data")
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+load_dotenv()
+
+app = FastAPI(title="ComboBravo MBA API", version="4.0.0")
+os.makedirs(OUTPUT_ROOT, exist_ok=True)
+logger = logging.getLogger("combobravo.api")
+
 BASE_DATASET_MAP: Dict[str, str] = {
     "a": "datasetA",
     "dataseta": "datasetA",
     "b": "datasetB",
     "datasetb": "datasetB",
+    "c": "datasetC",
+    "datasetc": "datasetC",
+    "d": "datasetD",
+    "datasetd": "datasetD",
+    "e": "datasetE",
+    "datasete": "datasetE",
+    "f": "datasetF",
+    "datasetf": "datasetF",
 }
+
+cors_origins = [
+    entry.strip()
+    for entry in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+    if entry.strip()
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-def parse_items(raw_items: str) -> List[str]:
-    return [piece.strip() for piece in str(raw_items).split(",") if piece.strip()]
-
-
-def is_dataset_folder(folder_name: str) -> bool:
-    folder_path = os.path.join(DATA_ROOT, folder_name)
-    if not os.path.isdir(folder_path):
-        return False
-    return any(name.startswith("batch") and name.endswith(".csv") for name in os.listdir(folder_path))
-
-
 def resolve_dataset(dataset_type: str, allow_all: bool = False) -> str:
-    key = dataset_type.strip()
+    key = (dataset_type or "").strip()
+    if not key:
+        raise HTTPException(status_code=400, detail="Dataset is required.")
+
     lower_key = key.lower()
     if allow_all and lower_key in {"all", "overall"}:
         return "all"
-    if lower_key in BASE_DATASET_MAP:
-        return BASE_DATASET_MAP[lower_key]
-    if is_dataset_folder(key):
-        return key
 
-    for folder_name in os.listdir(DATA_ROOT):
-        if folder_name.lower() == lower_key and is_dataset_folder(folder_name):
-            return folder_name
+    canonical = BASE_DATASET_MAP.get(lower_key, key)
+    store = get_supabase_store()
+    matched = store.get_dataset_key_case_insensitive(canonical)
+    if matched:
+        return matched
+
     raise HTTPException(
         status_code=400,
-        detail="Dataset not found. Use A, B, or a valid uploaded dataset id.",
+        detail="Dataset not found in Supabase. Use A, B, or an uploaded dataset id.",
     )
 
 
@@ -65,99 +78,45 @@ def sanitize_dataset_name(dataset_name: str) -> str:
     cleaned = re.sub(r"[^a-z0-9]+", "_", dataset_name.strip().lower()).strip("_")
     if not cleaned:
         cleaned = "uploaded"
-    return f"custom_{cleaned}"
+    if cleaned in BASE_DATASET_MAP:
+        return BASE_DATASET_MAP.get(cleaned, cleaned)
+    return f"custom_{cleaned}" if not cleaned.startswith("custom_") else cleaned
 
 
-def get_output_file(dataset_folder: str, iteration: int, suffix: str) -> str:
-    return os.path.join(OUTPUT_ROOT, dataset_folder, f"iteration_{iteration}_{suffix}")
+def get_output_file(dataset_key: str, iteration: int, suffix: str) -> str:
+    return os.path.join(OUTPUT_ROOT, dataset_key, f"iteration_{iteration}_{suffix}")
 
 
-def ensure_output_exists(dataset_folder: str, iteration: int, suffix: str, message: str) -> str:
-    file_path = get_output_file(dataset_folder, iteration, suffix)
+def ensure_output_exists(dataset_key: str, iteration: int, suffix: str, message: str) -> str:
+    file_path = get_output_file(dataset_key, iteration, suffix)
     if not os.path.exists(file_path):
-        run_dataset_iterations(dataset_name=dataset_folder, max_iteration=max(iteration, 3))
-        file_path = get_output_file(dataset_folder, iteration, suffix)
+        try:
+            run_dataset_iterations(dataset_name=dataset_key, max_iteration=max(iteration, 3))
+        except FileNotFoundError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
+        file_path = get_output_file(dataset_key, iteration, suffix)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail=message)
     return file_path
 
 
-def top_meals_for_dataset(dataset_folder: str) -> list[dict]:
-    folder = os.path.join(DATA_ROOT, dataset_folder)
-    if not os.path.exists(folder):
-        return []
-    counts = Counter()
-    batch_files = sorted([name for name in os.listdir(folder) if name.startswith("batch")])
-    for batch in batch_files:
-        batch_path = os.path.join(folder, batch)
-        df = pd.read_csv(batch_path)
-        if "items" not in df.columns:
-            continue
-        for raw_items in df["items"].fillna("").tolist():
-            for item in parse_items(raw_items):
-                counts[item] += 1
-    total = sum(counts.values())
-    return [
-        {
-            "item": item,
-            "count": int(count),
-            "share": float(count / total) if total else 0.0,
-        }
-        for item, count in counts.most_common()
-    ]
-
-
-def dataset_stats(dataset_folder: str) -> Dict[str, object]:
-    folder = os.path.join(DATA_ROOT, dataset_folder)
-    batch_files = sorted([name for name in os.listdir(folder) if name.startswith("batch")])
-    tx_count = 0
-    unique_items = set()
-    for batch in batch_files:
-        df = pd.read_csv(os.path.join(folder, batch))
-        tx_count += int(len(df))
-        if "items" in df.columns:
-            for raw_items in df["items"].fillna("").tolist():
-                unique_items.update(parse_items(raw_items))
-    if dataset_folder == "datasetA":
-        dataset_id = "A"
-        label = "Dataset A"
-    elif dataset_folder == "datasetB":
-        dataset_id = "B"
-        label = "Dataset B"
-    else:
-        dataset_id = dataset_folder
-        label = dataset_folder.replace("custom_", "Custom ").replace("_", " ").title()
-
-    return {
-        "id": dataset_id,
-        "folder": dataset_folder,
-        "label": label,
-        "transactions": tx_count,
-        "unique_items": len(unique_items),
-    }
-
-
 def list_datasets() -> List[Dict[str, object]]:
-    datasets = []
-    for folder_name in os.listdir(DATA_ROOT):
-        if is_dataset_folder(folder_name):
-            datasets.append(dataset_stats(folder_name))
-    datasets.sort(
-        key=lambda item: (
-            0 if item["folder"] in {"datasetA", "datasetB"} else 1,
-            item["label"].lower(),
-        )
-    )
-    return datasets
+    store = get_supabase_store()
+    return store.list_datasets()
+
+
+def top_meals_for_dataset(dataset_key: str) -> list[dict]:
+    store = get_supabase_store()
+    return store.top_meals(dataset_key)
 
 
 def build_margin_table(items: List[str]) -> pd.DataFrame:
-    reference_path = os.path.join(DATA_ROOT, "datasetA", "margins.csv")
-    reference_map: Dict[str, float] = {}
-    if os.path.exists(reference_path):
-        reference_df = pd.read_csv(reference_path)
-        if "item" in reference_df.columns and "margin_php" in reference_df.columns:
-            reference_map = dict(zip(reference_df["item"], reference_df["margin_php"]))
+    store = get_supabase_store()
+    reference_map = store.get_margin_map("datasetA")
+    if not reference_map:
+        dataset_keys = store.list_dataset_keys()
+        if dataset_keys:
+            reference_map = store.get_margin_map(dataset_keys[0])
 
     rows = []
     for item in sorted(items):
@@ -171,7 +130,24 @@ def build_margin_table(items: List[str]) -> pd.DataFrame:
 
 @app.get("/api/health")
 async def health_check():
-    return {"ok": True, "service": "combobravo-mba"}
+    try:
+        status = get_supabase_store().status()
+    except Exception as exc:
+        return {
+            "ok": False,
+            "service": "combobravo-mba",
+            "storage": "supabase",
+            "detail": str(exc),
+        }
+    return {"ok": status["ready"], "service": "combobravo-mba", "storage": "supabase", "status": status}
+
+
+@app.get("/api/supabase/status")
+async def supabase_status():
+    try:
+        return get_supabase_store().status()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
 @app.get("/api/datasets")
@@ -185,7 +161,10 @@ async def get_top_meals(dataset_type: str, limit: int = Query(default=10, ge=1, 
     if dataset == "all":
         counts = Counter()
         for dataset_info in list_datasets():
-            for row in top_meals_for_dataset(dataset_info["folder"]):
+            dataset_key = str(dataset_info.get("dataset_key") or dataset_info.get("folder") or "")
+            if not dataset_key:
+                continue
+            for row in top_meals_for_dataset(dataset_key):
                 counts[row["item"]] += int(row["count"])
         total = sum(counts.values())
         return [
@@ -203,6 +182,7 @@ async def get_top_meals(dataset_type: str, limit: int = Query(default=10, ge=1, 
 async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form("uploaded")):
     if not file.filename.lower().endswith(".csv"):
         raise HTTPException(status_code=400, detail="Please upload a CSV file.")
+
     try:
         raw_bytes = await file.read()
         dataframe = pd.read_csv(io.BytesIO(raw_bytes))
@@ -218,10 +198,9 @@ async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form(
 
     dataframe = dataframe.copy()
     dataframe["items"] = dataframe[source_column].fillna("").astype(str)
-    dataframe["items"] = dataframe["items"].apply(
-        lambda value: ", ".join(parse_items(value))
-    )
+    dataframe["items"] = dataframe["items"].apply(lambda value: ", ".join(parse_items(value)))
     dataframe = dataframe[dataframe["items"] != ""].reset_index(drop=True)
+
     if len(dataframe) < 90:
         raise HTTPException(
             status_code=400,
@@ -229,18 +208,20 @@ async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form(
         )
 
     if "timestamp" in dataframe.columns:
-        dataframe["timestamp"] = pd.to_datetime(dataframe["timestamp"], errors="coerce")
+        timestamp = pd.to_datetime(dataframe["timestamp"], errors="coerce")
     else:
-        dataframe["timestamp"] = pd.NaT
+        timestamp = pd.Series(pd.NaT, index=dataframe.index)
+
     generated_timestamps = pd.Series(
-        pd.date_range(end=pd.Timestamp.utcnow().floor("min"), periods=len(dataframe), freq="min"),
+        pd.date_range(end=pd.Timestamp.now(tz="UTC").floor("min"), periods=len(dataframe), freq="min"),
         index=dataframe.index,
     )
-    dataframe["timestamp"] = dataframe["timestamp"].fillna(generated_timestamps)
-    dataframe["timestamp"] = dataframe["timestamp"].astype(str)
+    timestamp = timestamp.fillna(generated_timestamps)
+    timestamp = pd.to_datetime(timestamp, utc=True, errors="coerce")
+    dataframe["timestamp"] = timestamp.dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     if "segment" not in dataframe.columns:
-        hour_values = pd.to_datetime(dataframe["timestamp"]).dt.hour
+        hour_values = pd.to_datetime(dataframe["timestamp"], utc=True, errors="coerce").dt.hour.fillna(12)
         dataframe["segment"] = np.where(
             hour_values.between(5, 10),
             "morning",
@@ -253,7 +234,7 @@ async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form(
         )
 
     if "day_type" not in dataframe.columns:
-        day_index = pd.to_datetime(dataframe["timestamp"]).dt.dayofweek
+        day_index = pd.to_datetime(dataframe["timestamp"], utc=True, errors="coerce").dt.dayofweek.fillna(0)
         dataframe["day_type"] = np.where(day_index >= 5, "weekend", "weekday")
     else:
         normalized_day = dataframe["day_type"].fillna("").astype(str).str.lower().str.strip()
@@ -262,24 +243,51 @@ async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form(
         )
 
     dataframe["tx_id"] = np.arange(1, len(dataframe) + 1)
-    dataframe = dataframe[["tx_id", "timestamp", "segment", "day_type", "items"]]
+    dataframe["batch_no"] = 1
+    splits = np.array_split(dataframe.index.to_numpy(), 3)
+    for index, split_idx in enumerate(splits, start=1):
+        dataframe.loc[split_idx, "batch_no"] = index
 
-    dataset_folder = sanitize_dataset_name(dataset_name)
-    dataset_dir = os.path.join(DATA_ROOT, dataset_folder)
-    os.makedirs(dataset_dir, exist_ok=True)
+    dataframe = dataframe[["tx_id", "timestamp", "segment", "day_type", "items", "batch_no"]]
 
-    splits = np.array_split(dataframe, 3)
-    for index, split_df in enumerate(splits, start=1):
-        split_df.to_csv(os.path.join(dataset_dir, f"batch{index}.csv"), index=False)
+    dataset_key = sanitize_dataset_name(dataset_name)
+    label = dataset_name.strip() or dataset_key.replace("custom_", "Custom ").replace("_", " ").title()
 
     unique_items = sorted({item for raw in dataframe["items"].tolist() for item in parse_items(raw)})
     margin_df = build_margin_table(unique_items)
-    margin_df.to_csv(os.path.join(dataset_dir, "margins.csv"), index=False)
 
-    report = run_dataset_iterations(dataset_name=dataset_folder, max_iteration=3)
+    store = get_supabase_store()
+    status = store.status()
+    if not status["ready"]:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Supabase tables are not ready. Run backend/sql/supabase_schema.sql in Supabase SQL Editor first. "
+                f"Status: {status}"
+            ),
+        )
+
+    try:
+        store.replace_dataset_data(
+            dataset_key=dataset_key,
+            label=label,
+            transactions_df=dataframe,
+            margins_df=margin_df,
+        )
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to write dataset to Supabase. Ensure schema is installed: {exc}",
+        ) from exc
+
+    try:
+        report = run_dataset_iterations(dataset_name=dataset_key, max_iteration=3)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
     return {
-        "message": "Dataset uploaded and processed.",
-        "dataset_id": dataset_folder,
+        "message": "Dataset uploaded to Supabase and processed.",
+        "dataset_id": dataset_key,
         "transactions": int(len(dataframe)),
         "unique_items": int(len(unique_items)),
         "report": report,
@@ -289,7 +297,10 @@ async def upload_dataset(file: UploadFile = File(...), dataset_name: str = Form(
 @app.post("/api/run/{dataset_type}")
 async def run_dataset(dataset_type: str, max_iteration: int = Query(default=3, ge=1, le=6)):
     dataset = resolve_dataset(dataset_type)
-    report = run_dataset_iterations(dataset_name=dataset, max_iteration=max_iteration)
+    try:
+        report = run_dataset_iterations(dataset_name=dataset, max_iteration=max_iteration)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
     return {"dataset": dataset, "report": report}
 
 
@@ -353,6 +364,7 @@ async def get_overview(dataset_type: str, iteration: int):
         recs = json.load(handle)
     with open(segment_path, "r", encoding="utf-8") as handle:
         segments = json.load(handle)
+
     rules = pd.read_csv(rules_path).replace([np.inf, -np.inf], np.nan).replace({np.nan: None})
     menu_rank = pd.read_csv(menu_path)
     return {
