@@ -1,0 +1,277 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 2,
+  "n_transactions": 1000,
+  "n_unique_items": 17,
+  "drift": {
+    "drift": false,
+    "js": 0.02781209037002295
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.015,
+  "minconf_longterm": 0.55,
+  "holdout_mean_hr_longterm": 0.0,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.2857142857142857,
+  "system_metrics": {
+    "avg_basket_size": 2.691,
+    "coverage_top_rules": 0.09,
+    "estimated_uplift_score": 0.11904516200984701,
+    "n_rules_blended": 4,
+    "recommendable_items": 5
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Burger",
+        "Cheese Stick",
+        "Iced Tea"
+      ],
+      "support": 0.02,
+      "confidence": 0.5925925925925926,
+      "lift": 2.1846731524150877,
+      "why": "strong bundle because lift=2.18 and confidence=0.59"
+    },
+    {
+      "items": [
+        "Burger",
+        "Nuggets",
+        "Soda"
+      ],
+      "support": 0.0175,
+      "confidence": 0.6363636363636365,
+      "lift": 3.3939393939393945,
+      "why": "strong bundle because lift=3.39 and confidence=0.64"
+    },
+    {
+      "items": [
+        "Nuggets",
+        "Soda",
+        "Burger"
+      ],
+      "support": 0.0175,
+      "confidence": 0.5384615384615385,
+      "lift": 3.4188034188034195,
+      "why": "strong bundle because lift=3.42 and confidence=0.54"
+    },
+    {
+      "items": [
+        "Hotdog",
+        "Sundae",
+        "Fries"
+      ],
+      "support": 0.015,
+      "confidence": 0.4615384615384615,
+      "lift": 2.42914979757085,
+      "why": "strong bundle because lift=2.43 and confidence=0.46"
+    }
+  ],
+  "fbt_burger": [
+    {
+      "item": "Iced Tea",
+      "score": 0.8331803868471953,
+      "confidence": 0.5925925925925926,
+      "lift": 2.1846731524150877,
+      "why": "conf=0.59, lift=2.18"
+    },
+    {
+      "item": "Soda",
+      "score": 0.2531157024793388,
+      "confidence": 0.6363636363636365,
+      "lift": 3.3939393939393945,
+      "why": "conf=0.64, lift=3.39"
+    }
+  ],
+  "cross_sell_burger": [
+    {
+      "item": "Iced Tea",
+      "score": 0.8331803868471953,
+      "confidence": 0.5925925925925926,
+      "lift": 2.1846731524150877,
+      "why": "conf=0.59, lift=2.18"
+    },
+    {
+      "item": "Soda",
+      "score": 0.2531157024793388,
+      "confidence": 0.6363636363636365,
+      "lift": 3.3939393939393945,
+      "why": "conf=0.64, lift=3.39"
+    }
+  ],
+  "cart_targets": {
+    "Burger": [
+      {
+        "item": "Iced Tea",
+        "score": 0.8331803868471953,
+        "confidence": 0.5925925925925926,
+        "lift": 2.1846731524150877,
+        "why": "conf=0.59, lift=2.18"
+      },
+      {
+        "item": "Soda",
+        "score": 0.2531157024793388,
+        "confidence": 0.6363636363636365,
+        "lift": 3.3939393939393945,
+        "why": "conf=0.64, lift=3.39"
+      }
+    ],
+    "Soda": [
+      {
+        "item": "Burger",
+        "score": 0.2046,
+        "confidence": 0.5384615384615385,
+        "lift": 3.4188034188034195,
+        "why": "conf=0.54, lift=3.42"
+      }
+    ],
+    "Cheese Stick": [
+      {
+        "item": "Iced Tea",
+        "score": 0.8331803868471953,
+        "confidence": 0.5925925925925926,
+        "lift": 2.1846731524150877,
+        "why": "conf=0.59, lift=2.18"
+      }
+    ],
+    "Nuggets": [
+      {
+        "item": "Soda",
+        "score": 0.2531157024793388,
+        "confidence": 0.6363636363636365,
+        "lift": 3.3939393939393945,
+        "why": "conf=0.64, lift=3.39"
+      },
+      {
+        "item": "Burger",
+        "score": 0.2046,
+        "confidence": 0.5384615384615385,
+        "lift": 3.4188034188034195,
+        "why": "conf=0.54, lift=3.42"
+      }
+    ],
+    "Sundae": [
+      {
+        "item": "Fries",
+        "score": 0.0,
+        "confidence": 0.4615384615384615,
+        "lift": 2.42914979757085,
+        "why": "conf=0.46, lift=2.43"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Burger",
+        "Cheese Stick",
+        "Iced Tea"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.18, conf=0.59, profit~66php"
+    },
+    {
+      "bundle": [
+        "Burger",
+        "Nuggets",
+        "Soda"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=3.39, conf=0.64, profit~69php"
+    },
+    {
+      "bundle": [
+        "Nuggets",
+        "Soda",
+        "Burger"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=3.42, conf=0.54, profit~69php"
+    },
+    {
+      "bundle": [
+        "Hotdog",
+        "Sundae",
+        "Fries"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.43, conf=0.46, profit~65php"
+    }
+  ],
+  "portfolio": {
+    "stable": [
+      {
+        "antecedents": [
+          "Burger",
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      }
+    ],
+    "emerging": [
+      {
+        "antecedents": [
+          "Burger",
+          "Nuggets"
+        ],
+        "consequents": [
+          "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets",
+          "Soda"
+        ],
+        "consequents": [
+          "Burger"
+        ]
+      },
+      {
+        "antecedents": [
+          "Hotdog",
+          "Sundae"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      }
+    ],
+    "fading": [],
+    "stable_count": 1,
+    "emerging_count": 3,
+    "fading_count": 0
+  },
+  "business_insights": [
+    "Homepage anchor item should be Iced Tea based on rank score.",
+    "Most influential cross-sell rule: Burger, Cheese Stick -> Iced Tea.",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0278, recent-model weight set to 0.30.",
+    "Top-rule coverage is 9.0% of baskets with estimated uplift score 0.12."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 1,
+  "n_transactions": 500,
+  "n_unique_items": 16,
+  "drift": {
+    "drift": false,
+    "js": 0.0
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.01,
+  "minconf_longterm": 0.65,
+  "holdout_mean_hr_longterm": 0.0,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.0,
+  "system_metrics": {
+    "avg_basket_size": 2.288,
+    "coverage_top_rules": 0.016,
+    "estimated_uplift_score": 0.0296,
+    "n_rules_blended": 1,
+    "recommendable_items": 2
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Burger",
+        "Coffee",
+        "Fries"
+      ],
+      "support": 0.01,
+      "confidence": 0.7999999999999999,
+      "lift": 4.324324324324324,
+      "why": "strong bundle because lift=4.32 and confidence=0.80"
+    }
+  ],
+  "fbt_burger": [
+    {
+      "item": "Fries",
+      "score": 0.85,
+      "confidence": 0.7999999999999999,
+      "lift": 4.324324324324324,
+      "why": "conf=0.80, lift=4.32"
+    }
+  ],
+  "cross_sell_burger": [
+    {
+      "item": "Fries",
+      "score": 0.85,
+      "confidence": 0.7999999999999999,
+      "lift": 4.324324324324324,
+      "why": "conf=0.80, lift=4.32"
+    }
+  ],
+  "cart_targets": {
+    "Burger": [
+      {
+        "item": "Fries",
+        "score": 0.85,
+        "confidence": 0.7999999999999999,
+        "lift": 4.324324324324324,
+        "why": "conf=0.80, lift=4.32"
+      }
+    ],
+    "Coffee": [
+      {
+        "item": "Fries",
+        "score": 0.85,
+        "confidence": 0.7999999999999999,
+        "lift": 4.324324324324324,
+        "why": "conf=0.80, lift=4.32"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Burger",
+        "Coffee",
+        "Fries"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=4.32, conf=0.80, profit~73php"
+    }
+  ],
+  "portfolio": {
+    "stable": [],
+    "emerging": [
+      {
+        "antecedents": [
+          "Burger",
+          "Coffee"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      }
+    ],
+    "fading": [],
+    "stable_count": 0,
+    "emerging_count": 1,
+    "fading_count": 0
+  },
+  "business_insights": [
+    "Homepage anchor item should be Fries based on rank score.",
+    "Most influential cross-sell rule: Burger, Coffee -> Fries.",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0000, recent-model weight set to 0.30.",
+    "Top-rule coverage is 1.6% of baskets with estimated uplift score 0.03."
+  ]
+}

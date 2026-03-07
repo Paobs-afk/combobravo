@@ -1,0 +1,239 @@
+{
+  "morning": {
+    "n_tx": 239,
+    "engine": "fp_growth",
+    "minsup": 0.04,
+    "minconf": 0.55,
+    "holdout_mean_hr": 0.42857142857142855,
+    "menu_rank_top10": [
+      {
+        "item": "Coffee",
+        "pop": 82,
+        "impact": 0.85,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Sisig Rice",
+        "pop": 23,
+        "impact": 0.2975,
+        "rank_score": 0.5585294117647058
+      },
+      {
+        "item": "Hotdog",
+        "pop": 61,
+        "impact": 0.0,
+        "rank_score": 0.44926470588235295
+      },
+      {
+        "item": "Fries",
+        "pop": 50,
+        "impact": 0.0,
+        "rank_score": 0.34411764705882353
+      },
+      {
+        "item": "Spaghetti",
+        "pop": 45,
+        "impact": 0.0,
+        "rank_score": 0.2963235294117647
+      },
+      {
+        "item": "Burger",
+        "pop": 39,
+        "impact": 0.0,
+        "rank_score": 0.23897058823529413
+      },
+      {
+        "item": "Extra Rice",
+        "pop": 33,
+        "impact": 0.0,
+        "rank_score": 0.18161764705882355
+      },
+      {
+        "item": "Water",
+        "pop": 33,
+        "impact": 0.0,
+        "rank_score": 0.18161764705882355
+      },
+      {
+        "item": "Extra Sauce",
+        "pop": 29,
+        "impact": 0.0,
+        "rank_score": 0.14338235294117646
+      },
+      {
+        "item": "Nuggets",
+        "pop": 28,
+        "impact": 0.0,
+        "rank_score": 0.1338235294117647
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Sisig Rice",
+          "Coffee"
+        ],
+        "promo": "Add-on Suggestion 15%",
+        "why": "lift=1.82, conf=0.56, profit~63php"
+      }
+    ]
+  },
+  "lunch": {
+    "n_tx": 469,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.35,
+    "holdout_mean_hr": 0.2631578947368421,
+    "menu_rank_top10": [
+      {
+        "item": "Chicken Rice",
+        "pop": 109,
+        "impact": 0.85,
+        "rank_score": 1.9403669724770642
+      },
+      {
+        "item": "Nuggets",
+        "pop": 72,
+        "impact": 0.2975,
+        "rank_score": 0.8422247706422019
+      },
+      {
+        "item": "Iced Tea",
+        "pop": 119,
+        "impact": 0.0,
+        "rank_score": 0.65
+      },
+      {
+        "item": "Fries",
+        "pop": 95,
+        "impact": 0.0,
+        "rank_score": 0.5068807339449541
+      },
+      {
+        "item": "Sisig Rice",
+        "pop": 91,
+        "impact": 0.0,
+        "rank_score": 0.48302752293577983
+      },
+      {
+        "item": "Burger",
+        "pop": 84,
+        "impact": 0.0,
+        "rank_score": 0.4412844036697248
+      },
+      {
+        "item": "Water",
+        "pop": 80,
+        "impact": 0.0,
+        "rank_score": 0.4174311926605505
+      },
+      {
+        "item": "Soda",
+        "pop": 74,
+        "impact": 0.0,
+        "rank_score": 0.381651376146789
+      },
+      {
+        "item": "Lumpia",
+        "pop": 56,
+        "impact": 0.0,
+        "rank_score": 0.27431192660550463
+      },
+      {
+        "item": "Spaghetti",
+        "pop": 51,
+        "impact": 0.0,
+        "rank_score": 0.24449541284403672
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Nuggets",
+          "Chicken Rice"
+        ],
+        "promo": "Add-on Suggestion 15%",
+        "why": "lift=1.69, conf=0.40, profit~62php"
+      }
+    ]
+  },
+  "dinner": {
+    "n_tx": 292,
+    "engine": "fp_growth",
+    "minsup": 0.03,
+    "minconf": 0.45,
+    "holdout_mean_hr": 0.5,
+    "menu_rank_top10": [
+      {
+        "item": "Iced Tea",
+        "pop": 75,
+        "impact": 0.85,
+        "rank_score": 2.0
+      },
+      {
+        "item": "Nuggets",
+        "pop": 43,
+        "impact": 0.2975,
+        "rank_score": 0.8073484848484849
+      },
+      {
+        "item": "Chicken Rice",
+        "pop": 65,
+        "impact": 0.0,
+        "rank_score": 0.5515151515151515
+      },
+      {
+        "item": "Sisig Rice",
+        "pop": 62,
+        "impact": 0.0,
+        "rank_score": 0.521969696969697
+      },
+      {
+        "item": "Soda",
+        "pop": 47,
+        "impact": 0.0,
+        "rank_score": 0.37424242424242427
+      },
+      {
+        "item": "Burger",
+        "pop": 46,
+        "impact": 0.0,
+        "rank_score": 0.3643939393939394
+      },
+      {
+        "item": "Extra Rice",
+        "pop": 42,
+        "impact": 0.0,
+        "rank_score": 0.325
+      },
+      {
+        "item": "Water",
+        "pop": 42,
+        "impact": 0.0,
+        "rank_score": 0.325
+      },
+      {
+        "item": "Sundae",
+        "pop": 37,
+        "impact": 0.0,
+        "rank_score": 0.27575757575757576
+      },
+      {
+        "item": "Fries",
+        "pop": 37,
+        "impact": 0.0,
+        "rank_score": 0.27575757575757576
+      }
+    ],
+    "promos_top3": [
+      {
+        "bundle": [
+          "Nuggets",
+          "Iced Tea"
+        ],
+        "promo": "Add-on Suggestion 15%",
+        "why": "lift=1.77, conf=0.45, profit~37php"
+      }
+    ]
+  }
+}

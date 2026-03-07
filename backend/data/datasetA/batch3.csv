@@ -1,0 +1,501 @@
+tx_id,timestamp,segment,day_type,items
+1001,2026-01-04T14:27:00,lunch,weekday,"Iced Tea, Nuggets, Sisig Rice"
+1002,2026-01-05T19:35:00,lunch,weekday,"Nuggets, Sisig Rice, Water"
+1003,2026-01-04T13:07:00,lunch,weekday,"Chicken Rice, Water"
+1004,2026-01-09T15:27:00,lunch,weekday,Chicken Rice
+1005,2026-01-11T10:51:00,morning,weekend,"Hotdog, Water"
+1006,2026-01-01T17:56:00,lunch,weekday,Sisig Rice
+1007,2026-01-06T13:38:00,lunch,weekday,Lumpia
+1008,2026-01-02T10:46:00,lunch,weekday,Nuggets
+1009,2026-01-05T11:16:00,dinner,weekday,"Burger, Sundae, Water"
+1010,2026-01-11T01:44:00,lunch,weekday,"Burger, Fries, Soda"
+1011,2026-01-12T13:02:00,dinner,weekday,"Chicken Rice, Iced Tea"
+1012,2026-01-05T03:29:00,lunch,weekday,"Hotdog, Iced Tea"
+1013,2026-01-13T06:08:00,lunch,weekday,"Iced Tea, Nuggets"
+1014,2026-01-05T18:50:00,dinner,weekday,"Burger, Iced Tea"
+1015,2026-01-14T13:04:00,lunch,weekday,"Extra Sauce, Sisig Rice"
+1016,2026-01-11T05:36:00,dinner,weekend,"Fries, Spaghetti, Water"
+1017,2026-01-01T10:38:00,lunch,weekday,"Burger, Extra Sauce, Fries"
+1018,2026-01-05T21:24:00,dinner,weekday,"Burger, Fries"
+1019,2026-01-09T21:01:00,lunch,weekday,"Burger, Water"
+1020,2026-01-03T12:38:00,lunch,weekend,"Hotdog, Iced Tea, Nuggets"
+1021,2026-01-13T18:50:00,lunch,weekend,Spaghetti
+1022,2026-01-09T05:16:00,morning,weekday,"Coffee, Extra Sauce, Fries, Spaghetti"
+1023,2026-01-06T19:27:00,dinner,weekday,Soda
+1024,2026-01-13T20:57:00,lunch,weekend,"Extra Sauce, Sisig Rice, Water"
+1025,2026-01-13T20:43:00,lunch,weekday,Sisig Rice
+1026,2026-01-02T15:54:00,morning,weekday,"Burger, Coffee"
+1027,2026-01-13T00:12:00,dinner,weekday,"Chicken Rice, Extra Rice"
+1028,2026-01-10T17:16:00,dinner,weekday,Water
+1029,2026-01-14T03:02:00,morning,weekend,"Coffee, Lumpia, Spaghetti"
+1030,2026-01-08T10:50:00,morning,weekend,"Coffee, Hotdog"
+1031,2026-01-09T12:51:00,dinner,weekend,"Burger, Coffee, Extra Sauce, Lumpia"
+1032,2026-01-04T23:37:00,morning,weekend,"Fries, Iced Tea"
+1033,2026-01-05T18:52:00,lunch,weekday,"Burger, Water"
+1034,2026-01-08T01:17:00,dinner,weekend,"Burger, Nuggets, Soda"
+1035,2026-01-07T06:01:00,dinner,weekday,"Hotdog, Nuggets"
+1036,2026-01-07T16:03:00,dinner,weekend,Nuggets
+1037,2026-01-03T11:44:00,lunch,weekday,Burger
+1038,2026-01-01T18:41:00,dinner,weekday,"Chicken Rice, Sundae, Water"
+1039,2026-01-03T13:23:00,dinner,weekday,Chicken Rice
+1040,2026-01-03T22:00:00,dinner,weekday,"Donut, Sisig Rice, Water"
+1041,2026-01-12T17:06:00,lunch,weekday,Nuggets
+1042,2026-01-07T20:26:00,morning,weekend,"Burger, Coffee, Sundae"
+1043,2026-01-01T18:41:00,lunch,weekend,"Chicken Rice, Donut, Water"
+1044,2026-01-12T00:14:00,dinner,weekend,Extra Sauce
+1045,2026-01-07T08:32:00,dinner,weekday,Lumpia
+1046,2026-01-12T19:28:00,lunch,weekday,Water
+1047,2026-01-08T21:50:00,lunch,weekend,"Burger, Extra Sauce, Iced Tea"
+1048,2026-01-05T10:25:00,lunch,weekday,Water
+1049,2026-01-02T01:39:00,morning,weekday,Hotdog
+1050,2026-01-04T11:02:00,dinner,weekday,"Fries, Iced Tea, Spaghetti"
+1051,2026-01-08T07:48:00,lunch,weekend,"Burger, Coffee, Fries"
+1052,2026-01-04T04:37:00,morning,weekend,Donut
+1053,2026-01-08T23:22:00,morning,weekend,"Lumpia, Spaghetti"
+1054,2026-01-01T05:52:00,morning,weekend,"Coffee, Donut, Extra Sauce, Spaghetti"
+1055,2026-01-08T18:26:00,lunch,weekday,"Iced Tea, Lumpia, Sisig Rice"
+1056,2026-01-07T14:58:00,dinner,weekend,"Fries, Sisig Rice, Soda"
+1057,2026-01-10T14:17:00,morning,weekday,"Coffee, Lumpia"
+1058,2026-01-06T17:12:00,morning,weekday,Spaghetti
+1059,2026-01-13T18:12:00,dinner,weekday,"Extra Sauce, Sisig Rice, Soda"
+1060,2026-01-03T16:09:00,lunch,weekday,Sisig Rice
+1061,2026-01-12T21:29:00,dinner,weekday,"Donut, Sisig Rice, Water"
+1062,2026-01-10T09:05:00,morning,weekday,"Coffee, Fries, Spaghetti"
+1063,2026-01-06T23:43:00,dinner,weekday,Extra Rice
+1064,2026-01-13T05:56:00,dinner,weekday,Coffee
+1065,2026-01-09T17:00:00,dinner,weekend,"Sisig Rice, Water"
+1066,2026-01-13T18:05:00,morning,weekend,"Fries, Hotdog, Sundae, Water"
+1067,2026-01-04T07:36:00,lunch,weekday,"Chicken Rice, Iced Tea"
+1068,2026-01-02T20:53:00,dinner,weekday,"Coffee, Spaghetti"
+1069,2026-01-05T21:56:00,lunch,weekday,"Coffee, Extra Rice, Fries, Hotdog"
+1070,2026-01-05T08:59:00,morning,weekday,
+1071,2026-01-06T23:56:00,lunch,weekend,Sisig Rice
+1072,2026-01-13T05:58:00,lunch,weekday,"Nuggets, Soda"
+1073,2026-01-13T14:35:00,lunch,weekday,Extra Rice
+1074,2026-01-08T21:50:00,dinner,weekday,"Extra Rice, Iced Tea, Sisig Rice, Sundae"
+1075,2026-01-04T00:49:00,lunch,weekday,"Chicken Rice, Extra Rice, Fries"
+1076,2026-01-13T06:42:00,dinner,weekday,"Chicken Rice, Nuggets"
+1077,2026-01-13T01:19:00,dinner,weekday,Chicken Rice
+1078,2026-01-08T13:12:00,lunch,weekday,"Extra Sauce, Spaghetti"
+1079,2026-01-10T19:02:00,morning,weekend,"Coffee, Donut, Extra Sauce, Spaghetti"
+1080,2026-01-01T11:08:00,dinner,weekday,"Chicken Rice, Coffee"
+1081,2026-01-02T13:53:00,dinner,weekday,Coffee
+1082,2026-01-11T00:40:00,dinner,weekday,"Burger, Iced Tea"
+1083,2026-01-08T02:12:00,dinner,weekend,"Burger, Fries"
+1084,2026-01-13T11:16:00,dinner,weekday,"Chicken Rice, Fries, Iced Tea"
+1085,2026-01-11T22:22:00,dinner,weekend,Hotdog
+1086,2026-01-13T02:30:00,dinner,weekend,"Sisig Rice, Soda"
+1087,2026-01-12T04:16:00,lunch,weekend,"Hotdog, Nuggets, Water"
+1088,2026-01-01T22:44:00,morning,weekday,Hotdog
+1089,2026-01-02T01:46:00,morning,weekday,Donut
+1090,2026-01-12T13:50:00,dinner,weekday,Chicken Rice
+1091,2026-01-13T23:55:00,lunch,weekday,"Extra Rice, Water"
+1092,2026-01-08T12:38:00,lunch,weekday,"Soda, Sundae"
+1093,2026-01-10T14:55:00,dinner,weekend,"Fries, Hotdog"
+1094,2026-01-09T13:57:00,lunch,weekday,Donut
+1095,2026-01-03T14:28:00,lunch,weekend,"Chicken Rice, Nuggets, Soda"
+1096,2026-01-07T11:29:00,morning,weekend,"Coffee, Hotdog, Nuggets"
+1097,2026-01-03T11:42:00,dinner,weekday,Extra Sauce
+1098,2026-01-01T22:25:00,morning,weekday,"Burger, Fries"
+1099,2026-01-06T16:58:00,lunch,weekday,Sundae
+1100,2026-01-01T13:49:00,dinner,weekday,"Fries, Iced Tea, Sisig Rice, Sundae"
+1101,2026-01-04T20:47:00,dinner,weekday,"Chicken Rice, Iced Tea, Sundae"
+1102,2026-01-06T02:37:00,dinner,weekday,"Donut, Fries, Sisig Rice"
+1103,2026-01-09T19:13:00,dinner,weekday,Burger
+1104,2026-01-04T06:51:00,lunch,weekday,"Chicken Rice, Coffee, Extra Rice"
+1105,2026-01-13T07:43:00,lunch,weekday,Donut
+1106,2026-01-11T13:08:00,dinner,weekend,"Iced Tea, Sisig Rice"
+1107,2026-01-11T13:03:00,lunch,weekday,"Fries, Iced Tea, Sisig Rice"
+1108,2026-01-10T09:04:00,lunch,weekend,"Iced Tea, Nuggets, Sisig Rice"
+1109,2026-01-07T05:16:00,morning,weekday,"Burger, Coffee, Fries"
+1110,2026-01-12T01:47:00,dinner,weekday,"Fries, Sisig Rice, Water"
+1111,2026-01-02T04:48:00,lunch,weekend,"Extra Rice, Sisig Rice"
+1112,2026-01-11T03:54:00,lunch,weekday,"Extra Sauce, Water"
+1113,2026-01-13T13:38:00,lunch,weekday,"Burger, Fries, Water"
+1114,2026-01-11T18:13:00,lunch,weekday,"Extra Rice, Iced Tea, Sisig Rice"
+1115,2026-01-13T21:32:00,lunch,weekday,"Extra Sauce, Sisig Rice"
+1116,2026-01-05T11:39:00,lunch,weekday,"Chicken Rice, Extra Sauce, Soda"
+1117,2026-01-06T18:00:00,dinner,weekday,"Donut, Soda, Spaghetti"
+1118,2026-01-01T22:05:00,morning,weekday,"Coffee, Fries, Spaghetti"
+1119,2026-01-05T13:01:00,lunch,weekend,"Extra Rice, Iced Tea, Sisig Rice"
+1120,2026-01-08T18:50:00,dinner,weekday,"Lumpia, Sisig Rice"
+1121,2026-01-03T13:59:00,morning,weekday,"Hotdog, Iced Tea, Nuggets"
+1122,2026-01-08T18:18:00,morning,weekday,Burger
+1123,2026-01-03T18:36:00,dinner,weekday,Sisig Rice
+1124,2026-01-02T03:18:00,morning,weekday,"Donut, Lumpia"
+1125,2026-01-14T11:12:00,dinner,weekday,Burger
+1126,2026-01-02T17:23:00,dinner,weekday,"Burger, Fries, Iced Tea"
+1127,2026-01-06T11:29:00,morning,weekend,"Coffee, Extra Sauce, Fries, Hotdog"
+1128,2026-01-10T18:53:00,lunch,weekday,"Fries, Water"
+1129,2026-01-02T11:58:00,morning,weekend,"Burger, Nuggets"
+1130,2026-01-06T04:34:00,lunch,weekday,"Chicken Rice, Fries"
+1131,2026-01-11T06:56:00,lunch,weekday,"Chicken Rice, Water"
+1132,2026-01-09T07:43:00,morning,weekday,Spaghetti
+1133,2026-01-07T21:45:00,morning,weekend,"Burger, Donut, Extra Sauce, Fries, Soda"
+1134,2026-01-03T09:53:00,dinner,weekend,"Burger, Lumpia, Soda"
+1135,2026-01-08T16:54:00,morning,weekday,"Coffee, Extra Sauce, Hotdog"
+1136,2026-01-11T18:36:00,lunch,weekday,"Burger, Iced Tea"
+1137,2026-01-07T09:12:00,morning,weekday,"Hotdog, Water"
+1138,2026-01-06T16:02:00,lunch,weekday,"Burger, Extra Rice, Iced Tea"
+1139,2026-01-07T01:16:00,lunch,weekday,"Chicken Rice, Donut, Water"
+1140,2026-01-11T23:32:00,morning,weekday,"Extra Rice, Lumpia, Spaghetti"
+1141,2026-01-14T14:21:00,lunch,weekend,Iced Tea
+1142,2026-01-05T15:32:00,lunch,weekday,"Nuggets, Soda, Spaghetti"
+1143,2026-01-08T03:32:00,morning,weekday,"Coffee, Donut, Spaghetti"
+1144,2026-01-08T04:10:00,morning,weekday,"Donut, Lumpia, Sisig Rice, Soda"
+1145,2026-01-13T22:29:00,dinner,weekday,"Chicken Rice, Iced Tea"
+1146,2026-01-02T20:19:00,morning,weekday,"Coffee, Extra Rice, Fries, Sisig Rice, Sundae"
+1147,2026-01-03T14:56:00,lunch,weekend,"Chicken Rice, Fries, Soda"
+1148,2026-01-04T11:21:00,dinner,weekend,Lumpia
+1149,2026-01-02T13:06:00,dinner,weekday,"Chicken Rice, Extra Sauce, Iced Tea"
+1150,2026-01-05T20:12:00,morning,weekday,"Chicken Rice, Coffee"
+1151,2026-01-06T22:10:00,morning,weekday,"Lumpia, Sisig Rice, Water"
+1152,2026-01-03T10:17:00,lunch,weekday,"Chicken Rice, Extra Rice"
+1153,2026-01-09T05:07:00,dinner,weekend,Chicken Rice
+1154,2026-01-09T20:12:00,lunch,weekday,"Fries, Spaghetti, Sundae"
+1155,2026-01-06T15:43:00,dinner,weekday,Sisig Rice
+1156,2026-01-03T05:06:00,morning,weekday,"Burger, Fries, Iced Tea"
+1157,2026-01-06T23:28:00,morning,weekday,"Fries, Hotdog, Sundae"
+1158,2026-01-11T20:14:00,lunch,weekend,Nuggets
+1159,2026-01-05T21:40:00,morning,weekday,Spaghetti
+1160,2026-01-07T09:22:00,morning,weekday,"Chicken Rice, Extra Rice, Lumpia"
+1161,2026-01-02T00:05:00,dinner,weekday,"Donut, Hotdog"
+1162,2026-01-11T18:02:00,dinner,weekend,"Donut, Extra Sauce, Iced Tea, Spaghetti"
+1163,2026-01-14T04:52:00,lunch,weekday,
+1164,2026-01-10T19:46:00,lunch,weekday,Hotdog
+1165,2026-01-04T07:13:00,morning,weekday,"Coffee, Spaghetti"
+1166,2026-01-03T13:06:00,lunch,weekday,Donut
+1167,2026-01-12T03:09:00,dinner,weekday,"Chicken Rice, Soda"
+1168,2026-01-06T03:19:00,morning,weekday,"Chicken Rice, Coffee, Nuggets"
+1169,2026-01-07T23:25:00,lunch,weekday,"Extra Rice, Iced Tea, Spaghetti"
+1170,2026-01-02T12:36:00,morning,weekday,"Chicken Rice, Coffee, Fries, Sundae"
+1171,2026-01-11T21:17:00,lunch,weekend,"Chicken Rice, Nuggets, Soda"
+1172,2026-01-10T14:51:00,lunch,weekday,"Iced Tea, Nuggets, Spaghetti"
+1173,2026-01-02T21:18:00,lunch,weekday,"Iced Tea, Nuggets, Spaghetti"
+1174,2026-01-11T06:24:00,morning,weekend,"Burger, Water"
+1175,2026-01-11T12:57:00,morning,weekday,Burger
+1176,2026-01-01T21:44:00,lunch,weekday,"Chicken Rice, Extra Rice, Fries"
+1177,2026-01-06T02:01:00,lunch,weekday,Fries
+1178,2026-01-09T08:15:00,lunch,weekday,"Extra Rice, Hotdog, Sundae, Water"
+1179,2026-01-06T23:30:00,dinner,weekday,Chicken Rice
+1180,2026-01-13T10:08:00,dinner,weekday,"Chicken Rice, Fries, Sundae, Water"
+1181,2026-01-01T06:06:00,lunch,weekday,"Extra Rice, Iced Tea, Sisig Rice"
+1182,2026-01-11T19:16:00,lunch,weekday,"Chicken Rice, Extra Rice, Lumpia, Soda"
+1183,2026-01-02T15:38:00,lunch,weekday,"Chicken Rice, Extra Sauce, Nuggets, Water"
+1184,2026-01-01T15:06:00,lunch,weekday,"Fries, Iced Tea, Sisig Rice"
+1185,2026-01-10T06:01:00,morning,weekday,"Chicken Rice, Lumpia"
+1186,2026-01-01T21:49:00,lunch,weekend,"Chicken Rice, Fries, Sundae, Water"
+1187,2026-01-12T15:18:00,lunch,weekday,"Nuggets, Sisig Rice"
+1188,2026-01-08T19:00:00,lunch,weekend,"Chicken Rice, Extra Rice, Soda"
+1189,2026-01-06T10:45:00,lunch,weekday,"Extra Sauce, Sisig Rice"
+1190,2026-01-04T04:03:00,lunch,weekday,"Iced Tea, Nuggets, Sisig Rice"
+1191,2026-01-03T16:00:00,dinner,weekday,Sisig Rice
+1192,2026-01-07T03:51:00,dinner,weekend,"Burger, Donut"
+1193,2026-01-11T08:21:00,dinner,weekday,"Burger, Extra Sauce, Iced Tea, Nuggets"
+1194,2026-01-10T22:45:00,dinner,weekday,"Chicken Rice, Iced Tea"
+1195,2026-01-03T04:22:00,lunch,weekday,"Chicken Rice, Lumpia"
+1196,2026-01-14T17:40:00,dinner,weekday,"Iced Tea, Nuggets, Sisig Rice"
+1197,2026-01-01T09:31:00,lunch,weekday,"Fries, Sisig Rice, Soda"
+1198,2026-01-04T22:46:00,dinner,weekday,"Lumpia, Soda, Spaghetti"
+1199,2026-01-11T02:33:00,dinner,weekday,"Extra Sauce, Sisig Rice, Water"
+1200,2026-01-08T07:53:00,lunch,weekday,"Chicken Rice, Lumpia, Soda"
+1201,2026-01-09T00:55:00,morning,weekday,"Chicken Rice, Extra Rice, Lumpia, Soda"
+1202,2026-01-01T11:56:00,lunch,weekday,"Hotdog, Lumpia, Soda"
+1203,2026-01-06T21:55:00,lunch,weekday,"Chicken Rice, Donut"
+1204,2026-01-06T04:50:00,lunch,weekday,Soda
+1205,2026-01-07T08:06:00,morning,weekend,"Iced Tea, Sisig Rice"
+1206,2026-01-05T00:05:00,dinner,weekday,"Burger, Water"
+1207,2026-01-13T03:36:00,lunch,weekday,"Burger, Coffee, Sundae"
+1208,2026-01-01T11:18:00,morning,weekday,"Coffee, Fries, Sisig Rice"
+1209,2026-01-11T08:27:00,lunch,weekend,"Burger, Nuggets, Water"
+1210,2026-01-09T23:43:00,morning,weekday,"Donut, Nuggets, Sisig Rice"
+1211,2026-01-10T05:17:00,lunch,weekday,Soda
+1212,2026-01-10T09:13:00,dinner,weekday,"Chicken Rice, Nuggets, Water"
+1213,2026-01-04T04:22:00,lunch,weekday,"Chicken Rice, Lumpia"
+1214,2026-01-11T13:01:00,lunch,weekday,"Burger, Iced Tea"
+1215,2026-01-02T18:39:00,morning,weekend,"Burger, Fries, Iced Tea"
+1216,2026-01-12T12:44:00,lunch,weekday,Chicken Rice
+1217,2026-01-08T21:28:00,morning,weekend,"Donut, Iced Tea, Nuggets, Sisig Rice"
+1218,2026-01-13T21:18:00,lunch,weekday,"Chicken Rice, Extra Sauce, Iced Tea"
+1219,2026-01-09T17:39:00,lunch,weekend,"Extra Sauce, Sisig Rice, Water"
+1220,2026-01-05T19:01:00,lunch,weekday,"Burger, Iced Tea, Nuggets"
+1221,2026-01-02T19:40:00,morning,weekday,"Coffee, Nuggets"
+1222,2026-01-08T12:33:00,lunch,weekend,"Sisig Rice, Soda"
+1223,2026-01-06T03:32:00,lunch,weekday,Sisig Rice
+1224,2026-01-04T08:48:00,dinner,weekday,"Coffee, Donut, Spaghetti"
+1225,2026-01-08T12:53:00,lunch,weekend,"Iced Tea, Nuggets, Spaghetti"
+1226,2026-01-04T12:07:00,lunch,weekday,"Extra Sauce, Spaghetti"
+1227,2026-01-10T18:53:00,lunch,weekend,"Chicken Rice, Soda"
+1228,2026-01-03T02:24:00,dinner,weekday,"Burger, Extra Sauce, Fries, Iced Tea, Sundae"
+1229,2026-01-09T03:06:00,dinner,weekend,"Burger, Fries, Soda"
+1230,2026-01-12T03:48:00,lunch,weekday,"Coffee, Fries, Hotdog, Sundae"
+1231,2026-01-12T17:11:00,morning,weekday,"Chicken Rice, Fries"
+1232,2026-01-12T13:54:00,morning,weekday,Burger
+1233,2026-01-11T11:55:00,lunch,weekday,Chicken Rice
+1234,2026-01-11T23:00:00,morning,weekday,"Chicken Rice, Donut, Fries, Iced Tea"
+1235,2026-01-09T21:25:00,lunch,weekday,Fries
+1236,2026-01-08T08:43:00,morning,weekday,"Soda, Spaghetti"
+1237,2026-01-04T17:39:00,lunch,weekend,Sisig Rice
+1238,2026-01-10T12:12:00,dinner,weekday,"Nuggets, Spaghetti, Water"
+1239,2026-01-12T11:47:00,morning,weekday,"Extra Rice, Hotdog, Nuggets, Water"
+1240,2026-01-07T14:29:00,lunch,weekday,"Chicken Rice, Extra Sauce, Lumpia"
+1241,2026-01-14T20:27:00,lunch,weekend,"Hotdog, Soda"
+1242,2026-01-09T23:37:00,lunch,weekend,"Hotdog, Water"
+1243,2026-01-13T10:29:00,lunch,weekday,"Iced Tea, Lumpia, Spaghetti"
+1244,2026-01-12T07:13:00,dinner,weekday,
+1245,2026-01-05T13:22:00,dinner,weekday,"Hotdog, Iced Tea"
+1246,2026-01-10T10:57:00,morning,weekday,"Extra Sauce, Hotdog, Iced Tea"
+1247,2026-01-03T18:19:00,morning,weekday,Spaghetti
+1248,2026-01-13T03:57:00,dinner,weekday,"Extra Rice, Sisig Rice"
+1249,2026-01-02T23:11:00,lunch,weekday,"Donut, Fries, Hotdog, Water"
+1250,2026-01-09T20:35:00,dinner,weekday,"Chicken Rice, Lumpia"
+1251,2026-01-06T03:50:00,dinner,weekday,"Iced Tea, Sisig Rice"
+1252,2026-01-09T11:27:00,dinner,weekend,"Chicken Rice, Extra Rice, Iced Tea, Lumpia, Sundae"
+1253,2026-01-04T02:08:00,lunch,weekday,"Lumpia, Spaghetti"
+1254,2026-01-01T21:15:00,lunch,weekday,"Extra Rice, Sisig Rice, Water"
+1255,2026-01-02T17:01:00,dinner,weekday,Coffee
+1256,2026-01-03T13:55:00,lunch,weekday,"Burger, Fries, Iced Tea"
+1257,2026-01-13T12:29:00,morning,weekday,"Soda, Spaghetti"
+1258,2026-01-03T06:51:00,dinner,weekend,Sisig Rice
+1259,2026-01-09T05:13:00,dinner,weekend,"Extra Rice, Fries, Sisig Rice, Soda, Sundae"
+1260,2026-01-03T21:10:00,lunch,weekday,Nuggets
+1261,2026-01-05T06:25:00,morning,weekend,"Coffee, Nuggets"
+1262,2026-01-07T03:06:00,lunch,weekday,"Chicken Rice, Fries, Water"
+1263,2026-01-14T02:54:00,morning,weekend,"Coffee, Extra Sauce, Hotdog"
+1264,2026-01-04T00:36:00,morning,weekday,"Iced Tea, Sisig Rice"
+1265,2026-01-04T08:16:00,dinner,weekday,"Burger, Iced Tea"
+1266,2026-01-04T07:41:00,dinner,weekend,Iced Tea
+1267,2026-01-06T17:41:00,morning,weekday,
+1268,2026-01-01T07:31:00,morning,weekday,"Coffee, Extra Sauce, Nuggets, Spaghetti"
+1269,2026-01-11T22:20:00,lunch,weekend,"Chicken Rice, Iced Tea, Lumpia"
+1270,2026-01-09T10:31:00,morning,weekend,"Hotdog, Soda"
+1271,2026-01-13T15:37:00,lunch,weekday,"Extra Rice, Sisig Rice, Sundae"
+1272,2026-01-13T14:29:00,dinner,weekday,Extra Rice
+1273,2026-01-05T12:56:00,lunch,weekday,Burger
+1274,2026-01-09T02:54:00,lunch,weekday,"Iced Tea, Nuggets"
+1275,2026-01-05T15:56:00,lunch,weekday,"Extra Sauce, Fries, Hotdog"
+1276,2026-01-03T04:53:00,lunch,weekday,"Burger, Extra Rice"
+1277,2026-01-14T14:45:00,morning,weekday,Iced Tea
+1278,2026-01-05T22:09:00,lunch,weekday,Extra Sauce
+1279,2026-01-04T17:43:00,dinner,weekend,"Chicken Rice, Nuggets, Soda"
+1280,2026-01-07T17:06:00,morning,weekday,"Burger, Extra Rice, Nuggets, Soda"
+1281,2026-01-04T12:03:00,lunch,weekday,"Burger, Nuggets, Water"
+1282,2026-01-03T11:13:00,lunch,weekend,Donut
+1283,2026-01-14T07:49:00,lunch,weekday,Sisig Rice
+1284,2026-01-07T08:28:00,dinner,weekend,"Soda, Spaghetti"
+1285,2026-01-03T01:42:00,lunch,weekday,Donut
+1286,2026-01-04T01:50:00,dinner,weekday,"Donut, Sisig Rice, Water"
+1287,2026-01-08T17:12:00,morning,weekday,Chicken Rice
+1288,2026-01-03T00:48:00,lunch,weekday,"Chicken Rice, Extra Sauce, Nuggets"
+1289,2026-01-01T14:55:00,lunch,weekday,Burger
+1290,2026-01-11T22:34:00,dinner,weekday,Nuggets
+1291,2026-01-08T02:51:00,dinner,weekday,"Chicken Rice, Water"
+1292,2026-01-11T20:23:00,lunch,weekday,"Fries, Water"
+1293,2026-01-11T15:12:00,lunch,weekday,"Burger, Donut, Nuggets"
+1294,2026-01-13T19:28:00,morning,weekday,"Fries, Hotdog, Water"
+1295,2026-01-13T13:45:00,morning,weekday,"Chicken Rice, Extra Rice, Fries"
+1296,2026-01-03T20:41:00,dinner,weekday,Fries
+1297,2026-01-05T00:54:00,morning,weekday,"Burger, Coffee, Extra Sauce, Nuggets"
+1298,2026-01-02T11:47:00,lunch,weekday,"Iced Tea, Sundae"
+1299,2026-01-03T23:16:00,morning,weekday,Donut
+1300,2026-01-09T20:55:00,lunch,weekday,"Burger, Lumpia, Water"
+1301,2026-01-05T06:06:00,morning,weekend,"Hotdog, Nuggets"
+1302,2026-01-13T01:38:00,lunch,weekend,"Iced Tea, Nuggets"
+1303,2026-01-11T14:19:00,lunch,weekend,"Donut, Sisig Rice, Soda"
+1304,2026-01-09T01:54:00,lunch,weekday,"Extra Rice, Hotdog, Soda"
+1305,2026-01-03T19:35:00,morning,weekday,"Coffee, Extra Sauce, Spaghetti"
+1306,2026-01-02T17:57:00,lunch,weekday,"Chicken Rice, Extra Sauce, Iced Tea, Nuggets"
+1307,2026-01-13T13:45:00,dinner,weekend,"Chicken Rice, Nuggets"
+1308,2026-01-13T12:13:00,dinner,weekday,"Iced Tea, Sisig Rice"
+1309,2026-01-14T13:32:00,morning,weekday,Water
+1310,2026-01-12T23:14:00,morning,weekday,"Burger, Extra Rice, Nuggets, Soda, Sundae"
+1311,2026-01-14T19:16:00,lunch,weekday,"Donut, Extra Rice, Fries, Hotdog, Soda"
+1312,2026-01-13T04:47:00,lunch,weekday,"Fries, Hotdog, Iced Tea"
+1313,2026-01-02T01:19:00,lunch,weekday,"Nuggets, Sisig Rice"
+1314,2026-01-09T05:19:00,lunch,weekday,Nuggets
+1315,2026-01-05T23:23:00,lunch,weekend,Fries
+1316,2026-01-04T05:52:00,lunch,weekday,"Chicken Rice, Iced Tea, Nuggets"
+1317,2026-01-05T09:59:00,lunch,weekend,"Fries, Hotdog"
+1318,2026-01-09T12:25:00,lunch,weekday,
+1319,2026-01-02T11:24:00,lunch,weekday,"Chicken Rice, Lumpia"
+1320,2026-01-14T00:46:00,dinner,weekday,"Burger, Extra Sauce"
+1321,2026-01-03T00:57:00,dinner,weekend,"Sisig Rice, Water"
+1322,2026-01-13T23:00:00,dinner,weekday,"Coffee, Fries, Hotdog, Sundae"
+1323,2026-01-10T18:46:00,lunch,weekend,"Burger, Iced Tea"
+1324,2026-01-10T12:07:00,lunch,weekday,Soda
+1325,2026-01-09T05:35:00,dinner,weekday,"Extra Sauce, Sisig Rice, Water"
+1326,2026-01-03T16:20:00,lunch,weekend,"Extra Rice, Iced Tea, Sisig Rice"
+1327,2026-01-04T08:04:00,dinner,weekend,"Chicken Rice, Water"
+1328,2026-01-05T07:55:00,lunch,weekday,Spaghetti
+1329,2026-01-07T04:29:00,dinner,weekday,"Extra Sauce, Spaghetti, Water"
+1330,2026-01-02T10:11:00,lunch,weekday,"Iced Tea, Lumpia, Spaghetti"
+1331,2026-01-01T13:55:00,dinner,weekday,"Fries, Iced Tea"
+1332,2026-01-05T00:46:00,morning,weekday,"Sisig Rice, Water"
+1333,2026-01-07T08:48:00,dinner,weekday,Extra Sauce
+1334,2026-01-10T08:48:00,lunch,weekend,"Chicken Rice, Iced Tea"
+1335,2026-01-04T15:54:00,lunch,weekday,"Chicken Rice, Water"
+1336,2026-01-11T07:52:00,lunch,weekend,"Sisig Rice, Water"
+1337,2026-01-05T15:54:00,morning,weekend,"Coffee, Extra Rice, Fries"
+1338,2026-01-04T00:17:00,dinner,weekend,"Burger, Iced Tea, Nuggets"
+1339,2026-01-04T20:07:00,lunch,weekday,"Iced Tea, Lumpia"
+1340,2026-01-03T07:29:00,dinner,weekday,"Chicken Rice, Coffee, Extra Rice, Fries"
+1341,2026-01-02T17:03:00,lunch,weekday,
+1342,2026-01-10T13:18:00,morning,weekday,"Chicken Rice, Sundae"
+1343,2026-01-13T06:33:00,morning,weekday,Chicken Rice
+1344,2026-01-12T05:08:00,morning,weekday,"Chicken Rice, Fries"
+1345,2026-01-12T07:08:00,dinner,weekday,Chicken Rice
+1346,2026-01-08T22:45:00,morning,weekday,"Burger, Extra Rice, Fries"
+1347,2026-01-03T09:17:00,lunch,weekday,Donut
+1348,2026-01-11T09:25:00,lunch,weekday,"Burger, Sundae"
+1349,2026-01-04T14:28:00,dinner,weekend,"Chicken Rice, Nuggets"
+1350,2026-01-14T14:42:00,morning,weekend,Extra Sauce
+1351,2026-01-02T12:03:00,dinner,weekday,Iced Tea
+1352,2026-01-05T01:46:00,lunch,weekday,"Chicken Rice, Water"
+1353,2026-01-11T11:59:00,morning,weekday,Chicken Rice
+1354,2026-01-14T03:00:00,lunch,weekday,"Burger, Extra Rice, Water"
+1355,2026-01-01T16:19:00,morning,weekend,"Coffee, Extra Rice, Fries, Sisig Rice"
+1356,2026-01-08T19:07:00,lunch,weekend,"Chicken Rice, Extra Sauce, Nuggets, Sundae"
+1357,2026-01-13T02:55:00,dinner,weekday,"Chicken Rice, Extra Rice, Iced Tea, Lumpia"
+1358,2026-01-10T05:07:00,dinner,weekend,"Sisig Rice, Water"
+1359,2026-01-04T19:34:00,morning,weekday,"Hotdog, Water"
+1360,2026-01-09T21:39:00,dinner,weekday,"Extra Rice, Nuggets, Soda"
+1361,2026-01-07T12:54:00,lunch,weekday,"Chicken Rice, Extra Rice"
+1362,2026-01-11T22:48:00,dinner,weekday,"Sisig Rice, Soda"
+1363,2026-01-11T07:46:00,lunch,weekday,"Donut, Extra Rice, Iced Tea, Sisig Rice"
+1364,2026-01-11T04:18:00,morning,weekend,Donut
+1365,2026-01-05T00:50:00,dinner,weekday,Coffee
+1366,2026-01-03T22:52:00,lunch,weekday,Coffee
+1367,2026-01-10T11:14:00,morning,weekday,"Coffee, Spaghetti"
+1368,2026-01-08T16:12:00,morning,weekday,"Chicken Rice, Extra Rice, Nuggets"
+1369,2026-01-07T13:18:00,dinner,weekend,"Nuggets, Sisig Rice"
+1370,2026-01-04T02:20:00,morning,weekday,
+1371,2026-01-03T15:12:00,dinner,weekday,"Burger, Extra Rice, Soda"
+1372,2026-01-07T11:18:00,dinner,weekend,"Burger, Extra Rice, Iced Tea, Nuggets"
+1373,2026-01-06T01:17:00,dinner,weekday,Chicken Rice
+1374,2026-01-02T14:00:00,lunch,weekend,"Iced Tea, Sisig Rice, Sundae"
+1375,2026-01-01T03:52:00,lunch,weekend,"Chicken Rice, Extra Rice, Sundae"
+1376,2026-01-13T13:52:00,lunch,weekday,Sisig Rice
+1377,2026-01-08T07:13:00,lunch,weekday,"Chicken Rice, Iced Tea"
+1378,2026-01-11T07:42:00,lunch,weekend,"Hotdog, Iced Tea, Sundae"
+1379,2026-01-11T09:40:00,lunch,weekday,"Burger, Water"
+1380,2026-01-08T09:56:00,lunch,weekday,Sisig Rice
+1381,2026-01-14T07:35:00,morning,weekday,"Nuggets, Sundae"
+1382,2026-01-13T07:00:00,morning,weekday,"Burger, Fries"
+1383,2026-01-01T10:40:00,morning,weekday,"Coffee, Extra Sauce, Hotdog"
+1384,2026-01-14T05:59:00,lunch,weekday,"Extra Rice, Sisig Rice"
+1385,2026-01-03T13:26:00,lunch,weekday,"Burger, Iced Tea"
+1386,2026-01-03T05:49:00,morning,weekday,"Burger, Extra Rice"
+1387,2026-01-11T14:16:00,morning,weekday,"Fries, Sisig Rice, Soda"
+1388,2026-01-13T04:10:00,lunch,weekday,"Chicken Rice, Water"
+1389,2026-01-09T19:49:00,lunch,weekday,Sisig Rice
+1390,2026-01-03T03:06:00,lunch,weekend,"Iced Tea, Lumpia, Sundae"
+1391,2026-01-07T07:22:00,morning,weekday,"Extra Sauce, Spaghetti"
+1392,2026-01-04T07:17:00,lunch,weekday,Sisig Rice
+1393,2026-01-04T04:15:00,lunch,weekday,"Burger, Water"
+1394,2026-01-13T00:59:00,morning,weekday,"Burger, Coffee, Fries, Sundae"
+1395,2026-01-05T01:40:00,dinner,weekend,"Nuggets, Sisig Rice"
+1396,2026-01-12T22:37:00,lunch,weekend,"Fries, Sisig Rice, Water"
+1397,2026-01-08T23:07:00,morning,weekday,"Fries, Sisig Rice, Sundae"
+1398,2026-01-03T22:00:00,dinner,weekend,Sisig Rice
+1399,2026-01-09T19:33:00,dinner,weekday,"Fries, Sisig Rice, Soda"
+1400,2026-01-10T14:43:00,lunch,weekend,"Burger, Extra Sauce"
+1401,2026-01-14T10:39:00,morning,weekday,Donut
+1402,2026-01-01T04:08:00,morning,weekday,Hotdog
+1403,2026-01-11T06:33:00,morning,weekday,"Coffee, Hotdog"
+1404,2026-01-06T14:24:00,lunch,weekend,"Burger, Soda"
+1405,2026-01-10T09:19:00,lunch,weekend,"Extra Rice, Fries, Iced Tea, Sisig Rice, Sundae"
+1406,2026-01-09T08:01:00,lunch,weekday,"Iced Tea, Sisig Rice"
+1407,2026-01-06T14:37:00,lunch,weekday,"Extra Rice, Sisig Rice"
+1408,2026-01-10T02:47:00,morning,weekday,"Lumpia, Spaghetti"
+1409,2026-01-06T18:35:00,morning,weekday,"Chicken Rice, Coffee"
+1410,2026-01-11T00:00:00,lunch,weekday,Hotdog
+1411,2026-01-07T01:16:00,dinner,weekend,Hotdog
+1412,2026-01-06T17:47:00,lunch,weekday,"Donut, Hotdog, Water"
+1413,2026-01-07T03:12:00,morning,weekday,Hotdog
+1414,2026-01-12T07:22:00,lunch,weekday,"Donut, Iced Tea, Nuggets, Sisig Rice"
+1415,2026-01-13T15:56:00,dinner,weekday,"Nuggets, Soda, Spaghetti"
+1416,2026-01-06T15:34:00,dinner,weekday,Nuggets
+1417,2026-01-03T14:13:00,morning,weekday,Hotdog
+1418,2026-01-02T03:50:00,dinner,weekday,Extra Rice
+1419,2026-01-14T23:59:00,lunch,weekend,"Burger, Donut, Extra Rice, Iced Tea, Nuggets"
+1420,2026-01-13T05:32:00,lunch,weekday,"Donut, Fries"
+1421,2026-01-04T15:46:00,lunch,weekday,"Nuggets, Sisig Rice, Water"
+1422,2026-01-10T23:01:00,dinner,weekday,Soda
+1423,2026-01-02T22:29:00,dinner,weekday,"Burger, Extra Rice, Iced Tea, Nuggets"
+1424,2026-01-04T18:18:00,lunch,weekday,Sisig Rice
+1425,2026-01-02T03:19:00,lunch,weekday,"Lumpia, Water"
+1426,2026-01-07T11:09:00,lunch,weekday,"Burger, Donut, Extra Rice, Nuggets"
+1427,2026-01-10T01:26:00,lunch,weekend,"Hotdog, Nuggets"
+1428,2026-01-06T15:47:00,morning,weekday,
+1429,2026-01-09T02:11:00,dinner,weekend,"Fries, Hotdog, Iced Tea"
+1430,2026-01-10T02:31:00,lunch,weekday,"Hotdog, Iced Tea"
+1431,2026-01-14T02:26:00,lunch,weekday,"Iced Tea, Spaghetti"
+1432,2026-01-05T15:43:00,morning,weekday,"Burger, Coffee, Extra Rice, Lumpia"
+1433,2026-01-10T02:47:00,dinner,weekday,"Donut, Lumpia, Sisig Rice"
+1434,2026-01-01T17:14:00,lunch,weekend,"Burger, Fries, Sundae"
+1435,2026-01-02T11:40:00,dinner,weekday,"Sisig Rice, Water"
+1436,2026-01-10T02:50:00,dinner,weekday,Chicken Rice
+1437,2026-01-09T23:27:00,lunch,weekday,"Burger, Soda"
+1438,2026-01-12T12:44:00,lunch,weekend,"Chicken Rice, Lumpia, Water"
+1439,2026-01-05T02:37:00,lunch,weekday,"Extra Rice, Fries, Iced Tea"
+1440,2026-01-02T09:47:00,morning,weekday,"Extra Rice, Hotdog, Nuggets"
+1441,2026-01-14T15:24:00,morning,weekday,"Chicken Rice, Coffee, Extra Rice, Lumpia"
+1442,2026-01-07T16:11:00,morning,weekday,"Chicken Rice, Fries"
+1443,2026-01-08T10:31:00,dinner,weekend,Hotdog
+1444,2026-01-08T00:29:00,dinner,weekday,"Iced Tea, Lumpia, Sisig Rice"
+1445,2026-01-03T23:26:00,dinner,weekend,"Chicken Rice, Iced Tea, Lumpia"
+1446,2026-01-04T15:31:00,dinner,weekday,"Extra Sauce, Iced Tea, Nuggets, Sisig Rice"
+1447,2026-01-08T01:38:00,dinner,weekday,Burger
+1448,2026-01-06T17:11:00,lunch,weekend,"Chicken Rice, Donut, Iced Tea"
+1449,2026-01-11T22:47:00,lunch,weekday,"Burger, Donut"
+1450,2026-01-11T03:38:00,dinner,weekend,Iced Tea
+1451,2026-01-11T21:26:00,morning,weekday,"Coffee, Fries, Spaghetti, Sundae"
+1452,2026-01-04T20:11:00,lunch,weekday,Sisig Rice
+1453,2026-01-07T02:33:00,lunch,weekday,"Hotdog, Soda"
+1454,2026-01-11T04:22:00,morning,weekday,"Coffee, Extra Rice, Fries, Hotdog, Sundae"
+1455,2026-01-10T01:26:00,lunch,weekday,"Sisig Rice, Water"
+1456,2026-01-11T19:16:00,dinner,weekday,"Donut, Sisig Rice"
+1457,2026-01-05T10:08:00,lunch,weekday,"Sisig Rice, Water"
+1458,2026-01-07T22:53:00,morning,weekday,"Hotdog, Sundae"
+1459,2026-01-11T18:57:00,morning,weekend,
+1460,2026-01-02T05:12:00,lunch,weekday,"Chicken Rice, Fries"
+1461,2026-01-14T13:21:00,dinner,weekday,"Extra Sauce, Hotdog, Nuggets, Soda"
+1462,2026-01-14T08:12:00,morning,weekday,Water
+1463,2026-01-04T00:33:00,lunch,weekend,
+1464,2026-01-09T16:15:00,dinner,weekday,"Iced Tea, Sisig Rice"
+1465,2026-01-03T13:33:00,dinner,weekday,"Burger, Fries, Iced Tea"
+1466,2026-01-12T17:05:00,dinner,weekday,Chicken Rice
+1467,2026-01-09T15:12:00,dinner,weekday,"Burger, Extra Sauce, Fries, Iced Tea, Sundae"
+1468,2026-01-01T06:07:00,morning,weekend,Sisig Rice
+1469,2026-01-06T13:14:00,lunch,weekend,"Chicken Rice, Iced Tea"
+1470,2026-01-08T00:56:00,lunch,weekday,"Burger, Iced Tea"
+1471,2026-01-05T03:36:00,lunch,weekend,"Iced Tea, Sisig Rice"
+1472,2026-01-09T20:57:00,morning,weekend,Donut
+1473,2026-01-13T07:48:00,lunch,weekday,Extra Rice
+1474,2026-01-10T13:12:00,lunch,weekday,"Nuggets, Soda, Spaghetti"
+1475,2026-01-13T16:45:00,lunch,weekday,"Chicken Rice, Nuggets, Soda"
+1476,2026-01-09T10:36:00,lunch,weekend,Chicken Rice
+1477,2026-01-09T03:47:00,dinner,weekday,"Extra Sauce, Nuggets, Sisig Rice, Sundae, Water"
+1478,2026-01-14T00:11:00,lunch,weekend,"Chicken Rice, Fries, Sundae"
+1479,2026-01-04T03:20:00,lunch,weekday,"Chicken Rice, Iced Tea"
+1480,2026-01-04T03:14:00,lunch,weekday,"Burger, Sundae, Water"
+1481,2026-01-09T08:07:00,lunch,weekday,"Lumpia, Soda, Spaghetti"
+1482,2026-01-14T03:39:00,lunch,weekday,"Chicken Rice, Soda"
+1483,2026-01-02T04:51:00,morning,weekend,"Donut, Extra Sauce, Lumpia, Spaghetti"
+1484,2026-01-01T02:45:00,lunch,weekday,"Iced Tea, Nuggets, Sisig Rice"
+1485,2026-01-02T08:10:00,morning,weekday,Chicken Rice
+1486,2026-01-02T23:03:00,dinner,weekend,"Donut, Fries, Iced Tea, Sisig Rice"
+1487,2026-01-01T23:56:00,lunch,weekday,"Burger, Water"
+1488,2026-01-08T10:42:00,morning,weekday,"Coffee, Extra Sauce, Hotdog, Nuggets"
+1489,2026-01-14T13:02:00,lunch,weekday,"Iced Tea, Sisig Rice"
+1490,2026-01-11T18:56:00,lunch,weekend,Chicken Rice
+1491,2026-01-14T21:33:00,morning,weekday,"Donut, Extra Sauce, Hotdog"
+1492,2026-01-06T12:08:00,lunch,weekday,"Spaghetti, Water"
+1493,2026-01-14T09:16:00,lunch,weekend,Burger
+1494,2026-01-08T05:37:00,lunch,weekend,
+1495,2026-01-08T12:41:00,dinner,weekday,
+1496,2026-01-05T16:29:00,lunch,weekday,"Hotdog, Iced Tea"
+1497,2026-01-14T15:43:00,lunch,weekday,"Burger, Extra Sauce"
+1498,2026-01-01T10:25:00,morning,weekday,
+1499,2026-01-08T04:06:00,morning,weekend,"Chicken Rice, Coffee, Nuggets"
+1500,2026-01-13T21:03:00,dinner,weekend,"Burger, Fries, Iced Tea"

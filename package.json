@@ -1,0 +1,18 @@
+{
+  "name": "combobravo-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup:frontend": "npm install --prefix frontend",
+    "setup:backend": "python -m pip install -r backend/requirements.txt",
+    "setup": "npm run setup:frontend && npm run setup:backend",
+    "train": "cd backend && python -c \"from mba_engine import run_all_datasets; run_all_datasets(3)\"",
+    "dev:backend": "cd backend && python main.py",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "npm run setup && npm run train && concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

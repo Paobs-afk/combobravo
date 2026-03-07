@@ -1,0 +1,184 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 3,
+  "n_transactions": 1500,
+  "n_unique_items": 16,
+  "drift": {
+    "drift": false,
+    "js": 0.012129981460180607
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.01,
+  "minconf_longterm": 0.45,
+  "holdout_mean_hr_longterm": 0.4,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.0,
+  "system_metrics": {
+    "avg_basket_size": 2.275333333333333,
+    "coverage_top_rules": 0.052,
+    "estimated_uplift_score": 0.0741,
+    "n_rules_blended": 2,
+    "recommendable_items": 4
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Nuggets",
+        "Sisig Rice",
+        "Iced Tea"
+      ],
+      "support": 0.015,
+      "confidence": 0.5142857142857142,
+      "lift": 2.4489795918367347,
+      "why": "strong bundle because lift=2.45 and confidence=0.51"
+    },
+    {
+      "items": [
+        "Extra Rice",
+        "Iced Tea",
+        "Sisig Rice"
+      ],
+      "support": 0.015,
+      "confidence": 0.5454545454545454,
+      "lift": 2.628696604600219,
+      "why": "strong bundle because lift=2.63 and confidence=0.55"
+    }
+  ],
+  "fbt_burger": [],
+  "cross_sell_burger": [],
+  "cart_targets": {
+    "Iced Tea": [
+      {
+        "item": "Sisig Rice",
+        "score": 0.255,
+        "confidence": 0.5454545454545454,
+        "lift": 2.628696604600219,
+        "why": "conf=0.55, lift=2.63"
+      }
+    ],
+    "Sisig Rice": [
+      {
+        "item": "Iced Tea",
+        "score": 0.595,
+        "confidence": 0.5142857142857142,
+        "lift": 2.4489795918367347,
+        "why": "conf=0.51, lift=2.45"
+      }
+    ],
+    "Nuggets": [
+      {
+        "item": "Iced Tea",
+        "score": 0.595,
+        "confidence": 0.5142857142857142,
+        "lift": 2.4489795918367347,
+        "why": "conf=0.51, lift=2.45"
+      }
+    ],
+    "Extra Rice": [
+      {
+        "item": "Sisig Rice",
+        "score": 0.255,
+        "confidence": 0.5454545454545454,
+        "lift": 2.628696604600219,
+        "why": "conf=0.55, lift=2.63"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Nuggets",
+        "Sisig Rice",
+        "Iced Tea"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.45, conf=0.51, profit~82php"
+    },
+    {
+      "bundle": [
+        "Extra Rice",
+        "Iced Tea",
+        "Sisig Rice"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.63, conf=0.55, profit~70php"
+    }
+  ],
+  "portfolio": {
+    "stable": [],
+    "emerging": [
+      {
+        "antecedents": [
+          "Extra Rice",
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Sisig Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets",
+          "Sisig Rice"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      }
+    ],
+    "fading": [
+      {
+        "antecedents": [
+          "Extra Sauce",
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Sisig Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Extra Sauce",
+          "Sisig Rice"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      }
+    ],
+    "stable_count": 0,
+    "emerging_count": 2,
+    "fading_count": 2
+  },
+  "business_insights": [
+    "Homepage anchor item should be Iced Tea based on rank score.",
+    "Most influential cross-sell rule: Nuggets, Sisig Rice -> Iced Tea.",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0121, recent-model weight set to 0.30.",
+    "Top-rule coverage is 5.2% of baskets with estimated uplift score 0.07."
+  ]
+}

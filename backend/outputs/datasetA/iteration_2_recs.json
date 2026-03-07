@@ -1,0 +1,173 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 2,
+  "n_transactions": 1000,
+  "n_unique_items": 16,
+  "drift": {
+    "drift": false,
+    "js": 0.023264015677300718
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.01,
+  "minconf_longterm": 0.55,
+  "holdout_mean_hr_longterm": 0.0,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.0,
+  "system_metrics": {
+    "avg_basket_size": 2.28,
+    "coverage_top_rules": 0.028,
+    "estimated_uplift_score": 0.04578,
+    "n_rules_blended": 2,
+    "recommendable_items": 3
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Extra Sauce",
+        "Sisig Rice",
+        "Iced Tea"
+      ],
+      "support": 0.01125,
+      "confidence": 0.6,
+      "lift": 2.874251497005988,
+      "why": "strong bundle because lift=2.87 and confidence=0.60"
+    },
+    {
+      "items": [
+        "Extra Sauce",
+        "Iced Tea",
+        "Sisig Rice"
+      ],
+      "support": 0.01125,
+      "confidence": 0.6,
+      "lift": 3.5555555555555554,
+      "why": "strong bundle because lift=3.56 and confidence=0.60"
+    }
+  ],
+  "fbt_burger": [],
+  "cross_sell_burger": [],
+  "cart_targets": {
+    "Iced Tea": [
+      {
+        "item": "Sisig Rice",
+        "score": 0.595,
+        "confidence": 0.6,
+        "lift": 3.5555555555555554,
+        "why": "conf=0.60, lift=3.56"
+      }
+    ],
+    "Sisig Rice": [
+      {
+        "item": "Iced Tea",
+        "score": 0.675,
+        "confidence": 0.6,
+        "lift": 2.874251497005988,
+        "why": "conf=0.60, lift=2.87"
+      }
+    ],
+    "Extra Sauce": [
+      {
+        "item": "Iced Tea",
+        "score": 0.675,
+        "confidence": 0.6,
+        "lift": 2.874251497005988,
+        "why": "conf=0.60, lift=2.87"
+      },
+      {
+        "item": "Sisig Rice",
+        "score": 0.595,
+        "confidence": 0.6,
+        "lift": 3.5555555555555554,
+        "why": "conf=0.60, lift=3.56"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Extra Sauce",
+        "Sisig Rice",
+        "Iced Tea"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.87, conf=0.60, profit~66php"
+    },
+    {
+      "bundle": [
+        "Extra Sauce",
+        "Iced Tea",
+        "Sisig Rice"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=3.56, conf=0.60, profit~66php"
+    }
+  ],
+  "portfolio": {
+    "stable": [],
+    "emerging": [
+      {
+        "antecedents": [
+          "Extra Sauce",
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Sisig Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Extra Sauce",
+          "Sisig Rice"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      }
+    ],
+    "fading": [
+      {
+        "antecedents": [
+          "Burger",
+          "Coffee"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      }
+    ],
+    "stable_count": 0,
+    "emerging_count": 2,
+    "fading_count": 1
+  },
+  "business_insights": [
+    "Homepage anchor item should be Iced Tea based on rank score.",
+    "Most influential cross-sell rule: Extra Sauce, Sisig Rice -> Iced Tea.",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0233, recent-model weight set to 0.30.",
+    "Top-rule coverage is 2.8% of baskets with estimated uplift score 0.05."
+  ]
+}

@@ -1,0 +1,2 @@
+antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction,support_n,conf_n,lift_n,stability,profit,profit_n,score,recent_score,blend_score,key
+"Burger, Cheese Stick",Iced Tea,0.03,0.2775,0.0225,0.75,2.7027027027027026,0.014174999999999998,2.8899999999999997,1.0,1.0,1.0,0.0,66.0,1.0,0.85,0.85,0.85,"('Burger', 'Cheese Stick')=>('Iced Tea',)"

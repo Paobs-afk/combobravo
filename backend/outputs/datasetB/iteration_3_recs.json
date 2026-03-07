@@ -1,0 +1,235 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 3,
+  "n_transactions": 1500,
+  "n_unique_items": 17,
+  "drift": {
+    "drift": false,
+    "js": 0.016588281434693077
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.02,
+  "minconf_longterm": 0.35,
+  "holdout_mean_hr_longterm": 0.35714285714285715,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.375,
+  "system_metrics": {
+    "avg_basket_size": 2.7093333333333334,
+    "coverage_top_rules": 0.212,
+    "estimated_uplift_score": 0.28478666666666663,
+    "n_rules_blended": 3,
+    "recommendable_items": 4
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Cheese Stick",
+        "Iced Tea"
+      ],
+      "support": 0.0575,
+      "confidence": 0.3791208791208791,
+      "lift": 1.4581572273879966,
+      "why": "strong bundle because lift=1.46 and confidence=0.38"
+    },
+    {
+      "items": [
+        "Donut",
+        "Iced Tea",
+        "Chicken Rice"
+      ],
+      "support": 0.03,
+      "confidence": 0.5217391304347826,
+      "lift": 2.3715415019762847,
+      "why": "strong bundle because lift=2.37 and confidence=0.52"
+    },
+    {
+      "items": [
+        "Chicken Rice",
+        "Donut",
+        "Iced Tea"
+      ],
+      "support": 0.03,
+      "confidence": 0.5217391304347826,
+      "lift": 2.1080368906455864,
+      "why": "strong bundle because lift=2.11 and confidence=0.52"
+    }
+  ],
+  "fbt_burger": [],
+  "cross_sell_burger": [],
+  "cart_targets": {
+    "Iced Tea": [
+      {
+        "item": "Chicken Rice",
+        "score": 0.255,
+        "confidence": 0.5217391304347826,
+        "lift": 2.3715415019762847,
+        "why": "conf=0.52, lift=2.37"
+      }
+    ],
+    "Chicken Rice": [
+      {
+        "item": "Iced Tea",
+        "score": 0.18,
+        "confidence": 0.5217391304347826,
+        "lift": 2.1080368906455864,
+        "why": "conf=0.52, lift=2.11"
+      }
+    ],
+    "Cheese Stick": [
+      {
+        "item": "Iced Tea",
+        "score": 0.595,
+        "confidence": 0.3791208791208791,
+        "lift": 1.4581572273879966,
+        "why": "conf=0.38, lift=1.46"
+      }
+    ],
+    "Donut": [
+      {
+        "item": "Chicken Rice",
+        "score": 0.255,
+        "confidence": 0.5217391304347826,
+        "lift": 2.3715415019762847,
+        "why": "conf=0.52, lift=2.37"
+      },
+      {
+        "item": "Iced Tea",
+        "score": 0.18,
+        "confidence": 0.5217391304347826,
+        "lift": 2.1080368906455864,
+        "why": "conf=0.52, lift=2.11"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Cheese Stick",
+        "Iced Tea"
+      ],
+      "promo": "Add-on Suggestion 15%",
+      "why": "lift=1.46, conf=0.38, profit~31php"
+    },
+    {
+      "bundle": [
+        "Donut",
+        "Iced Tea",
+        "Chicken Rice"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.37, conf=0.52, profit~69php"
+    },
+    {
+      "bundle": [
+        "Chicken Rice",
+        "Donut",
+        "Iced Tea"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=2.11, conf=0.52, profit~69php"
+    }
+  ],
+  "portfolio": {
+    "stable": [],
+    "emerging": [
+      {
+        "antecedents": [
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Chicken Rice",
+          "Donut"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Donut",
+          "Iced Tea"
+        ],
+        "consequents": [
+          "Chicken Rice"
+        ]
+      }
+    ],
+    "fading": [
+      {
+        "antecedents": [
+          "Burger",
+          "Nuggets"
+        ],
+        "consequents": [
+          "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets",
+          "Soda"
+        ],
+        "consequents": [
+          "Burger"
+        ]
+      },
+      {
+        "antecedents": [
+          "Burger",
+          "Cheese Stick"
+        ],
+        "consequents": [
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Hotdog",
+          "Sundae"
+        ],
+        "consequents": [
+          "Fries"
+        ]
+      }
+    ],
+    "stable_count": 0,
+    "emerging_count": 3,
+    "fading_count": 4
+  },
+  "business_insights": [
+    "Homepage anchor item should be Iced Tea based on rank score.",
+    "Most influential cross-sell rule: Cheese Stick -> Iced Tea.",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0166, recent-model weight set to 0.30.",
+    "Top-rule coverage is 21.2% of baskets with estimated uplift score 0.28."
+  ]
+}
