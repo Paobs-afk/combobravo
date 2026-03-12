@@ -1,0 +1,28 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Runtime outputs / caches
+backend/outputs/
+backend/.mypy_cache/
+backend/.pytest_cache/
+
+# Env files (keep backend/.env as requested)
+.env
+.env.*
+!.env.example
+!backend/.env

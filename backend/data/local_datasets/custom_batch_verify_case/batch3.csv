@@ -1,0 +1,181 @@
+tx_id,timestamp,segment,day_type,items,batch_no
+361,2026-03-12 11:10:00+00:00,morning,weekday,"Coffee, Hash Brown, Milk Tea, Pasta, Wrap",3
+362,2026-03-12 11:11:00+00:00,morning,weekday,"Burger, Hash Brown, Hotdog, Water",3
+363,2026-03-12 11:12:00+00:00,morning,weekday,"Coffee, Water",3
+364,2026-03-12 11:13:00+00:00,morning,weekday,"Chicken Rice, Hotdog, Iced Tea, Nuggets, Salad",3
+365,2026-03-12 11:14:00+00:00,morning,weekday,"Burger, Hash Brown",3
+366,2026-03-12 11:15:00+00:00,morning,weekday,"Fries, Nuggets, Salad, Water",3
+367,2026-03-12 11:16:00+00:00,morning,weekday,"Brownie, Pasta",3
+368,2026-03-12 11:17:00+00:00,morning,weekday,"Brownie, Coffee, Fries, Salad",3
+369,2026-03-12 11:18:00+00:00,morning,weekday,"Burger, Hotdog",3
+370,2026-03-12 11:19:00+00:00,morning,weekday,"Burger, Hotdog, Spaghetti",3
+371,2026-03-12 11:20:00+00:00,morning,weekday,"Fries, Hash Brown, Hotdog",3
+372,2026-03-12 11:21:00+00:00,morning,weekday,"Brownie, Hash Brown, Hotdog, Milk Tea, Pasta",3
+373,2026-03-12 11:22:00+00:00,morning,weekday,"Spaghetti, Wrap",3
+374,2026-03-12 11:23:00+00:00,lunch,weekday,"Fries, Iced Tea, Wrap",3
+375,2026-03-12 11:24:00+00:00,lunch,weekday,"Brownie, Hotdog, Milk Tea, Nuggets, Pasta",3
+376,2026-03-12 11:25:00+00:00,lunch,weekday,"Chicken Rice, Hotdog, Iced Tea",3
+377,2026-03-12 11:26:00+00:00,lunch,weekday,Pasta,3
+378,2026-03-12 11:27:00+00:00,lunch,weekday,"Milk Tea, Pasta, Salad",3
+379,2026-03-12 11:28:00+00:00,lunch,weekday,"Coffee, Salad",3
+380,2026-03-12 11:29:00+00:00,lunch,weekday,"Brownie, Milk Tea",3
+381,2026-03-12 11:30:00+00:00,lunch,weekday,"Burger, Milk Tea, Wrap",3
+382,2026-03-12 11:31:00+00:00,lunch,weekday,"Chicken Rice, Hotdog, Spaghetti",3
+383,2026-03-12 11:32:00+00:00,lunch,weekday,"Brownie, Coffee, Nuggets, Salad, Soda, Wrap",3
+384,2026-03-12 11:33:00+00:00,lunch,weekday,"Brownie, Coffee, Pasta, Wrap",3
+385,2026-03-12 11:34:00+00:00,lunch,weekday,Fries,3
+386,2026-03-12 11:35:00+00:00,lunch,weekday,"Brownie, Coffee, Fries, Salad",3
+387,2026-03-12 11:36:00+00:00,lunch,weekday,"Brownie, Hotdog",3
+388,2026-03-12 11:37:00+00:00,lunch,weekday,Brownie,3
+389,2026-03-12 11:38:00+00:00,lunch,weekday,"Brownie, Burger, Iced Tea",3
+390,2026-03-12 11:39:00+00:00,lunch,weekday,"Hash Brown, Soda",3
+391,2026-03-12 11:40:00+00:00,lunch,weekday,"Brownie, Pasta",3
+392,2026-03-12 11:41:00+00:00,lunch,weekday,"Brownie, Soda",3
+393,2026-03-12 11:42:00+00:00,lunch,weekday,Chicken Rice,3
+394,2026-03-12 11:43:00+00:00,lunch,weekday,"Burger, Milk Tea, Salad",3
+395,2026-03-12 11:44:00+00:00,dinner,weekday,"Burger, Chicken Rice, Hash Brown, Hotdog",3
+396,2026-03-12 11:45:00+00:00,dinner,weekday,Burger,3
+397,2026-03-12 11:46:00+00:00,dinner,weekday,"Fries, Water",3
+398,2026-03-12 11:47:00+00:00,dinner,weekday,"Burger, Hash Brown",3
+399,2026-03-12 11:48:00+00:00,dinner,weekday,"Chicken Rice, Iced Tea, Spaghetti",3
+400,2026-03-12 11:49:00+00:00,dinner,weekday,"Brownie, Coffee, Milk Tea, Nuggets, Salad",3
+401,2026-03-12 11:50:00+00:00,dinner,weekday,"Fries, Pasta",3
+402,2026-03-12 11:51:00+00:00,dinner,weekday,"Hotdog, Nuggets, Wrap",3
+403,2026-03-12 11:52:00+00:00,dinner,weekday,Salad,3
+404,2026-03-12 11:53:00+00:00,dinner,weekday,"Nuggets, Soda",3
+405,2026-03-12 11:54:00+00:00,dinner,weekday,"Coffee, Water",3
+406,2026-03-12 11:55:00+00:00,dinner,weekday,Spaghetti,3
+407,2026-03-12 11:56:00+00:00,dinner,weekday,"Chicken Rice, Hotdog, Iced Tea, Wrap",3
+408,2026-03-12 11:57:00+00:00,dinner,weekday,"Brownie, Soda",3
+409,2026-03-12 11:58:00+00:00,dinner,weekday,"Chicken Rice, Nuggets, Salad",3
+410,2026-03-12 11:59:00+00:00,dinner,weekday,"Chicken Rice, Hash Brown, Milk Tea, Wrap",3
+411,2026-03-12 12:00:00+00:00,dinner,weekday,"Spaghetti, Water",3
+412,2026-03-12 12:01:00+00:00,dinner,weekday,"Fries, Hash Brown, Salad",3
+413,2026-03-12 12:02:00+00:00,dinner,weekday,Soda,3
+414,2026-03-12 12:03:00+00:00,dinner,weekday,"Brownie, Coffee, Iced Tea, Spaghetti",3
+415,2026-03-12 12:04:00+00:00,dinner,weekday,"Brownie, Salad, Water",3
+416,2026-03-12 12:05:00+00:00,dinner,weekday,"Fries, Hotdog, Iced Tea, Milk Tea, Wrap",3
+417,2026-03-12 12:06:00+00:00,dinner,weekday,"Salad, Soda",3
+418,2026-03-12 12:07:00+00:00,dinner,weekday,"Fries, Pasta",3
+419,2026-03-12 12:08:00+00:00,dinner,weekday,"Brownie, Salad",3
+420,2026-03-12 12:09:00+00:00,dinner,weekday,"Burger, Hotdog, Wrap",3
+421,2026-03-12 12:10:00+00:00,dinner,weekday,"Iced Tea, Water",3
+422,2026-03-12 12:11:00+00:00,dinner,weekday,"Burger, Hash Brown, Water, Wrap",3
+423,2026-03-12 12:12:00+00:00,dinner,weekday,"Iced Tea, Pasta",3
+424,2026-03-12 12:13:00+00:00,dinner,weekday,"Chicken Rice, Iced Tea",3
+425,2026-03-12 12:14:00+00:00,dinner,weekday,"Milk Tea, Wrap",3
+426,2026-03-12 12:15:00+00:00,dinner,weekday,"Coffee, Fries, Hash Brown",3
+427,2026-03-12 12:16:00+00:00,dinner,weekday,"Chicken Rice, Coffee, Iced Tea",3
+428,2026-03-12 12:17:00+00:00,dinner,weekday,"Soda, Spaghetti",3
+429,2026-03-12 12:18:00+00:00,dinner,weekday,"Brownie, Coffee",3
+430,2026-03-12 12:19:00+00:00,dinner,weekday,"Chicken Rice, Fries, Soda",3
+431,2026-03-12 12:20:00+00:00,dinner,weekday,"Burger, Chicken Rice, Hash Brown",3
+432,2026-03-12 12:21:00+00:00,dinner,weekday,"Chicken Rice, Fries, Hotdog, Iced Tea, Water",3
+433,2026-03-12 12:22:00+00:00,dinner,weekday,"Nuggets, Spaghetti",3
+434,2026-03-12 12:23:00+00:00,dinner,weekday,"Chicken Rice, Fries, Pasta",3
+435,2026-03-12 12:24:00+00:00,dinner,weekday,"Burger, Wrap",3
+436,2026-03-12 12:25:00+00:00,dinner,weekday,"Milk Tea, Pasta",3
+437,2026-03-12 12:26:00+00:00,morning,weekday,"Burger, Milk Tea",3
+438,2026-03-12 12:27:00+00:00,morning,weekday,Hash Brown,3
+439,2026-03-12 12:28:00+00:00,morning,weekday,"Brownie, Chicken Rice, Coffee, Fries",3
+440,2026-03-12 12:29:00+00:00,morning,weekday,Hotdog,3
+441,2026-03-12 12:30:00+00:00,morning,weekday,"Fries, Milk Tea, Water, Wrap",3
+442,2026-03-12 12:31:00+00:00,morning,weekday,"Pasta, Water",3
+443,2026-03-12 12:32:00+00:00,morning,weekday,"Burger, Fries, Hash Brown, Iced Tea, Soda",3
+444,2026-03-12 12:33:00+00:00,morning,weekday,"Chicken Rice, Coffee, Iced Tea",3
+445,2026-03-12 12:34:00+00:00,morning,weekday,"Hash Brown, Wrap",3
+446,2026-03-12 12:35:00+00:00,morning,weekday,"Brownie, Wrap",3
+447,2026-03-12 12:36:00+00:00,morning,weekday,"Fries, Hash Brown, Pasta",3
+448,2026-03-12 12:37:00+00:00,morning,weekday,"Chicken Rice, Fries, Iced Tea, Pasta, Spaghetti",3
+449,2026-03-12 12:38:00+00:00,morning,weekday,"Fries, Hotdog",3
+450,2026-03-12 12:39:00+00:00,morning,weekday,"Brownie, Coffee, Hash Brown, Hotdog, Spaghetti",3
+451,2026-03-12 12:40:00+00:00,morning,weekday,"Fries, Milk Tea, Nuggets",3
+452,2026-03-12 12:41:00+00:00,morning,weekday,"Milk Tea, Salad, Spaghetti, Wrap",3
+453,2026-03-12 12:42:00+00:00,morning,weekday,"Burger, Fries, Hash Brown, Pasta, Wrap",3
+454,2026-03-12 12:43:00+00:00,morning,weekday,"Hash Brown, Salad, Spaghetti",3
+455,2026-03-12 12:44:00+00:00,morning,weekday,"Brownie, Chicken Rice, Hotdog, Pasta",3
+456,2026-03-12 12:45:00+00:00,morning,weekday,"Milk Tea, Wrap",3
+457,2026-03-12 12:46:00+00:00,morning,weekday,"Pasta, Spaghetti",3
+458,2026-03-12 12:47:00+00:00,morning,weekday,"Fries, Hotdog, Iced Tea, Water",3
+459,2026-03-12 12:48:00+00:00,lunch,weekday,"Brownie, Coffee, Hash Brown, Hotdog, Pasta, Wrap",3
+460,2026-03-12 12:49:00+00:00,lunch,weekday,Milk Tea,3
+461,2026-03-12 12:50:00+00:00,lunch,weekday,"Iced Tea, Wrap",3
+462,2026-03-12 12:51:00+00:00,lunch,weekday,"Chicken Rice, Coffee, Hash Brown, Milk Tea, Wrap",3
+463,2026-03-12 12:52:00+00:00,lunch,weekday,"Chicken Rice, Water",3
+464,2026-03-12 12:53:00+00:00,lunch,weekday,"Coffee, Nuggets, Pasta",3
+465,2026-03-12 12:54:00+00:00,lunch,weekday,Fries,3
+466,2026-03-12 12:55:00+00:00,lunch,weekday,"Burger, Chicken Rice, Hotdog, Iced Tea",3
+467,2026-03-12 12:56:00+00:00,lunch,weekday,"Brownie, Nuggets, Pasta, Water",3
+468,2026-03-12 12:57:00+00:00,lunch,weekday,"Chicken Rice, Hash Brown, Hotdog, Iced Tea",3
+469,2026-03-12 12:58:00+00:00,lunch,weekday,"Hash Brown, Salad",3
+470,2026-03-12 12:59:00+00:00,lunch,weekday,"Hash Brown, Nuggets",3
+471,2026-03-12 13:00:00+00:00,lunch,weekday,"Brownie, Coffee, Salad",3
+472,2026-03-12 13:01:00+00:00,lunch,weekday,"Brownie, Milk Tea, Salad, Wrap",3
+473,2026-03-12 13:02:00+00:00,lunch,weekday,"Burger, Hash Brown, Iced Tea, Soda",3
+474,2026-03-12 13:03:00+00:00,lunch,weekday,"Brownie, Chicken Rice, Fries, Iced Tea",3
+475,2026-03-12 13:04:00+00:00,lunch,weekday,"Hash Brown, Milk Tea, Salad, Wrap",3
+476,2026-03-12 13:05:00+00:00,lunch,weekday,"Milk Tea, Pasta, Soda, Wrap",3
+477,2026-03-12 13:06:00+00:00,lunch,weekday,Soda,3
+478,2026-03-12 13:07:00+00:00,lunch,weekday,"Burger, Chicken Rice, Coffee, Iced Tea",3
+479,2026-03-12 13:08:00+00:00,lunch,weekday,"Salad, Wrap",3
+480,2026-03-12 13:09:00+00:00,dinner,weekday,Chicken Rice,3
+481,2026-03-12 13:10:00+00:00,dinner,weekday,"Brownie, Fries",3
+482,2026-03-12 13:11:00+00:00,dinner,weekday,"Brownie, Burger, Coffee, Soda",3
+483,2026-03-12 13:12:00+00:00,dinner,weekday,Salad,3
+484,2026-03-12 13:13:00+00:00,dinner,weekday,Nuggets,3
+485,2026-03-12 13:14:00+00:00,dinner,weekday,"Brownie, Burger, Coffee, Hotdog",3
+486,2026-03-12 13:15:00+00:00,dinner,weekday,"Brownie, Coffee, Spaghetti, Water",3
+487,2026-03-12 13:16:00+00:00,dinner,weekday,"Brownie, Burger, Chicken Rice",3
+488,2026-03-12 13:17:00+00:00,dinner,weekday,"Burger, Water",3
+489,2026-03-12 13:18:00+00:00,dinner,weekday,"Milk Tea, Soda",3
+490,2026-03-12 13:19:00+00:00,dinner,weekday,"Burger, Iced Tea, Water",3
+491,2026-03-12 13:20:00+00:00,dinner,weekday,"Coffee, Salad, Wrap",3
+492,2026-03-12 13:21:00+00:00,dinner,weekday,"Burger, Hash Brown",3
+493,2026-03-12 13:22:00+00:00,dinner,weekday,"Fries, Water",3
+494,2026-03-12 13:23:00+00:00,dinner,weekday,"Burger, Hash Brown, Iced Tea, Salad",3
+495,2026-03-12 13:24:00+00:00,dinner,weekday,"Brownie, Fries, Wrap",3
+496,2026-03-12 13:25:00+00:00,dinner,weekday,"Chicken Rice, Iced Tea, Milk Tea, Pasta",3
+497,2026-03-12 13:26:00+00:00,dinner,weekday,"Salad, Water",3
+498,2026-03-12 13:27:00+00:00,dinner,weekday,"Chicken Rice, Coffee, Iced Tea, Pasta",3
+499,2026-03-12 13:28:00+00:00,dinner,weekday,"Brownie, Fries, Hotdog, Pasta, Water",3
+500,2026-03-12 13:29:00+00:00,dinner,weekday,"Brownie, Chicken Rice, Coffee, Iced Tea, Pasta",3
+501,2026-03-12 13:30:00+00:00,dinner,weekday,"Chicken Rice, Hotdog, Milk Tea, Pasta, Wrap",3
+502,2026-03-12 13:31:00+00:00,dinner,weekday,"Milk Tea, Pasta, Spaghetti",3
+503,2026-03-12 13:32:00+00:00,dinner,weekday,"Brownie, Burger, Coffee",3
+504,2026-03-12 13:33:00+00:00,dinner,weekday,"Brownie, Fries, Iced Tea, Pasta",3
+505,2026-03-12 13:34:00+00:00,dinner,weekday,"Brownie, Coffee, Fries, Hotdog, Pasta, Wrap",3
+506,2026-03-12 13:35:00+00:00,dinner,weekday,"Brownie, Iced Tea, Pasta, Spaghetti, Water",3
+507,2026-03-12 13:36:00+00:00,dinner,weekday,"Chicken Rice, Water",3
+508,2026-03-12 13:37:00+00:00,dinner,weekday,Spaghetti,3
+509,2026-03-12 13:38:00+00:00,dinner,weekday,"Hotdog, Pasta",3
+510,2026-03-12 13:39:00+00:00,dinner,weekday,"Coffee, Soda",3
+511,2026-03-12 13:40:00+00:00,dinner,weekday,"Fries, Hash Brown",3
+512,2026-03-12 13:41:00+00:00,dinner,weekday,"Brownie, Coffee, Pasta, Salad, Water, Wrap",3
+513,2026-03-12 13:42:00+00:00,dinner,weekday,"Pasta, Water",3
+514,2026-03-12 13:43:00+00:00,dinner,weekday,"Milk Tea, Salad, Water, Wrap",3
+515,2026-03-12 13:44:00+00:00,dinner,weekday,"Brownie, Coffee, Milk Tea, Nuggets, Salad",3
+516,2026-03-12 13:45:00+00:00,dinner,weekday,"Hotdog, Iced Tea",3
+517,2026-03-12 13:46:00+00:00,dinner,weekday,Milk Tea,3
+518,2026-03-12 13:47:00+00:00,dinner,weekday,"Brownie, Chicken Rice, Milk Tea",3
+519,2026-03-12 13:48:00+00:00,dinner,weekday,Wrap,3
+520,2026-03-12 13:49:00+00:00,dinner,weekday,"Coffee, Pasta",3
+521,2026-03-12 13:50:00+00:00,dinner,weekday,"Coffee, Milk Tea, Water, Wrap",3
+522,2026-03-12 13:51:00+00:00,morning,weekday,"Burger, Coffee, Hash Brown, Hotdog",3
+523,2026-03-12 13:52:00+00:00,morning,weekday,"Brownie, Coffee, Fries, Hotdog, Iced Tea",3
+524,2026-03-12 13:53:00+00:00,morning,weekday,"Brownie, Coffee, Spaghetti, Wrap",3
+525,2026-03-12 13:54:00+00:00,morning,weekday,"Brownie, Hotdog, Milk Tea, Wrap",3
+526,2026-03-12 13:55:00+00:00,morning,weekday,"Milk Tea, Soda, Spaghetti, Wrap",3
+527,2026-03-12 13:56:00+00:00,morning,weekday,"Brownie, Burger, Nuggets, Pasta, Wrap",3
+528,2026-03-12 13:57:00+00:00,morning,weekday,"Iced Tea, Milk Tea, Nuggets, Wrap",3
+529,2026-03-12 13:58:00+00:00,morning,weekday,"Burger, Hash Brown, Soda",3
+530,2026-03-12 13:59:00+00:00,morning,weekday,"Chicken Rice, Coffee, Pasta",3
+531,2026-03-12 14:00:00+00:00,morning,weekday,"Milk Tea, Soda, Water, Wrap",3
+532,2026-03-12 14:01:00+00:00,morning,weekday,"Burger, Chicken Rice, Soda",3
+533,2026-03-12 14:02:00+00:00,morning,weekday,"Brownie, Coffee, Water",3
+534,2026-03-12 14:03:00+00:00,morning,weekday,"Nuggets, Water",3
+535,2026-03-12 14:04:00+00:00,morning,weekday,"Chicken Rice, Hotdog, Iced Tea, Nuggets",3
+536,2026-03-12 14:05:00+00:00,morning,weekday,"Burger, Chicken Rice, Hotdog, Iced Tea, Water",3
+537,2026-03-12 14:06:00+00:00,morning,weekday,"Iced Tea, Milk Tea, Salad, Spaghetti, Wrap",3
+538,2026-03-12 14:07:00+00:00,morning,weekday,"Chicken Rice, Milk Tea, Pasta, Water, Wrap",3
+539,2026-03-12 14:08:00+00:00,morning,weekday,"Chicken Rice, Fries, Hotdog, Iced Tea",3
+540,2026-03-12 14:09:00+00:00,morning,weekday,"Coffee, Soda",3

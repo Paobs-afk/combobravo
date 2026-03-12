@@ -1,0 +1,181 @@
+tx_id,timestamp,segment,day_type,items,batch_no
+181,2026-02-01 08:00:00+00:00,morning,weekend,"Burger, Chicken Rice, Iced Tea, Sundae, Water",2
+182,2026-02-01 08:17:00+00:00,morning,weekend,"Burger, Fries, Lumpia, Sisig Rice, Soda",2
+183,2026-02-01 08:34:00+00:00,morning,weekend,"Burger, Lumpia, Spaghetti",2
+184,2026-02-01 08:51:00+00:00,morning,weekend,"Donut, Spaghetti",2
+185,2026-02-01 09:08:00+00:00,morning,weekend,"Chicken Rice, Iced Tea, Sisig Rice, Sundae",2
+186,2026-02-01 09:25:00+00:00,morning,weekend,"Fries, Iced Tea, Sisig Rice, Soda",2
+187,2026-02-01 09:42:00+00:00,morning,weekend,"Extra Sauce, Fries, Spaghetti",2
+188,2026-02-01 09:59:00+00:00,morning,weekend,"Extra Rice, Lumpia",2
+189,2026-02-01 10:16:00+00:00,morning,weekend,"Cheese Stick, Chicken Rice, Iced Tea, Lumpia, Sundae",2
+190,2026-02-01 10:33:00+00:00,morning,weekend,"Extra Rice, Fries, Nuggets, Sisig Rice, Soda",2
+191,2026-02-01 10:50:00+00:00,morning,weekend,"Spaghetti, Sundae",2
+192,2026-02-01 11:07:00+00:00,lunch,weekend,"Chicken Rice, Fries, Nuggets, Spaghetti, Sundae",2
+193,2026-02-01 11:24:00+00:00,lunch,weekend,"Chicken Rice, Coffee, Donut, Nuggets",2
+194,2026-02-01 11:41:00+00:00,lunch,weekend,"Donut, Fries, Sisig Rice, Soda",2
+195,2026-02-01 11:58:00+00:00,lunch,weekend,"Cheese Stick, Coffee, Fries, Iced Tea, Nuggets",2
+196,2026-02-01 12:15:00+00:00,lunch,weekend,Spaghetti,2
+197,2026-02-01 12:32:00+00:00,lunch,weekend,"Chicken Rice, Donut, Iced Tea",2
+198,2026-02-01 12:49:00+00:00,lunch,weekend,Fries,2
+199,2026-02-01 13:06:00+00:00,lunch,weekend,Chicken Rice,2
+200,2026-02-01 13:23:00+00:00,lunch,weekend,"Fries, Nuggets, Sisig Rice, Soda",2
+201,2026-02-01 13:40:00+00:00,lunch,weekend,"Burger, Coffee, Fries, Sundae",2
+202,2026-02-01 13:57:00+00:00,lunch,weekend,"Donut, Spaghetti",2
+203,2026-02-01 14:14:00+00:00,lunch,weekend,"Burger, Extra Rice",2
+204,2026-02-01 14:31:00+00:00,lunch,weekend,"Burger, Cheese Stick, Donut, Spaghetti",2
+205,2026-02-01 14:48:00+00:00,lunch,weekend,"Chicken Rice, Iced Tea, Sisig Rice, Soda",2
+206,2026-02-01 15:05:00+00:00,lunch,weekend,"Burger, Chicken Rice, Lumpia",2
+207,2026-02-01 15:22:00+00:00,lunch,weekend,"Burger, Iced Tea, Lumpia, Spaghetti",2
+208,2026-02-01 15:39:00+00:00,lunch,weekend,Cheese Stick,2
+209,2026-02-01 15:56:00+00:00,lunch,weekend,"Coffee, Nuggets, Soda, Water",2
+210,2026-02-01 16:13:00+00:00,lunch,weekend,Extra Rice,2
+211,2026-02-01 16:30:00+00:00,lunch,weekend,"Cheese Stick, Sisig Rice, Sundae, Water",2
+212,2026-02-01 16:47:00+00:00,lunch,weekend,"Cheese Stick, Chicken Rice, Extra Sauce, Iced Tea, Spaghetti",2
+213,2026-02-01 17:04:00+00:00,dinner,weekend,"Burger, Fries, Lumpia, Nuggets",2
+214,2026-02-01 17:21:00+00:00,dinner,weekend,Soda,2
+215,2026-02-01 17:38:00+00:00,dinner,weekend,"Fries, Iced Tea, Nuggets, Soda, Spaghetti",2
+216,2026-02-01 17:55:00+00:00,dinner,weekend,"Cheese Stick, Nuggets",2
+217,2026-02-01 18:12:00+00:00,dinner,weekend,"Coffee, Fries, Iced Tea, Nuggets",2
+218,2026-02-01 18:29:00+00:00,dinner,weekend,"Coffee, Extra Sauce, Fries",2
+219,2026-02-01 18:46:00+00:00,dinner,weekend,Donut,2
+220,2026-02-01 19:03:00+00:00,dinner,weekend,"Cheese Stick, Extra Sauce, Fries, Iced Tea, Nuggets",2
+221,2026-02-01 19:20:00+00:00,dinner,weekend,"Extra Sauce, Iced Tea",2
+222,2026-02-01 19:37:00+00:00,dinner,weekend,"Iced Tea, Spaghetti",2
+223,2026-02-01 19:54:00+00:00,dinner,weekend,"Cheese Stick, Nuggets, Sisig Rice, Soda",2
+224,2026-02-01 20:11:00+00:00,dinner,weekend,Burger,2
+225,2026-02-01 20:28:00+00:00,dinner,weekend,"Extra Sauce, Lumpia, Spaghetti, Water",2
+226,2026-02-01 20:45:00+00:00,dinner,weekend,"Burger, Fries, Sisig Rice, Water",2
+227,2026-02-01 21:02:00+00:00,dinner,weekend,"Burger, Coffee, Fries, Nuggets",2
+228,2026-02-01 21:19:00+00:00,dinner,weekend,"Burger, Chicken Rice, Iced Tea, Spaghetti",2
+229,2026-02-01 21:36:00+00:00,dinner,weekend,"Lumpia, Nuggets, Spaghetti",2
+230,2026-02-01 21:53:00+00:00,dinner,weekend,"Coffee, Sisig Rice, Soda",2
+231,2026-02-01 22:10:00+00:00,dinner,weekend,"Iced Tea, Spaghetti",2
+232,2026-02-01 22:27:00+00:00,dinner,weekend,"Sisig Rice, Soda, Spaghetti",2
+233,2026-02-01 22:44:00+00:00,dinner,weekend,"Burger, Lumpia, Nuggets, Soda",2
+234,2026-02-01 23:01:00+00:00,dinner,weekend,"Extra Sauce, Iced Tea, Sisig Rice, Soda, Spaghetti",2
+235,2026-02-01 23:18:00+00:00,dinner,weekend,"Lumpia, Soda, Spaghetti, Sundae, Water",2
+236,2026-02-01 23:35:00+00:00,dinner,weekend,"Burger, Coffee, Extra Rice",2
+237,2026-02-01 23:52:00+00:00,dinner,weekend,"Burger, Extra Sauce, Fries, Iced Tea, Soda, Water",2
+238,2026-02-02 00:09:00+00:00,dinner,weekday,Lumpia,2
+239,2026-02-02 00:26:00+00:00,dinner,weekday,"Coffee, Extra Sauce, Sisig Rice",2
+240,2026-02-02 00:43:00+00:00,dinner,weekday,"Extra Sauce, Spaghetti",2
+241,2026-02-02 01:00:00+00:00,dinner,weekday,Extra Rice,2
+242,2026-02-02 01:17:00+00:00,dinner,weekday,Coffee,2
+243,2026-02-02 01:34:00+00:00,dinner,weekday,"Fries, Nuggets, Soda, Spaghetti, Sundae",2
+244,2026-02-02 01:51:00+00:00,dinner,weekday,"Sisig Rice, Soda, Water",2
+245,2026-02-02 02:08:00+00:00,dinner,weekday,"Sisig Rice, Water",2
+246,2026-02-02 02:25:00+00:00,dinner,weekday,"Chicken Rice, Extra Sauce, Fries, Iced Tea",2
+247,2026-02-02 02:42:00+00:00,dinner,weekday,"Extra Rice, Lumpia",2
+248,2026-02-02 02:59:00+00:00,dinner,weekday,"Donut, Extra Rice, Nuggets, Soda",2
+249,2026-02-02 03:16:00+00:00,dinner,weekday,"Burger, Chicken Rice, Soda, Sundae",2
+250,2026-02-02 03:33:00+00:00,dinner,weekday,"Burger, Fries, Nuggets, Water",2
+251,2026-02-02 03:50:00+00:00,dinner,weekday,"Cheese Stick, Fries, Nuggets",2
+252,2026-02-02 04:07:00+00:00,dinner,weekday,"Burger, Iced Tea, Nuggets",2
+253,2026-02-02 04:24:00+00:00,dinner,weekday,"Extra Rice, Sisig Rice, Soda, Spaghetti",2
+254,2026-02-02 04:41:00+00:00,dinner,weekday,"Burger, Coffee, Sisig Rice, Soda",2
+255,2026-02-02 04:58:00+00:00,dinner,weekday,"Burger, Fries, Lumpia, Sisig Rice, Soda, Spaghetti",2
+256,2026-02-02 05:15:00+00:00,morning,weekday,"Cheese Stick, Fries, Iced Tea, Lumpia, Nuggets, Sisig Rice",2
+257,2026-02-02 05:32:00+00:00,morning,weekday,"Cheese Stick, Chicken Rice, Fries, Sisig Rice",2
+258,2026-02-02 05:49:00+00:00,morning,weekday,"Cheese Stick, Coffee, Extra Rice, Fries",2
+259,2026-02-02 06:06:00+00:00,morning,weekday,"Coffee, Fries, Lumpia, Nuggets",2
+260,2026-02-02 06:23:00+00:00,morning,weekday,"Cheese Stick, Sisig Rice",2
+261,2026-02-02 06:40:00+00:00,morning,weekday,"Chicken Rice, Lumpia",2
+262,2026-02-02 06:57:00+00:00,morning,weekday,"Burger, Nuggets, Water",2
+263,2026-02-02 07:14:00+00:00,morning,weekday,"Chicken Rice, Coffee, Extra Sauce, Iced Tea, Nuggets",2
+264,2026-02-02 07:31:00+00:00,morning,weekday,"Chicken Rice, Coffee, Fries, Lumpia, Spaghetti",2
+265,2026-02-02 07:48:00+00:00,morning,weekday,"Chicken Rice, Coffee, Iced Tea, Nuggets, Water",2
+266,2026-02-02 08:05:00+00:00,morning,weekday,Cheese Stick,2
+267,2026-02-02 08:22:00+00:00,morning,weekday,"Coffee, Extra Sauce, Sisig Rice",2
+268,2026-02-02 08:39:00+00:00,morning,weekday,"Burger, Donut, Nuggets, Sisig Rice",2
+269,2026-02-02 08:56:00+00:00,morning,weekday,"Donut, Iced Tea, Lumpia, Sisig Rice, Spaghetti",2
+270,2026-02-02 09:13:00+00:00,morning,weekday,"Fries, Iced Tea, Nuggets",2
+271,2026-02-02 09:30:00+00:00,morning,weekday,"Coffee, Donut, Lumpia, Nuggets",2
+272,2026-02-02 09:47:00+00:00,morning,weekday,"Cheese Stick, Extra Rice, Nuggets, Spaghetti",2
+273,2026-02-02 10:04:00+00:00,morning,weekday,"Cheese Stick, Nuggets, Water",2
+274,2026-02-02 10:21:00+00:00,morning,weekday,"Chicken Rice, Donut, Extra Sauce, Iced Tea, Spaghetti",2
+275,2026-02-02 10:38:00+00:00,morning,weekday,"Lumpia, Sisig Rice, Soda",2
+276,2026-02-02 10:55:00+00:00,morning,weekday,"Chicken Rice, Iced Tea, Soda, Water",2
+277,2026-02-02 11:12:00+00:00,lunch,weekday,"Extra Rice, Fries, Nuggets",2
+278,2026-02-02 11:29:00+00:00,lunch,weekday,"Extra Rice, Sisig Rice",2
+279,2026-02-02 11:46:00+00:00,lunch,weekday,"Burger, Donut, Extra Rice",2
+280,2026-02-02 12:03:00+00:00,lunch,weekday,"Sundae, Water",2
+281,2026-02-02 12:20:00+00:00,lunch,weekday,"Extra Rice, Spaghetti, Sundae",2
+282,2026-02-02 12:37:00+00:00,lunch,weekday,"Cheese Stick, Fries, Iced Tea, Nuggets",2
+283,2026-02-02 12:54:00+00:00,lunch,weekday,"Donut, Nuggets, Sundae",2
+284,2026-02-02 13:11:00+00:00,lunch,weekday,"Burger, Extra Sauce, Lumpia, Sisig Rice",2
+285,2026-02-02 13:28:00+00:00,lunch,weekday,"Extra Rice, Fries, Nuggets",2
+286,2026-02-02 13:45:00+00:00,lunch,weekday,"Coffee, Iced Tea, Sisig Rice, Soda",2
+287,2026-02-02 14:02:00+00:00,lunch,weekday,"Extra Rice, Water",2
+288,2026-02-02 14:19:00+00:00,lunch,weekday,"Burger, Chicken Rice, Fries",2
+289,2026-02-02 14:36:00+00:00,lunch,weekday,"Burger, Extra Sauce, Iced Tea",2
+290,2026-02-02 14:53:00+00:00,lunch,weekday,"Cheese Stick, Nuggets, Soda",2
+291,2026-02-02 15:10:00+00:00,lunch,weekday,"Nuggets, Sisig Rice",2
+292,2026-02-02 15:27:00+00:00,lunch,weekday,"Chicken Rice, Extra Sauce, Lumpia",2
+293,2026-02-02 15:44:00+00:00,lunch,weekday,"Chicken Rice, Fries, Water",2
+294,2026-02-02 16:01:00+00:00,lunch,weekday,"Chicken Rice, Donut, Iced Tea, Sisig Rice, Sundae",2
+295,2026-02-02 16:18:00+00:00,lunch,weekday,"Donut, Iced Tea, Lumpia",2
+296,2026-02-02 16:35:00+00:00,lunch,weekday,"Coffee, Extra Rice, Lumpia, Spaghetti",2
+297,2026-02-02 16:52:00+00:00,lunch,weekday,Extra Rice,2
+298,2026-02-02 17:09:00+00:00,dinner,weekday,Sundae,2
+299,2026-02-02 17:26:00+00:00,dinner,weekday,"Sisig Rice, Soda, Water",2
+300,2026-02-02 17:43:00+00:00,dinner,weekday,"Cheese Stick, Donut, Lumpia, Spaghetti",2
+301,2026-02-02 18:00:00+00:00,dinner,weekday,"Chicken Rice, Spaghetti",2
+302,2026-02-02 18:17:00+00:00,dinner,weekday,"Fries, Nuggets, Soda, Water",2
+303,2026-02-02 18:34:00+00:00,dinner,weekday,"Burger, Coffee, Nuggets",2
+304,2026-02-02 18:51:00+00:00,dinner,weekday,"Chicken Rice, Sisig Rice",2
+305,2026-02-02 19:08:00+00:00,dinner,weekday,"Cheese Stick, Chicken Rice, Iced Tea, Spaghetti",2
+306,2026-02-02 19:25:00+00:00,dinner,weekday,"Cheese Stick, Donut, Fries, Nuggets, Spaghetti",2
+307,2026-02-02 19:42:00+00:00,dinner,weekday,"Burger, Fries, Nuggets",2
+308,2026-02-02 19:59:00+00:00,dinner,weekday,"Nuggets, Sundae",2
+309,2026-02-02 20:16:00+00:00,dinner,weekday,"Chicken Rice, Coffee",2
+310,2026-02-02 20:33:00+00:00,dinner,weekday,"Chicken Rice, Iced Tea, Spaghetti",2
+311,2026-02-02 20:50:00+00:00,dinner,weekday,"Chicken Rice, Extra Sauce, Iced Tea",2
+312,2026-02-02 21:07:00+00:00,dinner,weekday,"Fries, Lumpia",2
+313,2026-02-02 21:24:00+00:00,dinner,weekday,"Lumpia, Soda, Spaghetti, Sundae",2
+314,2026-02-02 21:41:00+00:00,dinner,weekday,Fries,2
+315,2026-02-02 21:58:00+00:00,dinner,weekday,"Coffee, Extra Rice, Water",2
+316,2026-02-02 22:15:00+00:00,dinner,weekday,Burger,2
+317,2026-02-02 22:32:00+00:00,dinner,weekday,"Burger, Chicken Rice, Extra Sauce, Fries",2
+318,2026-02-02 22:49:00+00:00,dinner,weekday,"Burger, Extra Rice, Fries, Iced Tea",2
+319,2026-02-02 23:06:00+00:00,dinner,weekday,"Donut, Soda, Water",2
+320,2026-02-02 23:23:00+00:00,dinner,weekday,"Fries, Nuggets",2
+321,2026-02-02 23:40:00+00:00,dinner,weekday,"Donut, Nuggets",2
+322,2026-02-02 23:57:00+00:00,dinner,weekday,"Extra Rice, Water",2
+323,2026-02-03 00:14:00+00:00,dinner,weekday,Iced Tea,2
+324,2026-02-03 00:31:00+00:00,dinner,weekday,"Sisig Rice, Water",2
+325,2026-02-03 00:48:00+00:00,dinner,weekday,Chicken Rice,2
+326,2026-02-03 01:05:00+00:00,dinner,weekday,"Extra Rice, Lumpia, Spaghetti",2
+327,2026-02-03 01:22:00+00:00,dinner,weekday,Lumpia,2
+328,2026-02-03 01:39:00+00:00,dinner,weekday,"Coffee, Extra Sauce, Fries, Sisig Rice",2
+329,2026-02-03 01:56:00+00:00,dinner,weekday,"Cheese Stick, Chicken Rice, Fries, Sisig Rice",2
+330,2026-02-03 02:13:00+00:00,dinner,weekday,"Burger, Cheese Stick, Soda",2
+331,2026-02-03 02:30:00+00:00,dinner,weekday,"Fries, Lumpia, Nuggets, Sisig Rice, Soda",2
+332,2026-02-03 02:47:00+00:00,dinner,weekday,"Cheese Stick, Fries, Lumpia, Nuggets",2
+333,2026-02-03 03:04:00+00:00,dinner,weekday,"Burger, Fries, Iced Tea",2
+334,2026-02-03 03:21:00+00:00,dinner,weekday,"Burger, Coffee, Donut",2
+335,2026-02-03 03:38:00+00:00,dinner,weekday,"Chicken Rice, Nuggets",2
+336,2026-02-03 03:55:00+00:00,dinner,weekday,"Coffee, Extra Rice",2
+337,2026-02-03 04:12:00+00:00,dinner,weekday,"Burger, Cheese Stick, Chicken Rice, Extra Sauce, Sisig Rice",2
+338,2026-02-03 04:29:00+00:00,dinner,weekday,"Cheese Stick, Water",2
+339,2026-02-03 04:46:00+00:00,dinner,weekday,"Fries, Nuggets, Sisig Rice, Soda",2
+340,2026-02-03 05:03:00+00:00,morning,weekday,"Burger, Donut, Extra Rice, Spaghetti",2
+341,2026-02-03 05:20:00+00:00,morning,weekday,"Burger, Extra Rice, Sisig Rice, Soda",2
+342,2026-02-03 05:37:00+00:00,morning,weekday,"Donut, Extra Sauce, Sisig Rice, Soda",2
+343,2026-02-03 05:54:00+00:00,morning,weekday,"Cheese Stick, Extra Sauce, Nuggets, Spaghetti, Sundae",2
+344,2026-02-03 06:11:00+00:00,morning,weekday,"Burger, Lumpia, Spaghetti",2
+345,2026-02-03 06:28:00+00:00,morning,weekday,"Burger, Fries, Iced Tea",2
+346,2026-02-03 06:45:00+00:00,morning,weekday,"Lumpia, Sisig Rice, Soda",2
+347,2026-02-03 07:02:00+00:00,morning,weekday,"Cheese Stick, Chicken Rice, Iced Tea",2
+348,2026-02-03 07:19:00+00:00,morning,weekday,"Cheese Stick, Extra Rice, Fries, Water",2
+349,2026-02-03 07:36:00+00:00,morning,weekday,"Burger, Coffee, Donut, Extra Sauce, Fries",2
+350,2026-02-03 07:53:00+00:00,morning,weekday,"Cheese Stick, Extra Rice, Lumpia, Spaghetti",2
+351,2026-02-03 08:10:00+00:00,morning,weekday,"Donut, Nuggets",2
+352,2026-02-03 08:27:00+00:00,morning,weekday,"Fries, Lumpia, Nuggets, Sisig Rice",2
+353,2026-02-03 08:44:00+00:00,morning,weekday,"Coffee, Donut, Sisig Rice",2
+354,2026-02-03 09:01:00+00:00,morning,weekday,"Burger, Lumpia, Nuggets, Spaghetti, Water",2
+355,2026-02-03 09:18:00+00:00,morning,weekday,"Extra Sauce, Fries, Nuggets",2
+356,2026-02-03 09:35:00+00:00,morning,weekday,"Sisig Rice, Soda, Water",2
+357,2026-02-03 09:52:00+00:00,morning,weekday,"Chicken Rice, Extra Rice, Soda",2
+358,2026-02-03 10:09:00+00:00,morning,weekday,"Chicken Rice, Coffee, Donut",2
+359,2026-02-03 10:26:00+00:00,morning,weekday,"Cheese Stick, Fries, Lumpia, Sisig Rice",2
+360,2026-02-03 10:43:00+00:00,morning,weekday,"Donut, Extra Rice, Fries",2

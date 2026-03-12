@@ -1,0 +1,51 @@
+tx_id,timestamp,segment,day_type,items,batch_no
+1,2026-03-01 15:30:00+00:00,lunch,weekend,"Chicken Rice, Iced Tea, Milk Tea",1
+2,2026-03-01 15:41:00+00:00,lunch,weekend,"Fries, Soda, Nuggets, Donut",1
+3,2026-03-01 15:52:00+00:00,lunch,weekend,"Spaghetti, Coffee, Lumpia, Sundae, Pasta",1
+4,2026-03-01 16:03:00+00:00,lunch,weekend,"Iced Tea, Milk Tea",1
+5,2026-03-01 16:14:00+00:00,lunch,weekend,"Soda, Nuggets, Donut",1
+6,2026-03-01 16:25:00+00:00,lunch,weekend,"Coffee, Lumpia, Sundae, Pasta",1
+7,2026-03-01 16:36:00+00:00,lunch,weekend,"Milk Tea, Hash Brown, Salad, Sisig Rice, Brownie",1
+8,2026-03-01 16:47:00+00:00,lunch,weekend,"Nuggets, Donut",1
+9,2026-03-01 16:58:00+00:00,lunch,weekend,"Lumpia, Sundae, Pasta",1
+10,2026-03-01 17:09:00+00:00,dinner,weekend,"Hash Brown, Salad, Sisig Rice, Brownie",1
+11,2026-03-01 17:20:00+00:00,dinner,weekend,"Donut, Wrap, Hotdog, Burger, Spaghetti",1
+12,2026-03-01 17:31:00+00:00,dinner,weekend,"Sundae, Pasta",1
+13,2026-03-01 17:42:00+00:00,dinner,weekend,"Salad, Sisig Rice, Brownie",1
+14,2026-03-01 17:53:00+00:00,dinner,weekend,"Wrap, Hotdog, Burger, Spaghetti",1
+15,2026-03-01 18:04:00+00:00,dinner,weekend,"Pasta, Water, Chicken Rice, Iced Tea, Milk Tea",1
+16,2026-03-01 18:15:00+00:00,dinner,weekend,"Sisig Rice, Brownie",1
+17,2026-03-01 18:26:00+00:00,dinner,weekend,"Hotdog, Burger, Spaghetti",1
+18,2026-03-01 18:37:00+00:00,dinner,weekend,"Water, Chicken Rice, Iced Tea, Milk Tea",1
+19,2026-03-01 18:48:00+00:00,dinner,weekend,"Brownie, Fries, Soda, Nuggets, Donut",1
+20,2026-03-01 18:59:00+00:00,dinner,weekend,"Burger, Spaghetti",1
+21,2026-03-01 19:10:00+00:00,dinner,weekend,"Chicken Rice, Iced Tea, Milk Tea",1
+22,2026-03-01 19:21:00+00:00,dinner,weekend,"Fries, Soda, Nuggets, Donut",1
+23,2026-03-01 19:32:00+00:00,dinner,weekend,"Spaghetti, Coffee, Lumpia, Sundae, Pasta",1
+24,2026-03-01 19:43:00+00:00,dinner,weekend,"Iced Tea, Milk Tea",1
+25,2026-03-01 19:54:00+00:00,dinner,weekend,"Soda, Nuggets, Donut",1
+26,2026-03-01 20:05:00+00:00,dinner,weekend,"Coffee, Lumpia, Sundae, Pasta",1
+27,2026-03-01 20:16:00+00:00,dinner,weekend,"Milk Tea, Hash Brown, Salad, Sisig Rice, Brownie",1
+28,2026-03-01 20:27:00+00:00,dinner,weekend,"Nuggets, Donut",1
+29,2026-03-01 20:38:00+00:00,dinner,weekend,"Lumpia, Sundae, Pasta",1
+30,2026-03-01 20:49:00+00:00,dinner,weekend,"Hash Brown, Salad, Sisig Rice, Brownie",1
+31,2026-03-01 21:00:00+00:00,dinner,weekend,"Donut, Wrap, Hotdog, Burger, Spaghetti",1
+32,2026-03-01 21:11:00+00:00,dinner,weekend,"Sundae, Pasta",1
+33,2026-03-01 21:22:00+00:00,dinner,weekend,"Salad, Sisig Rice, Brownie",1
+34,2026-03-01 21:33:00+00:00,dinner,weekend,"Wrap, Hotdog, Burger, Spaghetti",1
+35,2026-03-01 21:44:00+00:00,dinner,weekend,"Pasta, Water, Chicken Rice, Iced Tea, Milk Tea",1
+36,2026-03-01 21:55:00+00:00,dinner,weekend,"Sisig Rice, Brownie",1
+37,2026-03-01 22:06:00+00:00,dinner,weekend,"Hotdog, Burger, Spaghetti",1
+38,2026-03-01 22:17:00+00:00,dinner,weekend,"Water, Chicken Rice, Iced Tea, Milk Tea",1
+39,2026-03-01 22:28:00+00:00,dinner,weekend,"Brownie, Fries, Soda, Nuggets, Donut",1
+40,2026-03-01 22:39:00+00:00,dinner,weekend,"Burger, Spaghetti",1
+41,2026-03-01 22:50:00+00:00,dinner,weekend,"Chicken Rice, Iced Tea, Milk Tea",1
+42,2026-03-01 23:01:00+00:00,dinner,weekend,"Fries, Soda, Nuggets, Donut",1
+43,2026-03-01 23:12:00+00:00,dinner,weekend,"Spaghetti, Coffee, Lumpia, Sundae, Pasta",1
+44,2026-03-01 23:23:00+00:00,dinner,weekend,"Iced Tea, Milk Tea",1
+45,2026-03-01 23:34:00+00:00,dinner,weekend,"Soda, Nuggets, Donut",1
+46,2026-03-01 23:45:00+00:00,dinner,weekend,"Coffee, Lumpia, Sundae, Pasta",1
+47,2026-03-01 23:56:00+00:00,dinner,weekend,"Milk Tea, Hash Brown, Salad, Sisig Rice, Brownie",1
+48,2026-03-02 00:07:00+00:00,dinner,weekday,"Nuggets, Donut",1
+49,2026-03-02 00:18:00+00:00,dinner,weekday,"Lumpia, Sundae, Pasta",1
+50,2026-03-02 00:29:00+00:00,dinner,weekday,"Hash Brown, Salad, Sisig Rice, Brownie",1

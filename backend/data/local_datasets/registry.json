@@ -1,0 +1,8 @@
+{
+  "custom_batch_test": {
+    "label": "batch_test"
+  },
+  "custom_batch_verify_case": {
+    "label": "batch_verify_case"
+  }
+}

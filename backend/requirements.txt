@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+mlxtend
+scipy
+numpy
+supabase
+python-dotenv
+matplotlib
