@@ -1,0 +1,2 @@
+antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction,support_n,conf_n,lift_n,stability,profit,profit_n,score,recent_score,blend_score,key
+"Extra Sauce, Sisig Rice",Iced Tea,0.015228426395939087,0.2131979695431472,0.01015228426395939,0.6666666666666666,3.126984126984127,0.00690561467700791,2.360406091370558,1.0,1.0,1.0,0.0,66.0,1.0,0.85,0.85,0.85,"('Extra Sauce', 'Sisig Rice')=>('Iced Tea',)"

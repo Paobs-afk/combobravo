@@ -1,0 +1,1228 @@
+{
+  "business": {
+    "scenario": "Restaurant kiosk recommender backend",
+    "users": [
+      "owner",
+      "cashier",
+      "admin",
+      "customer"
+    ],
+    "decisions": [
+      "combo creation",
+      "cross-sell prompts at checkout",
+      "homepage item ordering",
+      "promo strategy"
+    ],
+    "value": "higher average order value and faster recommendation updates from new transactions"
+  },
+  "algorithm_notes": {
+    "primary_engine": "fp_growth",
+    "diff_vs_apriori": "FP-Growth compresses transactions into an FP-tree and avoids generating all candidate itemsets.",
+    "why_fit": "The datasets have 1,000+ transactions with dense food baskets, so FP-Growth scales better in speed and memory."
+  },
+  "iteration": 1,
+  "n_transactions": 400,
+  "n_unique_items": 25,
+  "drift": {
+    "drift": false,
+    "js": 0.0
+  },
+  "blend": {
+    "w_long": 0.7,
+    "w_recent": 0.3
+  },
+  "engine_longterm": "fp_growth",
+  "minsup_longterm": 0.02,
+  "minconf_longterm": 0.25,
+  "holdout_mean_hr_longterm": 0.9394704856909826,
+  "engine_recent": "fp_growth",
+  "holdout_mean_hr_recent": 0.9394704856909826,
+  "system_metrics": {
+    "avg_basket_size": 3.5025,
+    "coverage_top_rules": 0.8575,
+    "estimated_uplift_score": 1.0,
+    "n_rules_blended": 61,
+    "recommendable_items": 10
+  },
+  "top_bundles": [
+    {
+      "items": [
+        "Extra Rice",
+        "Fruit Juice",
+        "Fish Fillet"
+      ],
+      "support": 0.234375,
+      "confidence": 1.0,
+      "lift": 3.9024390243902443,
+      "leverage": 0.17431640625,
+      "conviction": 999.0,
+      "why": "strong bundle because lift=3.90 and confidence=1.00"
+    },
+    {
+      "items": [
+        "Extra Rice",
+        "Fish Fillet",
+        "Fruit Juice"
+      ],
+      "support": 0.234375,
+      "confidence": 1.0,
+      "lift": 3.8554216867469875,
+      "leverage": 0.173583984375,
+      "conviction": 999.0,
+      "why": "strong bundle because lift=3.86 and confidence=1.00"
+    },
+    {
+      "items": [
+        "Burger",
+        "Iced Tea",
+        "Nuggets"
+      ],
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 6.153846153846153,
+      "leverage": 0.12039062499999999,
+      "conviction": 999.0,
+      "why": "strong bundle because lift=6.15 and confidence=1.00"
+    },
+    {
+      "items": [
+        "Coffee",
+        "Pasta",
+        "Brownie"
+      ],
+      "support": 0.1875,
+      "confidence": 1.0,
+      "lift": 4.776119402985074,
+      "leverage": 0.1482421875,
+      "conviction": 999.0,
+      "why": "strong bundle because lift=4.78 and confidence=1.00"
+    },
+    {
+      "items": [
+        "Extra Rice",
+        "Soda",
+        "Fried Chicken"
+      ],
+      "support": 0.215625,
+      "confidence": 1.0,
+      "lift": 4.0506329113924044,
+      "leverage": 0.16239257812500002,
+      "conviction": 999.0,
+      "why": "strong bundle because lift=4.05 and confidence=1.00"
+    }
+  ],
+  "top_rules_full_measures": [
+    {
+      "antecedents": [
+        "Extra Rice",
+        "Fruit Juice"
+      ],
+      "consequents": [
+        "Fish Fillet"
+      ],
+      "support": 0.234375,
+      "confidence": 1.0,
+      "lift": 3.9024390243902443,
+      "leverage": 0.17431640625,
+      "conviction": 999.0,
+      "blend_score": 0.7375449820071971
+    },
+    {
+      "antecedents": [
+        "Extra Rice",
+        "Fish Fillet"
+      ],
+      "consequents": [
+        "Fruit Juice"
+      ],
+      "support": 0.234375,
+      "confidence": 1.0,
+      "lift": 3.8554216867469875,
+      "leverage": 0.173583984375,
+      "conviction": 999.0,
+      "blend_score": 0.7351965238001184
+    },
+    {
+      "antecedents": [
+        "Burger",
+        "Iced Tea"
+      ],
+      "consequents": [
+        "Nuggets"
+      ],
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 6.153846153846153,
+      "leverage": 0.12039062499999999,
+      "conviction": 999.0,
+      "blend_score": 0.7262443438914028
+    },
+    {
+      "antecedents": [
+        "Coffee",
+        "Pasta"
+      ],
+      "consequents": [
+        "Brownie"
+      ],
+      "support": 0.1875,
+      "confidence": 1.0,
+      "lift": 4.776119402985074,
+      "leverage": 0.1482421875,
+      "conviction": 999.0,
+      "blend_score": 0.7199725785679815
+    },
+    {
+      "antecedents": [
+        "Extra Rice",
+        "Soda"
+      ],
+      "consequents": [
+        "Fried Chicken"
+      ],
+      "support": 0.215625,
+      "confidence": 1.0,
+      "lift": 4.0506329113924044,
+      "leverage": 0.16239257812500002,
+      "conviction": 999.0,
+      "blend_score": 0.7050778034116045
+    },
+    {
+      "antecedents": [
+        "Brownie",
+        "Coffee"
+      ],
+      "consequents": [
+        "Pasta"
+      ],
+      "support": 0.1875,
+      "confidence": 0.9836065573770493,
+      "lift": 4.49648711943794,
+      "leverage": 0.14580078125,
+      "conviction": 47.65625000000027,
+      "blend_score": 0.6968978216911252
+    },
+    {
+      "antecedents": [
+        "Brownie",
+        "Pasta"
+      ],
+      "consequents": [
+        "Coffee"
+      ],
+      "support": 0.1875,
+      "confidence": 0.9836065573770493,
+      "lift": 4.49648711943794,
+      "leverage": 0.14580078125,
+      "conviction": 47.65625000000027,
+      "blend_score": 0.6968978216911252
+    },
+    {
+      "antecedents": [
+        "Burger",
+        "Nuggets"
+      ],
+      "consequents": [
+        "Iced Tea"
+      ],
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 5.517241379310345,
+      "leverage": 0.1176953125,
+      "conviction": 999.0,
+      "blend_score": 0.6944467181141274
+    },
+    {
+      "antecedents": [
+        "Iced Tea",
+        "Nuggets"
+      ],
+      "consequents": [
+        "Burger"
+      ],
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 5.517241379310345,
+      "leverage": 0.1176953125,
+      "conviction": 999.0,
+      "blend_score": 0.6944467181141274
+    },
+    {
+      "antecedents": [
+        "Fish Fillet"
+      ],
+      "consequents": [
+        "Extra Rice",
+        "Fruit Juice"
+      ],
+      "support": 0.234375,
+      "confidence": 0.9146341463414634,
+      "lift": 3.9024390243902443,
+      "leverage": 0.17431640625,
+      "conviction": 8.968750000000004,
+      "blend_score": 0.6901195077524546
+    },
+    {
+      "antecedents": [
+        "Soda"
+      ],
+      "consequents": [
+        "Extra Rice",
+        "Fried Chicken"
+      ],
+      "support": 0.215625,
+      "confidence": 0.9583333333333334,
+      "lift": 4.200913242009133,
+      "leverage": 0.164296875,
+      "conviction": 18.525000000000016,
+      "blend_score": 0.6894359730068638
+    },
+    {
+      "antecedents": [
+        "Extra Rice",
+        "Fried Chicken"
+      ],
+      "consequents": [
+        "Soda"
+      ],
+      "support": 0.215625,
+      "confidence": 0.9452054794520549,
+      "lift": 4.200913242009133,
+      "leverage": 0.164296875,
+      "conviction": 14.14375000000003,
+      "blend_score": 0.6821427208505979
+    }
+  ],
+  "homepage_ranking_preview": [
+    {
+      "item": "Extra Rice",
+      "pop": 183,
+      "impact": 7.8393692869464555,
+      "rank_score": 2.0
+    },
+    {
+      "item": "Pasta",
+      "pop": 97,
+      "impact": 4.267067674744164,
+      "rank_score": 1.0672084073557038
+    },
+    {
+      "item": "Coffee",
+      "pop": 95,
+      "impact": 4.255529213205702,
+      "rank_score": 1.0578350314347091
+    },
+    {
+      "item": "Brownie",
+      "pop": 92,
+      "impact": 4.268741447181121,
+      "rank_score": 1.0490307348189338
+    },
+    {
+      "item": "Fish Fillet",
+      "pop": 110,
+      "impact": 3.8735059337401894,
+      "rank_score": 1.047445396433637
+    },
+    {
+      "item": "Fruit Juice",
+      "pop": 107,
+      "impact": 3.8581212865487102,
+      "rank_score": 1.033716495788862
+    },
+    {
+      "item": "Burger",
+      "pop": 76,
+      "impact": 4.024455630335766,
+      "rank_score": 0.9478719194118412
+    },
+    {
+      "item": "Iced Tea",
+      "pop": 74,
+      "impact": 4.050994091874228,
+      "rank_score": 0.9450556840301295
+    },
+    {
+      "item": "Fried Chicken",
+      "pop": 91,
+      "impact": 3.6736688460762252,
+      "rank_score": 0.942861450385037
+    },
+    {
+      "item": "Nuggets",
+      "pop": 67,
+      "impact": 4.03558766829774,
+      "rank_score": 0.9165503060507681
+    }
+  ],
+  "fbt_widget": {
+    "anchor_item": "Burger",
+    "suggestions": [
+      {
+        "item": "Nuggets",
+        "score": 0.7262443438914028,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 6.153846153846153,
+        "leverage": 0.12039062499999999,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=6.15"
+      },
+      {
+        "item": "Iced Tea",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Lumpia",
+        "score": 0.3057587719298245,
+        "support": 0.015,
+        "confidence": 0.07894736842105263,
+        "lift": 1.7543859649122806,
+        "leverage": 0.006449999999999999,
+        "conviction": 1.036857142857143,
+        "why": "pair signal: conf=0.08, lift=1.75"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.4986149584487535,
+        "leverage": -0.022625,
+        "conviction": 0.8649253731343284,
+        "why": "pair signal: conf=0.12, lift=0.50"
+      },
+      {
+        "item": "Pasta",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.48833423765599565,
+        "leverage": -0.023575,
+        "conviction": 0.8592537313432836,
+        "why": "pair signal: conf=0.12, lift=0.49"
+      }
+    ]
+  },
+  "cross_sell_widget": {
+    "cart_item": "Burger",
+    "suggestions": [
+      {
+        "item": "Nuggets",
+        "score": 0.7262443438914028,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 6.153846153846153,
+        "leverage": 0.12039062499999999,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=6.15"
+      },
+      {
+        "item": "Iced Tea",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Lumpia",
+        "score": 0.3057587719298245,
+        "support": 0.015,
+        "confidence": 0.07894736842105263,
+        "lift": 1.7543859649122806,
+        "leverage": 0.006449999999999999,
+        "conviction": 1.036857142857143,
+        "why": "pair signal: conf=0.08, lift=1.75"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.4986149584487535,
+        "leverage": -0.022625,
+        "conviction": 0.8649253731343284,
+        "why": "pair signal: conf=0.12, lift=0.50"
+      },
+      {
+        "item": "Pasta",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.48833423765599565,
+        "leverage": -0.023575,
+        "conviction": 0.8592537313432836,
+        "why": "pair signal: conf=0.12, lift=0.49"
+      }
+    ]
+  },
+  "fbt_burger": [
+    {
+      "item": "Nuggets",
+      "score": 0.7262443438914028,
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 6.153846153846153,
+      "leverage": 0.12039062499999999,
+      "conviction": 999.0,
+      "why": "rule signal: conf=1.00, lift=6.15"
+    },
+    {
+      "item": "Iced Tea",
+      "score": 0.6944467181141274,
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 5.517241379310345,
+      "leverage": 0.1176953125,
+      "conviction": 999.0,
+      "why": "rule signal: conf=1.00, lift=5.52"
+    },
+    {
+      "item": "Lumpia",
+      "score": 0.3057587719298245,
+      "support": 0.015,
+      "confidence": 0.07894736842105263,
+      "lift": 1.7543859649122806,
+      "leverage": 0.006449999999999999,
+      "conviction": 1.036857142857143,
+      "why": "pair signal: conf=0.08, lift=1.75"
+    },
+    {
+      "item": "Coffee",
+      "score": 0.06258552631578947,
+      "support": 0.0225,
+      "confidence": 0.11842105263157894,
+      "lift": 0.4986149584487535,
+      "leverage": -0.022625,
+      "conviction": 0.8649253731343284,
+      "why": "pair signal: conf=0.12, lift=0.50"
+    },
+    {
+      "item": "Pasta",
+      "score": 0.06258552631578947,
+      "support": 0.0225,
+      "confidence": 0.11842105263157894,
+      "lift": 0.48833423765599565,
+      "leverage": -0.023575,
+      "conviction": 0.8592537313432836,
+      "why": "pair signal: conf=0.12, lift=0.49"
+    }
+  ],
+  "cross_sell_burger": [
+    {
+      "item": "Nuggets",
+      "score": 0.7262443438914028,
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 6.153846153846153,
+      "leverage": 0.12039062499999999,
+      "conviction": 999.0,
+      "why": "rule signal: conf=1.00, lift=6.15"
+    },
+    {
+      "item": "Iced Tea",
+      "score": 0.6944467181141274,
+      "support": 0.14375,
+      "confidence": 1.0,
+      "lift": 5.517241379310345,
+      "leverage": 0.1176953125,
+      "conviction": 999.0,
+      "why": "rule signal: conf=1.00, lift=5.52"
+    },
+    {
+      "item": "Lumpia",
+      "score": 0.3057587719298245,
+      "support": 0.015,
+      "confidence": 0.07894736842105263,
+      "lift": 1.7543859649122806,
+      "leverage": 0.006449999999999999,
+      "conviction": 1.036857142857143,
+      "why": "pair signal: conf=0.08, lift=1.75"
+    },
+    {
+      "item": "Coffee",
+      "score": 0.06258552631578947,
+      "support": 0.0225,
+      "confidence": 0.11842105263157894,
+      "lift": 0.4986149584487535,
+      "leverage": -0.022625,
+      "conviction": 0.8649253731343284,
+      "why": "pair signal: conf=0.12, lift=0.50"
+    },
+    {
+      "item": "Pasta",
+      "score": 0.06258552631578947,
+      "support": 0.0225,
+      "confidence": 0.11842105263157894,
+      "lift": 0.48833423765599565,
+      "leverage": -0.023575,
+      "conviction": 0.8592537313432836,
+      "why": "pair signal: conf=0.12, lift=0.49"
+    }
+  ],
+  "cart_targets": {
+    "Extra Rice": [
+      {
+        "item": "Fish Fillet",
+        "score": 0.7375449820071971,
+        "support": 0.234375,
+        "confidence": 1.0,
+        "lift": 3.9024390243902443,
+        "leverage": 0.17431640625,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=3.90"
+      },
+      {
+        "item": "Fruit Juice",
+        "score": 0.7351965238001184,
+        "support": 0.234375,
+        "confidence": 1.0,
+        "lift": 3.8554216867469875,
+        "leverage": 0.173583984375,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=3.86"
+      },
+      {
+        "item": "Fried Chicken",
+        "score": 0.7050778034116045,
+        "support": 0.215625,
+        "confidence": 1.0,
+        "lift": 4.0506329113924044,
+        "leverage": 0.16239257812500002,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=4.05"
+      },
+      {
+        "item": "Soda",
+        "score": 0.6821427208505979,
+        "support": 0.215625,
+        "confidence": 0.9452054794520549,
+        "lift": 4.200913242009133,
+        "leverage": 0.164296875,
+        "conviction": 14.14375000000003,
+        "why": "rule signal: conf=0.95, lift=4.20"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.040394125683060104,
+        "support": 0.0325,
+        "confidence": 0.07103825136612021,
+        "lift": 0.31572556162720095,
+        "leverage": -0.0704375,
+        "conviction": 0.8342647058823529,
+        "why": "pair signal: conf=0.07, lift=0.32"
+      }
+    ],
+    "Pasta": [
+      {
+        "item": "Brownie",
+        "score": 0.7199725785679815,
+        "support": 0.1875,
+        "confidence": 1.0,
+        "lift": 4.776119402985074,
+        "leverage": 0.1482421875,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=4.78"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.6968978216911252,
+        "support": 0.1875,
+        "confidence": 0.9836065573770493,
+        "lift": 4.49648711943794,
+        "leverage": 0.14580078125,
+        "conviction": 47.65625000000027,
+        "why": "rule signal: conf=0.98, lift=4.50"
+      },
+      {
+        "item": "Burger",
+        "score": 0.04976675257731959,
+        "support": 0.0225,
+        "confidence": 0.09278350515463918,
+        "lift": 0.48833423765599565,
+        "leverage": -0.023575,
+        "conviction": 0.8928409090909092,
+        "why": "pair signal: conf=0.09, lift=0.49"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.04976675257731959,
+        "support": 0.0225,
+        "confidence": 0.09278350515463918,
+        "lift": 0.41237113402061853,
+        "leverage": -0.0320625,
+        "conviction": 0.8542613636363636,
+        "why": "pair signal: conf=0.09, lift=0.41"
+      },
+      {
+        "item": "Nuggets",
+        "score": 0.033177835051546395,
+        "support": 0.015,
+        "confidence": 0.061855670103092786,
+        "lift": 0.36928758270503154,
+        "leverage": -0.025618750000000003,
+        "conviction": 0.8873901098901099,
+        "why": "pair signal: conf=0.06, lift=0.37"
+      }
+    ],
+    "Coffee": [
+      {
+        "item": "Brownie",
+        "score": 0.7199725785679815,
+        "support": 0.1875,
+        "confidence": 1.0,
+        "lift": 4.776119402985074,
+        "leverage": 0.1482421875,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=4.78"
+      },
+      {
+        "item": "Pasta",
+        "score": 0.6968978216911252,
+        "support": 0.1875,
+        "confidence": 0.9836065573770493,
+        "lift": 4.49648711943794,
+        "leverage": 0.14580078125,
+        "conviction": 47.65625000000027,
+        "why": "rule signal: conf=0.98, lift=4.50"
+      },
+      {
+        "item": "Burger",
+        "score": 0.050743421052631583,
+        "support": 0.0225,
+        "confidence": 0.09473684210526316,
+        "lift": 0.4986149584487535,
+        "leverage": -0.022625,
+        "conviction": 0.8947674418604651,
+        "why": "pair signal: conf=0.09, lift=0.50"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.04510526315789474,
+        "support": 0.02,
+        "confidence": 0.08421052631578947,
+        "lift": 0.3742690058479532,
+        "leverage": -0.033437499999999995,
+        "conviction": 0.846264367816092,
+        "why": "pair signal: conf=0.08, lift=0.37"
+      },
+      {
+        "item": "Fruit Juice",
+        "score": 0.04510526315789474,
+        "support": 0.02,
+        "confidence": 0.08421052631578947,
+        "lift": 0.31480570585341855,
+        "leverage": -0.043531249999999994,
+        "conviction": 0.7998563218390804,
+        "why": "pair signal: conf=0.08, lift=0.31"
+      }
+    ],
+    "Brownie": [
+      {
+        "item": "Pasta",
+        "score": 0.6968978216911252,
+        "support": 0.1875,
+        "confidence": 0.9836065573770493,
+        "lift": 4.49648711943794,
+        "leverage": 0.14580078125,
+        "conviction": 47.65625000000027,
+        "why": "rule signal: conf=0.98, lift=4.50"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.6968978216911252,
+        "support": 0.1875,
+        "confidence": 0.9836065573770493,
+        "lift": 4.49648711943794,
+        "leverage": 0.14580078125,
+        "conviction": 47.65625000000027,
+        "why": "rule signal: conf=0.98, lift=4.50"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.04066847826086957,
+        "support": 0.0175,
+        "confidence": 0.07608695652173914,
+        "lift": 0.33816425120772947,
+        "leverage": -0.03425,
+        "conviction": 0.8388235294117647,
+        "why": "pair signal: conf=0.08, lift=0.34"
+      },
+      {
+        "item": "Burger",
+        "score": 0.034858695652173914,
+        "support": 0.015,
+        "confidence": 0.06521739130434782,
+        "lift": 0.34324942791762014,
+        "leverage": -0.028700000000000003,
+        "conviction": 0.8665116279069768,
+        "why": "pair signal: conf=0.07, lift=0.34"
+      },
+      {
+        "item": "Milk Tea",
+        "score": 0.034858695652173914,
+        "support": 0.015,
+        "confidence": 0.06521739130434782,
+        "lift": 0.2964426877470356,
+        "leverage": -0.0356,
+        "conviction": 0.8344186046511628,
+        "why": "pair signal: conf=0.07, lift=0.30"
+      }
+    ],
+    "Fish Fillet": [
+      {
+        "item": "Fruit Juice",
+        "score": 0.7351965238001184,
+        "support": 0.234375,
+        "confidence": 1.0,
+        "lift": 3.8554216867469875,
+        "leverage": 0.173583984375,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=3.86"
+      },
+      {
+        "item": "Extra Rice",
+        "score": 0.6901195077524546,
+        "support": 0.234375,
+        "confidence": 0.9146341463414634,
+        "lift": 3.9024390243902443,
+        "leverage": 0.17431640625,
+        "conviction": 8.968750000000004,
+        "why": "rule signal: conf=0.91, lift=3.90"
+      },
+      {
+        "item": "Chicken Rice",
+        "score": 0.06134090909090906,
+        "support": 0.015,
+        "confidence": 0.05454545454545454,
+        "lift": 1.0909090909090908,
+        "leverage": 0.0012499999999999976,
+        "conviction": 1.0048076923076923,
+        "why": "pair signal: conf=0.05, lift=1.09"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.04920454545454546,
+        "support": 0.025,
+        "confidence": 0.09090909090909091,
+        "lift": 0.40404040404040403,
+        "leverage": -0.036875000000000005,
+        "conviction": 0.8525,
+        "why": "pair signal: conf=0.09, lift=0.40"
+      },
+      {
+        "item": "Cheese Stick",
+        "score": 0.04893382352941179,
+        "support": 0.0125,
+        "confidence": 0.045454545454545456,
+        "lift": 1.0695187165775402,
+        "leverage": 0.000812499999999999,
+        "conviction": 1.003095238095238,
+        "why": "pair signal: conf=0.05, lift=1.07"
+      }
+    ],
+    "Fruit Juice": [
+      {
+        "item": "Fish Fillet",
+        "score": 0.7375449820071971,
+        "support": 0.234375,
+        "confidence": 1.0,
+        "lift": 3.9024390243902443,
+        "leverage": 0.17431640625,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=3.90"
+      },
+      {
+        "item": "Extra Rice",
+        "score": 0.681649000373077,
+        "support": 0.234375,
+        "confidence": 0.9036144578313252,
+        "lift": 3.8554216867469875,
+        "leverage": 0.173583984375,
+        "conviction": 7.943359374999993,
+        "why": "rule signal: conf=0.90, lift=3.86"
+      },
+      {
+        "item": "Cheese Stick",
+        "score": 0.14207957669048926,
+        "support": 0.015,
+        "confidence": 0.056074766355140186,
+        "lift": 1.319406267179769,
+        "leverage": 0.0036312499999999973,
+        "conviction": 1.0143811881188118,
+        "why": "pair signal: conf=0.06, lift=1.32"
+      },
+      {
+        "item": "Spring Rolls",
+        "score": 0.04038317757009346,
+        "support": 0.02,
+        "confidence": 0.07476635514018691,
+        "lift": 0.33229491173416403,
+        "leverage": -0.0401875,
+        "conviction": 0.8376262626262626,
+        "why": "pair signal: conf=0.07, lift=0.33"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.04038317757009346,
+        "support": 0.02,
+        "confidence": 0.07476635514018691,
+        "lift": 0.3148057058534186,
+        "leverage": -0.043531249999999994,
+        "conviction": 0.8241161616161615,
+        "why": "pair signal: conf=0.07, lift=0.31"
+      }
+    ],
+    "Burger": [
+      {
+        "item": "Nuggets",
+        "score": 0.7262443438914028,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 6.153846153846153,
+        "leverage": 0.12039062499999999,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=6.15"
+      },
+      {
+        "item": "Iced Tea",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Lumpia",
+        "score": 0.3057587719298245,
+        "support": 0.015,
+        "confidence": 0.07894736842105263,
+        "lift": 1.7543859649122806,
+        "leverage": 0.006449999999999999,
+        "conviction": 1.036857142857143,
+        "why": "pair signal: conf=0.08, lift=1.75"
+      },
+      {
+        "item": "Coffee",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.4986149584487535,
+        "leverage": -0.022625,
+        "conviction": 0.8649253731343284,
+        "why": "pair signal: conf=0.12, lift=0.50"
+      },
+      {
+        "item": "Pasta",
+        "score": 0.06258552631578947,
+        "support": 0.0225,
+        "confidence": 0.11842105263157894,
+        "lift": 0.48833423765599565,
+        "leverage": -0.023575,
+        "conviction": 0.8592537313432836,
+        "why": "pair signal: conf=0.12, lift=0.49"
+      }
+    ],
+    "Iced Tea": [
+      {
+        "item": "Nuggets",
+        "score": 0.7262443438914028,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 6.153846153846153,
+        "leverage": 0.12039062499999999,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=6.15"
+      },
+      {
+        "item": "Burger",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Fries",
+        "score": 0.26064760914760915,
+        "support": 0.01,
+        "confidence": 0.05405405405405406,
+        "lift": 1.6632016632016633,
+        "leverage": 0.0039875,
+        "conviction": 1.0227857142857144,
+        "why": "pair signal: conf=0.05, lift=1.66"
+      },
+      {
+        "item": "Lumpia",
+        "score": 0.21118430930930934,
+        "support": 0.0125,
+        "confidence": 0.06756756756756757,
+        "lift": 1.5015015015015016,
+        "leverage": 0.004175000000000002,
+        "conviction": 1.0242028985507245,
+        "why": "pair signal: conf=0.07, lift=1.50"
+      },
+      {
+        "item": "Cheese Stick",
+        "score": 0.12367806041335454,
+        "support": 0.01,
+        "confidence": 0.05405405405405406,
+        "lift": 1.2718600953895072,
+        "leverage": 0.0021375000000000005,
+        "conviction": 1.0122142857142857,
+        "why": "pair signal: conf=0.05, lift=1.27"
+      }
+    ],
+    "Fried Chicken": [
+      {
+        "item": "Soda",
+        "score": 0.6821427208505979,
+        "support": 0.215625,
+        "confidence": 0.9452054794520549,
+        "lift": 4.200913242009133,
+        "leverage": 0.164296875,
+        "conviction": 14.14375000000003,
+        "why": "rule signal: conf=0.95, lift=4.20"
+      },
+      {
+        "item": "Extra Rice",
+        "score": 0.6347543153665975,
+        "support": 0.215625,
+        "confidence": 0.8734177215189873,
+        "lift": 4.0506329113924044,
+        "leverage": 0.16239257812500002,
+        "conviction": 6.1965625,
+        "why": "rule signal: conf=0.87, lift=4.05"
+      },
+      {
+        "item": "Chicken Rice",
+        "score": 0.1467554945054945,
+        "support": 0.015,
+        "confidence": 0.06593406593406594,
+        "lift": 1.3186813186813187,
+        "leverage": 0.003624999999999998,
+        "conviction": 1.0170588235294118,
+        "why": "pair signal: conf=0.07, lift=1.32"
+      },
+      {
+        "item": "Iced Tea",
+        "score": 0.05282554945054945,
+        "support": 0.0225,
+        "confidence": 0.0989010989010989,
+        "lift": 0.5346005346005346,
+        "leverage": -0.0195875,
+        "conviction": 0.9044512195121951,
+        "why": "pair signal: conf=0.10, lift=0.53"
+      },
+      {
+        "item": "Milk Tea",
+        "score": 0.041086538461538466,
+        "support": 0.0175,
+        "confidence": 0.07692307692307693,
+        "lift": 0.3496503496503497,
+        "leverage": -0.03255,
+        "conviction": 0.845,
+        "why": "pair signal: conf=0.08, lift=0.35"
+      }
+    ],
+    "Nuggets": [
+      {
+        "item": "Iced Tea",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Burger",
+        "score": 0.6944467181141274,
+        "support": 0.14375,
+        "confidence": 1.0,
+        "lift": 5.517241379310345,
+        "leverage": 0.1176953125,
+        "conviction": 999.0,
+        "why": "rule signal: conf=1.00, lift=5.52"
+      },
+      {
+        "item": "Lumpia",
+        "score": 0.39354353233830847,
+        "support": 0.015,
+        "confidence": 0.08955223880597014,
+        "lift": 1.9900497512437811,
+        "leverage": 0.0074624999999999995,
+        "conviction": 1.0489344262295082,
+        "why": "pair signal: conf=0.09, lift=1.99"
+      },
+      {
+        "item": "Fish Fillet",
+        "score": 0.047026119402985074,
+        "support": 0.015,
+        "confidence": 0.08955223880597014,
+        "lift": 0.3256445047489823,
+        "leverage": -0.031062500000000007,
+        "conviction": 0.796311475409836,
+        "why": "pair signal: conf=0.09, lift=0.33"
+      },
+      {
+        "item": "Pasta",
+        "score": 0.047026119402985074,
+        "support": 0.015,
+        "confidence": 0.08955223880597014,
+        "lift": 0.36928758270503154,
+        "leverage": -0.025618750000000003,
+        "conviction": 0.8320081967213115,
+        "why": "pair signal: conf=0.09, lift=0.37"
+      }
+    ]
+  },
+  "promos": [
+    {
+      "bundle": [
+        "Extra Rice",
+        "Fruit Juice",
+        "Fish Fillet"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=3.90, conf=1.00, profit~162php"
+    },
+    {
+      "bundle": [
+        "Extra Rice",
+        "Fish Fillet",
+        "Fruit Juice"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=3.86, conf=1.00, profit~162php"
+    },
+    {
+      "bundle": [
+        "Burger",
+        "Iced Tea",
+        "Nuggets"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=6.15, conf=1.00, profit~117php"
+    },
+    {
+      "bundle": [
+        "Coffee",
+        "Pasta",
+        "Brownie"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=4.78, conf=1.00, profit~142php"
+    },
+    {
+      "bundle": [
+        "Extra Rice",
+        "Soda",
+        "Fried Chicken"
+      ],
+      "promo": "Bundle Discount 10%",
+      "why": "lift=4.05, conf=1.00, profit~136php"
+    }
+  ],
+  "portfolio": {
+    "stable": [],
+    "emerging": [
+      {
+        "antecedents": [
+          "Soda"
+        ],
+        "consequents": [
+          "Extra Rice",
+          "Fried Chicken"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
+        ],
+        "consequents": [
+          "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fried Chicken",
+          "Soda"
+        ],
+        "consequents": [
+          "Extra Rice"
+        ]
+      },
+      {
+        "antecedents": [
+          "Pasta"
+        ],
+        "consequents": [
+          "Brownie",
+          "Coffee"
+        ]
+      },
+      {
+        "antecedents": [
+          "Nuggets"
+        ],
+        "consequents": [
+          "Burger",
+          "Iced Tea"
+        ]
+      },
+      {
+        "antecedents": [
+          "Fried Chicken"
+        ],
+        "consequents": [
+          "Extra Rice",
+          "Soda"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
+        ],
+        "consequents": [
+          "Pasta"
+        ]
+      },
+      {
+        "antecedents": [
+          "Brownie"
+        ],
+        "consequents": [
+          "Coffee",
+          "Pasta"
+        ]
+      }
+    ],
+    "fading": [],
+    "stable_count": 0,
+    "emerging_count": 25,
+    "fading_count": 0
+  },
+  "business_insights": [
+    "Homepage anchor order should be Extra Rice, Pasta, Coffee based on rank score.",
+    "Most influential cross-sell rule: Extra Rice, Fruit Juice -> Fish Fillet.",
+    "Shelf placement suggestion: move Sundae near checkout to monetize its high margin (62php).",
+    "FP-Growth is automatically selected for dense baskets to avoid Apriori candidate explosion.",
+    "Iteration drift score (JS) is 0.0000, recent-model weight adapted automatically.",
+    "Top-rule coverage is 85.8% of baskets with estimated uplift score 1.00."
+  ]
+}
