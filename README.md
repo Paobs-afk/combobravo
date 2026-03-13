@@ -102,12 +102,12 @@ Results taken from:
 | Holdout mean hit-rate (recent) | 0.5000 | 0.0000 |
 
 ### Top bundle snapshot
-- **Dataset A:** Nuggets + Sisig Rice + Iced Tea (lift ˜ 2.36)
-- **Dataset B:** Cheese Stick + Iced Tea (lift ˜ 1.44)
+- **Dataset A:** Nuggets + Sisig Rice + Iced Tea (lift Ëœ 2.36)
+- **Dataset B:** Cheese Stick + Iced Tea (lift Ëœ 1.44)
 
 ### Top rule snapshot
-- **Dataset A:** Nuggets + Sisig Rice -> Iced Tea (lift ˜ 2.36)
-- **Dataset B:** Cheese Stick -> Iced Tea (lift ˜ 1.44)
+- **Dataset A:** Nuggets + Sisig Rice -> Iced Tea (lift Ëœ 2.36)
+- **Dataset B:** Cheese Stick -> Iced Tea (lift Ëœ 1.44)
 
 ## 9) Evaluation
 ComboBravo evaluates recommendations using multiple angles:
@@ -181,3 +181,6 @@ Backend: `http://127.0.0.1:8000`
 - `GET /api/menu-rank/{dataset}/{iteration}`
 - `GET /api/segments/{dataset}/{iteration}`
 - `GET /api/overview/{dataset}/{iteration}`
+
+  ## 14) Dataset links
+  
